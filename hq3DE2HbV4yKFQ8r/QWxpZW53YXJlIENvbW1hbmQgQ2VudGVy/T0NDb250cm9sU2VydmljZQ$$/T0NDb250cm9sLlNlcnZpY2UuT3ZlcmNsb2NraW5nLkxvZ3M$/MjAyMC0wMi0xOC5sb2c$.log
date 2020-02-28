@@ -1,0 +1,76 @@
+2020-02-18 11:31:17.851 (Profile - IntelCpuTuner.cs) (192): XTU Version { Service = 6.5.1.351, SDK = 6.5.1.351 }
+2020-02-18 11:31:18.665 (Processor - IntelCpuInfo.cs) (99): Memory Frequency { XTU = 0, WMI = 2667 }
+2020-02-18 11:31:18.665 (Processor - IntelCpuInfo.cs) (100): Memory Voltage { XTU = 0, WMI = 1200 }
+2020-02-18 11:31:18.681 (Processor - IntelCpuInfo.cs) (158): Active Memory Timings (WMI): { tCL = 19, tRCD = 19, tRP = 19, tRAS = 43 }
+2020-02-18 11:31:18.701 (Processor - IntelCpuInfo.cs) (167): 
+	XMP Memory Timings (WMI)
+	{ Frequency = 750000, Voltage = 1.2, tCL = 19, tRCD = 19, tRP = 19, tRAS = 43 }
+2020-02-18 11:31:19.109 (Profile.cs) (439): LoadProfiles({ Platform = G3 3590, Processor = Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz })
+2020-02-18 11:31:19.748 (OverclockingControl - SystemModule.cs) (248): 
+	/system/state
+	{}
+	{"active_profile":"92ba744b-4cf8-4281-a8de-f8f1d3524d8c","bios_oc_ui_enabled":true,"bios_reset_triggered":false,"cpu_changed":false,"downloading":{"progress":100,"result":true},"failsafe_triggered":false,"gpu_changed":false,"invalid_custom_profile":false,"invalid_predefined_profile":false,"reboot_required":false,"success":true,"testing":{"progress":100,"result":true},"undersized_power_adapter":false}
+2020-02-18 11:31:20.042 (OverclockingControl - SystemModule.cs) (140): 
+	/system/info
+	{}
+	{"cpu":{"frequency_step":0.1,"manufacturer":"GenuineIntel","max_frequency":4.5,"name":"Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz","num_cores":6,"num_enabled_core":6,"num_logical_processors":12,"overclockable":false,"tunable":false,"voltage_offset_step":1,"voltage_step":0.001},"gpus":[{"device_id":"10DE 2191 - 1028 0949","gpu_clock_offset_step":1,"manufacturer":"NVIDIA","max_frequency":1335,"memory_clock_offset_step":1,"name":"GeForce GTX 1660 Ti with Max-Q Design","num_cores":1536,"overclockable":false,"power_limit_step":1,"thermal_limit_step":1}],"manufacturer":"Dell Inc.","max_profiles":0,"memory_overclockable":false,"name":"G3 3590","num_memory_profiles":0,"service_version":1250,"success":true,"xmps":[{"frequency":750000,"tCL":19,"tRAS":43,"tRCD":19,"tRP":19,"voltage":1.2}]}
+2020-02-18 11:38:36.388 (Profile - IntelCpuTuner.cs) (192): XTU Version { Service = 6.5.1.351, SDK = 6.5.1.351 }
+2020-02-18 11:38:36.855 (Processor - IntelCpuInfo.cs) (99): Memory Frequency { XTU = 0, WMI = 2667 }
+2020-02-18 11:38:36.855 (Processor - IntelCpuInfo.cs) (100): Memory Voltage { XTU = 0, WMI = 1200 }
+2020-02-18 11:38:36.871 (Processor - IntelCpuInfo.cs) (158): Active Memory Timings (WMI): { tCL = 19, tRCD = 19, tRP = 19, tRAS = 43 }
+2020-02-18 11:38:36.889 (Processor - IntelCpuInfo.cs) (167): 
+	XMP Memory Timings (WMI)
+	{ Frequency = 750000, Voltage = 1.2, tCL = 19, tRCD = 19, tRP = 19, tRAS = 43 }
+2020-02-18 11:38:37.456 (Profile.cs) (439): LoadProfiles({ Platform = G3 3590, Processor = Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz })
+2020-02-18 11:38:37.996 (OverclockingControl - SystemModule.cs) (140): 
+	/system/info
+	{}
+	{"cpu":{"frequency_step":0.1,"manufacturer":"GenuineIntel","max_frequency":4.5,"name":"Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz","num_cores":6,"num_enabled_core":6,"num_logical_processors":12,"overclockable":false,"tunable":false,"voltage_offset_step":1,"voltage_step":0.001},"gpus":[{"device_id":"10DE 2191 - 1028 0949","gpu_clock_offset_step":1,"manufacturer":"NVIDIA","max_frequency":0,"memory_clock_offset_step":1,"name":"GeForce GTX 1660 Ti with Max-Q Design","num_cores":1536,"overclockable":false,"power_limit_step":1,"thermal_limit_step":1}],"manufacturer":"Dell Inc.","max_profiles":0,"memory_overclockable":false,"name":"G3 3590","num_memory_profiles":0,"service_version":1250,"success":true,"xmps":[{"frequency":750000,"tCL":19,"tRAS":43,"tRCD":19,"tRP":19,"voltage":1.2}]}
+2020-02-18 11:38:37.996 (OverclockingControl - SystemModule.cs) (140): 
+	/system/info
+	{}
+	{"cpu":{"frequency_step":0.1,"manufacturer":"GenuineIntel","max_frequency":4.5,"name":"Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz","num_cores":6,"num_enabled_core":6,"num_logical_processors":12,"overclockable":false,"tunable":false,"voltage_offset_step":1,"voltage_step":0.001},"gpus":[{"device_id":"10DE 2191 - 1028 0949","gpu_clock_offset_step":1,"manufacturer":"NVIDIA","max_frequency":0,"memory_clock_offset_step":1,"name":"GeForce GTX 1660 Ti with Max-Q Design","num_cores":1536,"overclockable":false,"power_limit_step":1,"thermal_limit_step":1}],"manufacturer":"Dell Inc.","max_profiles":0,"memory_overclockable":false,"name":"G3 3590","num_memory_profiles":0,"service_version":1250,"success":true,"xmps":[{"frequency":750000,"tCL":19,"tRAS":43,"tRCD":19,"tRP":19,"voltage":1.2}]}
+2020-02-18 11:38:38.006 (OverclockingControl - SystemModule.cs) (248): 
+	/system/state
+	{}
+	{"active_profile":"92ba744b-4cf8-4281-a8de-f8f1d3524d8c","bios_oc_ui_enabled":true,"bios_reset_triggered":false,"cpu_changed":false,"downloading":{"progress":100,"result":true},"failsafe_triggered":false,"gpu_changed":false,"invalid_custom_profile":false,"invalid_predefined_profile":false,"reboot_required":false,"success":true,"testing":{"progress":100,"result":true},"undersized_power_adapter":false}
+2020-02-18 11:38:53.634 (OverclockingControl - SystemModule.cs) (140): 
+	/system/info
+	{}
+	{"cpu":{"frequency_step":0.1,"manufacturer":"GenuineIntel","max_frequency":4.5,"name":"Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz","num_cores":6,"num_enabled_core":6,"num_logical_processors":12,"overclockable":false,"tunable":false,"voltage_offset_step":1,"voltage_step":0.001},"gpus":[{"device_id":"10DE 2191 - 1028 0949","gpu_clock_offset_step":1,"manufacturer":"NVIDIA","max_frequency":0,"memory_clock_offset_step":1,"name":"GeForce GTX 1660 Ti with Max-Q Design","num_cores":1536,"overclockable":false,"power_limit_step":1,"thermal_limit_step":1}],"manufacturer":"Dell Inc.","max_profiles":0,"memory_overclockable":false,"name":"G3 3590","num_memory_profiles":0,"service_version":1250,"success":true,"xmps":[{"frequency":750000,"tCL":19,"tRAS":43,"tRCD":19,"tRP":19,"voltage":1.2}]}
+2020-02-18 11:38:53.655 (OverclockingControl - SystemModule.cs) (168): 
+	/system/configs/cpu
+	{}
+	{"frequency":[],"success":true,"voltage_offset_range":[],"voltage_range":[]}
+2020-02-18 11:38:53.657 (OverclockingControl - SystemModule.cs) (192): 
+	/system/configs/gpu
+	{}
+	{"gpus":[],"success":true}
+2020-02-18 11:38:53.659 (OverclockingControl - ProfilesModule.cs) (35): 
+	/profiles/list
+	{}
+	{"profiles":[],"success":true}
+2020-02-18 11:38:54.126 (OverclockingControl - SystemModule.cs) (140): 
+	/system/info
+	{}
+	{"cpu":{"frequency_step":0.1,"manufacturer":"GenuineIntel","max_frequency":4.5,"name":"Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz","num_cores":6,"num_enabled_core":6,"num_logical_processors":12,"overclockable":false,"tunable":false,"voltage_offset_step":1,"voltage_step":0.001},"gpus":[{"device_id":"10DE 2191 - 1028 0949","gpu_clock_offset_step":1,"manufacturer":"NVIDIA","max_frequency":0,"memory_clock_offset_step":1,"name":"GeForce GTX 1660 Ti with Max-Q Design","num_cores":1536,"overclockable":false,"power_limit_step":1,"thermal_limit_step":1}],"manufacturer":"Dell Inc.","max_profiles":0,"memory_overclockable":false,"name":"G3 3590","num_memory_profiles":0,"service_version":1250,"success":true,"xmps":[{"frequency":750000,"tCL":19,"tRAS":43,"tRCD":19,"tRP":19,"voltage":1.2}]}
+2020-02-18 11:39:10.273 (OverclockingControl - EventModule.cs) (31): 
+	/event/window_visibility_changed
+	{"visible":true}
+	{"success":true}
+2020-02-18 11:39:29.656 (OverclockingControl - EventModule.cs) (31): 
+	/event/window_visibility_changed
+	{"visible":false}
+	{"success":true}
+2020-02-18 11:39:30.647 (OverclockingControl - SystemModule.cs) (140): 
+	/system/info
+	{}
+	{"cpu":{"frequency_step":0.1,"manufacturer":"GenuineIntel","max_frequency":4.5,"name":"Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz","num_cores":6,"num_enabled_core":6,"num_logical_processors":12,"overclockable":false,"tunable":false,"voltage_offset_step":1,"voltage_step":0.001},"gpus":[{"device_id":"10DE 2191 - 1028 0949","gpu_clock_offset_step":1,"manufacturer":"NVIDIA","max_frequency":1335,"memory_clock_offset_step":1,"name":"GeForce GTX 1660 Ti with Max-Q Design","num_cores":1536,"overclockable":false,"power_limit_step":1,"thermal_limit_step":1}],"manufacturer":"Dell Inc.","max_profiles":0,"memory_overclockable":false,"name":"G3 3590","num_memory_profiles":0,"service_version":1250,"success":true,"xmps":[{"frequency":750000,"tCL":19,"tRAS":43,"tRCD":19,"tRP":19,"voltage":1.2}]}
+2020-02-18 11:39:30.798 (OverclockingControl - SystemModule.cs) (140): 
+	/system/info
+	{}
+	{"cpu":{"frequency_step":0.1,"manufacturer":"GenuineIntel","max_frequency":4.5,"name":"Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz","num_cores":6,"num_enabled_core":6,"num_logical_processors":12,"overclockable":false,"tunable":false,"voltage_offset_step":1,"voltage_step":0.001},"gpus":[{"device_id":"10DE 2191 - 1028 0949","gpu_clock_offset_step":1,"manufacturer":"NVIDIA","max_frequency":0,"memory_clock_offset_step":1,"name":"GeForce GTX 1660 Ti with Max-Q Design","num_cores":1536,"overclockable":false,"power_limit_step":1,"thermal_limit_step":1}],"manufacturer":"Dell Inc.","max_profiles":0,"memory_overclockable":false,"name":"G3 3590","num_memory_profiles":0,"service_version":1250,"success":true,"xmps":[{"frequency":750000,"tCL":19,"tRAS":43,"tRCD":19,"tRP":19,"voltage":1.2}]}
+2020-02-18 17:03:49.383 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-18 17:04:35.364 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-18 18:39:24.187 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-18 18:39:48.609 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
