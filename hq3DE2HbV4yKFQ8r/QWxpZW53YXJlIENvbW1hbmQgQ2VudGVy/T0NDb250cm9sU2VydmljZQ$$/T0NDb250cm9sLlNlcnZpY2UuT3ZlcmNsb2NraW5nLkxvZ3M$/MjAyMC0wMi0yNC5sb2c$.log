@@ -1,0 +1,28 @@
+2020-02-24 07:30:36.782 (Profile - IntelCpuTuner.cs) (192): XTU Version { Service = 6.5.1.351, SDK = 6.5.1.351 }
+2020-02-24 07:30:38.008 (Processor - IntelCpuInfo.cs) (99): Memory Frequency { XTU = 2660.1599999999999999999999999, WMI = 2667 }
+2020-02-24 07:30:38.009 (Processor - IntelCpuInfo.cs) (100): Memory Voltage { XTU = 0, WMI = 1200 }
+2020-02-24 07:30:38.041 (Processor - IntelCpuInfo.cs) (158): Active Memory Timings (WMI): { tCL = 19, tRCD = 19, tRP = 19, tRAS = 43 }
+2020-02-24 07:30:38.089 (Processor - IntelCpuInfo.cs) (167): 
+	XMP Memory Timings (WMI)
+	{ Frequency = 750000, Voltage = 1.2, tCL = 19, tRCD = 19, tRP = 19, tRAS = 43 }
+2020-02-24 07:30:38.790 (Profile.cs) (439): LoadProfiles({ Platform = G3 3590, Processor = Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz })
+2020-02-24 07:30:39.473 (OverclockingControl - SystemModule.cs) (140): 
+	/system/info
+	{}
+	{"cpu":{"frequency_step":0.1,"manufacturer":"GenuineIntel","max_frequency":4.5,"name":"Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz","num_cores":6,"num_enabled_core":6,"num_logical_processors":12,"overclockable":false,"tunable":false,"voltage_offset_step":1,"voltage_step":0.001},"gpus":[{"device_id":"10DE 2191 - 1028 0949","gpu_clock_offset_step":1,"manufacturer":"NVIDIA","max_frequency":0,"memory_clock_offset_step":1,"name":"GeForce GTX 1660 Ti with Max-Q Design","num_cores":1536,"overclockable":false,"power_limit_step":1,"thermal_limit_step":1}],"manufacturer":"Dell Inc.","max_profiles":0,"memory_overclockable":false,"name":"G3 3590","num_memory_profiles":0,"service_version":1250,"success":true,"xmps":[{"frequency":750000,"tCL":19,"tRAS":43,"tRCD":19,"tRP":19,"voltage":1.2}]}
+2020-02-24 07:30:39.499 (OverclockingControl - SystemModule.cs) (248): 
+	/system/state
+	{}
+	{"active_profile":"92ba744b-4cf8-4281-a8de-f8f1d3524d8c","bios_oc_ui_enabled":true,"bios_reset_triggered":false,"cpu_changed":false,"downloading":{"progress":100,"result":true},"failsafe_triggered":false,"gpu_changed":false,"invalid_custom_profile":false,"invalid_predefined_profile":false,"reboot_required":false,"success":true,"testing":{"progress":100,"result":true},"undersized_power_adapter":false}
+2020-02-24 08:53:38.045 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-24 08:53:41.370 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-24 10:18:01.926 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-24 12:31:43.920 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-24 13:22:30.989 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-24 13:22:34.232 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-24 14:17:59.429 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-24 17:28:37.552 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-24 19:32:47.423 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-24 19:32:51.095 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-24 21:06:00.952 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-24 22:43:00.381 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
