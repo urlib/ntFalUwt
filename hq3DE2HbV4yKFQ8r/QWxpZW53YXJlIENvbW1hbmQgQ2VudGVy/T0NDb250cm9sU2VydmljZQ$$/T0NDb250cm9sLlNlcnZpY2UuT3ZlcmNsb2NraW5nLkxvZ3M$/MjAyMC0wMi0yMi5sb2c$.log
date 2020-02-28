@@ -1,0 +1,37 @@
+2020-02-22 08:50:09.176 (Profile - IntelCpuTuner.cs) (192): XTU Version { Service = 6.5.1.351, SDK = 6.5.1.351 }
+2020-02-22 08:50:10.483 (Processor - IntelCpuInfo.cs) (99): Memory Frequency { XTU = 2660.1599999999999999999999999, WMI = 2667 }
+2020-02-22 08:50:10.484 (Processor - IntelCpuInfo.cs) (100): Memory Voltage { XTU = 0, WMI = 1200 }
+2020-02-22 08:50:10.514 (Processor - IntelCpuInfo.cs) (158): Active Memory Timings (WMI): { tCL = 19, tRCD = 19, tRP = 19, tRAS = 43 }
+2020-02-22 08:50:10.561 (Processor - IntelCpuInfo.cs) (167): 
+	XMP Memory Timings (WMI)
+	{ Frequency = 750000, Voltage = 1.2, tCL = 19, tRCD = 19, tRP = 19, tRAS = 43 }
+2020-02-22 08:50:11.285 (Profile.cs) (439): LoadProfiles({ Platform = G3 3590, Processor = Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz })
+2020-02-22 08:50:11.690 (OverclockingControl - SystemModule.cs) (248): 
+	/system/state
+	{}
+	{"active_profile":"92ba744b-4cf8-4281-a8de-f8f1d3524d8c","bios_oc_ui_enabled":true,"bios_reset_triggered":false,"cpu_changed":false,"downloading":{"progress":100,"result":true},"failsafe_triggered":false,"gpu_changed":false,"invalid_custom_profile":false,"invalid_predefined_profile":false,"reboot_required":false,"success":true,"testing":{"progress":100,"result":true},"undersized_power_adapter":false}
+2020-02-22 08:50:12.648 (OverclockingControl - SystemModule.cs) (140): 
+	/system/info
+	{}
+	{"cpu":{"frequency_step":0.1,"manufacturer":"GenuineIntel","max_frequency":4.5,"name":"Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz","num_cores":6,"num_enabled_core":6,"num_logical_processors":12,"overclockable":false,"tunable":false,"voltage_offset_step":1,"voltage_step":0.001},"gpus":[{"device_id":"10DE 2191 - 1028 0949","gpu_clock_offset_step":1,"manufacturer":"NVIDIA","max_frequency":1335,"memory_clock_offset_step":1,"name":"GeForce GTX 1660 Ti with Max-Q Design","num_cores":1536,"overclockable":false,"power_limit_step":1,"thermal_limit_step":1}],"manufacturer":"Dell Inc.","max_profiles":0,"memory_overclockable":false,"name":"G3 3590","num_memory_profiles":0,"service_version":1250,"success":true,"xmps":[{"frequency":750000,"tCL":19,"tRAS":43,"tRCD":19,"tRP":19,"voltage":1.2}]}
+2020-02-22 08:51:08.821 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 09:37:07.783 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 10:45:52.127 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 10:45:55.810 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 11:06:38.010 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 13:12:16.021 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 13:12:19.038 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 13:53:57.178 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 14:58:38.663 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 14:58:41.871 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 15:52:45.071 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 16:54:37.239 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 16:54:40.886 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 17:17:26.711 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 18:29:22.672 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 18:29:26.438 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 19:33:49.725 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 20:07:12.644 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 20:07:15.600 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 20:51:51.374 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
+2020-02-22 21:37:42.635 (OverclockingControl.cs) (116): PowerManagementEvent { PowerStatus = PowerStatusChange }
