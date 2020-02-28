@@ -1,0 +1,28 @@
+2020-02-18 11:31:19.547 (ThermalControl.cs) (69): Fans: { ID = 50, MinRPM = 0, MaxRPM = 5600, Sensors = [ 1 ] },{ ID = 51, MinRPM = 0, MaxRPM = 5600, Sensors = [ 6 ] }
+2020-02-18 11:31:19.549 (ThermalControl.cs) (70): Thermal Modes: { ID = 160 },{ ID = 161 },{ ID = 162 },{ ID = 163 }
+2020-02-18 11:38:37.833 (ThermalControl.cs) (69): Fans: { ID = 50, MinRPM = 0, MaxRPM = 5600, Sensors = [ 1 ] },{ ID = 51, MinRPM = 0, MaxRPM = 5600, Sensors = [ 6 ] }
+2020-02-18 11:38:37.835 (ThermalControl.cs) (70): Thermal Modes: { ID = 160 },{ ID = 161 },{ ID = 162 },{ ID = 163 }
+2020-02-18 11:38:38.164 (ThermalControl - Modules.cs) (525): 
+	/profiles/apply
+	{"id":"{92ba744b-4cf8-4281-a8de-f8f1d3524d8c}"}
+	{"id":"92ba744b-4cf8-4281-a8de-f8f1d3524d8c","success":true}
+2020-02-18 11:38:53.602 (ThermalControl - Modules.cs) (384): 
+	/system/info
+	{}
+	{"bios_support":true,"fans":[{"id":50,"max_rpm":5600,"min_rpm":0,"readonly":false,"sensor_ids":[1]},{"id":51,"max_rpm":5600,"min_rpm":0,"readonly":false,"sensor_ids":[6]}],"max_profiles":10,"platform_name":"G3 3590","sensors":[],"service_version":1250,"success":true,"thermal_modes":[160,161,162,163],"ustt_star_ratings":[{"acoustic_rating":4,"cpu_rating":4,"gpu_rating":5,"mode":160,"thermal_rating":3},{"acoustic_rating":3,"cpu_rating":5,"gpu_rating":5,"mode":161,"thermal_rating":2},{"acoustic_rating":4,"cpu_rating":4,"gpu_rating":3,"mode":162,"thermal_rating":5},{"acoustic_rating":5,"cpu_rating":3,"gpu_rating":4,"mode":163,"thermal_rating":3},{"acoustic_rating":1,"cpu_rating":5,"gpu_rating":5,"mode":164,"thermal_rating":1}]}
+2020-02-18 11:38:53.607 (ThermalControl - Modules.cs) (409): 
+	/system/state
+	{}
+	{"active_profile":"92ba744b-4cf8-4281-a8de-f8f1d3524d8c","g_mode":false,"success":true,"system_active_profile":"92ba744b-4cf8-4281-a8de-f8f1d3524d8c"}
+2020-02-18 11:38:53.632 (ThermalControl - Modules.cs) (431): 
+	/profiles/list
+	{}
+	{"profiles":[{"fans":[{"curve_middle_x":50,"curve_parameter_a":0,"curve_parameter_b":0,"curve_parameter_c":0,"fixed_offset":0,"id":50,"mode":"auto"},{"curve_middle_x":50,"curve_parameter_a":0,"curve_parameter_b":0,"curve_parameter_c":0,"fixed_offset":0,"id":51,"mode":"auto"}],"id":"92ba744b-4cf8-4281-a8de-f8f1d3524d8c","is_disabled_overclock":false,"name":"160","readonly":true,"thermal_mode":160},{"fans":[{"curve_middle_x":50,"curve_parameter_a":0,"curve_parameter_b":0,"curve_parameter_c":0,"fixed_offset":0,"id":50,"mode":"auto"},{"curve_middle_x":50,"curve_parameter_a":0,"curve_parameter_b":0,"curve_parameter_c":0,"fixed_offset":0,"id":51,"mode":"auto"}],"id":"f6e1318b-9df4-4557-9d70-36586465fcd2","is_disabled_overclock":false,"name":"161","readonly":true,"thermal_mode":161},{"fans":[{"curve_middle_x":50,"curve_parameter_a":0,"curve_parameter_b":0,"curve_parameter_c":0,"fixed_offset":0,"id":50,"mode":"auto"},{"curve_middle_x":50,"curve_parameter_a":0,"curve_parameter_b":0,"curve_parameter_c":0,"fixed_offset":0,"id":51,"mode":"auto"}],"id":"8f6e0d5e-e1fa-4518-8819-c04b8f7e3048","is_disabled_overclock":false,"name":"162","readonly":true,"thermal_mode":162},{"fans":[{"curve_middle_x":50,"curve_parameter_a":0,"curve_parameter_b":0,"curve_parameter_c":0,"fixed_offset":0,"id":50,"mode":"auto"},{"curve_middle_x":50,"curve_parameter_a":0,"curve_parameter_b":0,"curve_parameter_c":0,"fixed_offset":0,"id":51,"mode":"auto"}],"id":"e3db209f-5d5c-4032-a43d-fa9fb01c155f","is_disabled_overclock":false,"name":"163","readonly":true,"thermal_mode":163}],"success":true}
+2020-02-18 11:38:53.672 (ThermalControl - Modules.cs) (384): 
+	/system/info
+	{}
+	{"bios_support":true,"fans":[{"id":50,"max_rpm":5600,"min_rpm":0,"readonly":false,"sensor_ids":[1]},{"id":51,"max_rpm":5600,"min_rpm":0,"readonly":false,"sensor_ids":[6]}],"max_profiles":10,"platform_name":"G3 3590","sensors":[],"service_version":1250,"success":true,"thermal_modes":[160,161,162,163],"ustt_star_ratings":[{"acoustic_rating":4,"cpu_rating":4,"gpu_rating":5,"mode":160,"thermal_rating":3},{"acoustic_rating":3,"cpu_rating":5,"gpu_rating":5,"mode":161,"thermal_rating":2},{"acoustic_rating":4,"cpu_rating":4,"gpu_rating":3,"mode":162,"thermal_rating":5},{"acoustic_rating":5,"cpu_rating":3,"gpu_rating":4,"mode":163,"thermal_rating":3},{"acoustic_rating":1,"cpu_rating":5,"gpu_rating":5,"mode":164,"thermal_rating":1}]}
+2020-02-18 11:39:30.757 (ThermalControl - Modules.cs) (525): 
+	/profiles/apply
+	{"id":"{92ba744b-4cf8-4281-a8de-f8f1d3524d8c}"}
+	{"id":"92ba744b-4cf8-4281-a8de-f8f1d3524d8c","success":true}
