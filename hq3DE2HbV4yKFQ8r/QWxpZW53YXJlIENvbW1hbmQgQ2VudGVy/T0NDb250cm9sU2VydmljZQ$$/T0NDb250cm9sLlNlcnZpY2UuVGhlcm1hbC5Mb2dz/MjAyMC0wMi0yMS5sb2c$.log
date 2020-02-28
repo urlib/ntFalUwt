@@ -1,0 +1,6 @@
+2020-02-21 07:20:21.864 (ThermalControl.cs) (69): Fans: { ID = 50, MinRPM = 0, MaxRPM = 5600, Sensors = [ 1 ] },{ ID = 51, MinRPM = 0, MaxRPM = 5600, Sensors = [ 6 ] }
+2020-02-21 07:20:21.870 (ThermalControl.cs) (70): Thermal Modes: { ID = 160 },{ ID = 161 },{ ID = 162 },{ ID = 163 }
+2020-02-21 22:28:21.800 (ThermalControl - Modules.cs) (525): 
+	/profiles/apply
+	{"id":"{92ba744b-4cf8-4281-a8de-f8f1d3524d8c}"}
+	{"id":"92ba744b-4cf8-4281-a8de-f8f1d3524d8c","success":true}
