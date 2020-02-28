@@ -1,0 +1,2 @@
+2020-02-28 07:20:21.259 (ThermalControl.cs) (69): Fans: { ID = 50, MinRPM = 0, MaxRPM = 5600, Sensors = [ 1 ] },{ ID = 51, MinRPM = 0, MaxRPM = 5600, Sensors = [ 6 ] }
+2020-02-28 07:20:21.261 (ThermalControl.cs) (70): Thermal Modes: { ID = 160 },{ ID = 161 },{ ID = 162 },{ ID = 163 }
