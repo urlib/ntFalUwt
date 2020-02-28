@@ -1,0 +1,1171 @@
+{
+  "version": 14,
+  "platform": "Gpu",
+  "processor": "Gpu",
+  "encoding": "萬國碼",
+  "dgpu_whitelist": [
+    {
+      "platforms": [
+        "Alienware m15 R2"
+      ],
+      "device_id_list": [
+        "10DE 1E90 - 1028 093B",
+        "10DE 1F10 - 1028 093B",
+        "10DE 1F11 - 1028 093B",
+        "10DE 2191 - 1028 093B",
+        "10DE 1F91 - 1028 0963"
+      ]
+    },
+    {
+      "platforms": [
+        "Alienware m17 R2"
+      ],
+      "device_id_list": [
+        "10DE 1E90 - 1028 093C",
+        "10DE 1F10 - 1028 093C",
+        "10DE 1F11 - 1028 093C",
+        "10DE 2191 - 1028 093C",
+        "10DE 1F91 - 1028 0964"
+      ]
+    },
+    {
+      "platforms": [
+        "Alienware Area-51m"
+      ],
+      "device_id_list": [
+        "10DE 1ED0 - 1028 08C4",
+        "10DE 1E90 - 1028 08C5",
+        "10DE 1ED0 - 1028 08C6",
+        "10DE 1F50 - 1028 08C4",
+        "10DE 1F10 - 1028 08C5",
+        "10DE 1F50 - 1028 08C6",
+        "10DE 1F51 - 1028 08C4",
+        "10DE 1F11 - 1028 08C5",
+        "10DE 1F51 - 1028 08C6"
+      ]
+    }
+  ],
+  "gpus": [
+    {
+      "name": "Yamato15 N18E-G3 Max-Q",
+      "id": "10DE 1E90 - 1028 093B",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 50,
+            "mem_clock_offset": 150,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 300,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 100,
+                "risk": 1
+              },
+              {
+                "begin": 100,
+                "end": 120,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 200,
+                "risk": 1
+              },
+              {
+                "begin": 200,
+                "end": 300,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Yamato17 N18E-G3 Max-Q",
+      "id": "10DE 1E90 - 1028 093C",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 50,
+            "mem_clock_offset": 150,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 300,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 100,
+                "risk": 1
+              },
+              {
+                "begin": 100,
+                "end": 120,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 200,
+                "risk": 1
+              },
+              {
+                "begin": 200,
+                "end": 300,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Yamato15 N18E-G2 Max-Q",
+      "id": "10DE 1F10 - 1028 093B",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 75,
+            "mem_clock_offset": 150,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 300,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 100,
+                "risk": 1
+              },
+              {
+                "begin": 100,
+                "end": 150,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 200,
+                "risk": 1
+              },
+              {
+                "begin": 200,
+                "end": 300,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Yamato17 N18E-G2 Max-Q",
+      "id": "10DE 1F10 - 1028 093C",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 75,
+            "mem_clock_offset": 150,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 300,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 100,
+                "risk": 1
+              },
+              {
+                "begin": 100,
+                "end": 150,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 200,
+                "risk": 1
+              },
+              {
+                "begin": 200,
+                "end": 300,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Yamato15 N18E-G1 Max-P",
+      "id": "10DE 1F11 - 1028 093B",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 75,
+            "mem_clock_offset": 175,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 350,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 100,
+                "risk": 1
+              },
+              {
+                "begin": 100,
+                "end": 150,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 200,
+                "risk": 1
+              },
+              {
+                "begin": 200,
+                "end": 350,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Yamato17 N18E-G1 Max-P",
+      "id": "10DE 1F11 - 1028 093C",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 75,
+            "mem_clock_offset": 175,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 350,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 100,
+                "risk": 1
+              },
+              {
+                "begin": 100,
+                "end": 150,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 200,
+                "risk": 1
+              },
+              {
+                "begin": 200,
+                "end": 350,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Yamato15 N18E-G0 Max-P",
+      "id": "10DE 2191 - 1028 093B",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 75,
+            "mem_clock_offset": 150,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 300,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 100,
+                "risk": 1
+              },
+              {
+                "begin": 100,
+                "end": 150,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 200,
+                "risk": 1
+              },
+              {
+                "begin": 200,
+                "end": 300,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Yamato17 N18E-G0 Max-P",
+      "id": "10DE 2191 - 1028 093C",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 75,
+            "mem_clock_offset": 150,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 300,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 100,
+                "risk": 1
+              },
+              {
+                "begin": 100,
+                "end": 150,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 200,
+                "risk": 1
+              },
+              {
+                "begin": 200,
+                "end": 300,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Yamato15 N18P-G0",
+      "id": "10DE 1F91 - 1028 0963",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 0,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 0,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 0,
+                "risk": 1
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 0,
+                "risk": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Yamato17 N18P-G0",
+      "id": "10DE 1F91 - 1028 0964",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 0,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 0,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 0,
+                "risk": 1
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 0,
+                "risk": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Serenity N18E-G3 QS",
+      "id": "10DE 1ED0 - 1028 08C4",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 75
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 75
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Serenity N18E-G3 QS",
+      "id": "10DE 1E90 - 1028 08C5",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 75
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 75
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Serenity N18E-G3 QS",
+      "id": "10DE 1ED0 - 1028 08C6",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 75
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 75
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Serenity N18E-G2 QS",
+      "id": "10DE 1F50 - 1028 08C4",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Serenity N18E-G2 QS",
+      "id": "10DE 1F10 - 1028 08C5",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Serenity N18E-G2 QS",
+      "id": "10DE 1F50 - 1028 08C6",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Serenity N18E-G1",
+      "id": "10DE 1F51 - 1028 08C4",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 0,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 0,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Serenity N18E-G1",
+      "id": "10DE 1F11 - 1028 08C5",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 0,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 0,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Serenity N18E-G1",
+      "id": "10DE 1F51 - 1028 08C6",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 0,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 0,
+            "mem_clock_offset": 0,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": -100,
+                "end": 150,
+                "risk": 1
+              },
+              {
+                "begin": 150,
+                "end": 200,
+                "risk": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "GeForce GTX 1080",
+      "id": "10DE 1B80 - 1028 3366 reserved",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 100,
+            "power_limit": 110,
+            "thermal_limit": 88
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 150,
+            "power_limit": 120,
+            "thermal_limit": 92
+          }
+        }
+      ]
+    },
+    {
+      "name": "GeForce GTX 1080 with Max-Q Design",
+      "id": "10DE 1BE0 - 1028 0876 reserved",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 100,
+            "power_limit": 0,
+            "thermal_limit": 91
+          },
+          "oc2": {
+            "gpu_clock_offset": 125,
+            "mem_clock_offset": 125,
+            "power_limit": 0,
+            "thermal_limit": 91
+          }
+        }
+      ]
+    },
+    {
+      "name": "GeForce GTX 1080 Ti",
+      "id": "10DE 1B06 - 1028 3600 reserved",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 100,
+            "power_limit": 110,
+            "thermal_limit": 87
+          },
+          "oc2": {
+            "gpu_clock_offset": 125,
+            "mem_clock_offset": 125,
+            "power_limit": 120,
+            "thermal_limit": 90
+          }
+        }
+      ]
+    },
+    {
+      "name": "GeForce GTX 1070",
+      "id": "10DE 1B81 - 1028 3301 reserved",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 100,
+            "power_limit": 106,
+            "thermal_limit": 88
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 150,
+            "power_limit": 112,
+            "thermal_limit": 92
+          }
+        }
+      ]
+    },
+    {
+      "name": "GeForce GTX 1070 Ti",
+      "id": "10DE 1B82 - 1028 3471 reserved",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 100,
+            "power_limit": 110,
+            "thermal_limit": 88
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 150,
+            "power_limit": 120,
+            "thermal_limit": 92
+          }
+        }
+      ]
+    },
+    {
+      "name": "GeForce GTX 1060",
+      "id": "10DE 1C20 - 1028 0888 reserved",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 100,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 150,
+            "power_limit": 0,
+            "thermal_limit": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "GeForce GTX 1060 6GB",
+      "id": "10DE 1C03 - 1028 11D7 reserved",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 100,
+            "power_limit": 108,
+            "thermal_limit": 88
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 150,
+            "power_limit": 116,
+            "thermal_limit": 92
+          }
+        }
+      ]
+    },
+    {
+      "name": "GeForce GTX 1050 Ti",
+      "id": "10DE 1C82 - 1028 3512 reserved",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 100,
+            "power_limit": 100,
+            "thermal_limit": 90
+          },
+          "oc2": {
+            "gpu_clock_offset": 150,
+            "mem_clock_offset": 150,
+            "power_limit": 100,
+            "thermal_limit": 97
+          }
+        }
+      ]
+    },
+    {
+      "name": "Graphics Card ?",
+      "id": "DEAD BEEF - DEAD BEEF",
+      "platforms": [
+        {
+          "name": "All",
+          "oc1": {
+            "gpu_clock_offset": 5,
+            "mem_clock_offset": 5,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 10,
+            "mem_clock_offset": 10,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 100,
+                "risk": 1
+              },
+              {
+                "begin": 100,
+                "end": 200,
+                "risk": 2
+              },
+              {
+                "begin": 200,
+                "end": 300,
+                "risk": 4
+              }
+            ],
+            "memory_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 100,
+                "risk": 1
+              }
+            ],
+            "power_limit_range": [
+            ],
+            "thermal_limit_range": [
+              {
+                "begin": 60,
+                "end": 92,
+                "risk": 1
+              }
+            ]
+          }
+        },
+        {
+          "name": "Platform ?",
+          "oc1": {
+            "gpu_clock_offset": 50,
+            "mem_clock_offset": 50,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "oc2": {
+            "gpu_clock_offset": 100,
+            "mem_clock_offset": 100,
+            "power_limit": 0,
+            "thermal_limit": 0
+          },
+          "custom": {
+            "gpu_clock_offset_range": [
+              {
+                "begin": 0,
+                "end": 100,
+                "risk": 1
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
