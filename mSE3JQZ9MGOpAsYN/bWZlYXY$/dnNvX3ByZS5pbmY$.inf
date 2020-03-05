@@ -1,0 +1,130 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=vso_pre.inf
+
+[SourceDisksNames]
+1="McAfee VirusScan Pre-install","",1
+
+[Installer_Config]
+AppID=VSO
+Shared=0
+
+[DirIds]
+50000=%33500%\McAfee\MfeAV
+50010=%33500%\McAfee\VirusScan
+
+51000=%ProgramW6432%\McAfee\MfeAV
+51010=%ProgramW6432%\McAfee\VirusScan
+
+54200=%33100%\McAfee\VirusScan\Data
+
+
+
+[DestinationDirs]   
+VsoRD32=50000
+VsoRD64=51000
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 32 bit
+[Install_NT]
+OldVirusScanRemoval32=EXE
+OldVirusScanFolder32=Delfolders
+VsoLiPresetup32=Setup
+VsoRC32=RenCopy
+
+[UnInstall_NT]
+VsoUninstall32=Setup
+
+[VsoLiPresetup32]
+AddReg=VsoLiRegistry32,VsoLiRegistrySubInfo
+
+[VsoUninstall32]
+Cleanup=1
+DelFiles=VsoRD32
+
+[VsoRC32]
+vso_pre.inf=%50000%
+vsoLI.inf=%50000%
+mcvsoins.dll=%50000%
+mcvsoins64.dll=%50000%
+
+[VsoRD32]
+vsoLI.inf,,,0x10004
+mcvsoins.dll,,,0x10020
+mcvsoins64.dll,,,0x10020
+
+
+[OldVirusScanRemoval32]
+%33200%\mcinst.exe=/nolog /uninstall /longpath """%50010%\vso.inf""",1,1
+%33200%\mcinst.exe=/nolog /uninstall /longpath """%50010%\vsapi.inf""",1,1
+%33200%\mcinst.exe=/nolog /uninstall /longpath """%50010%\vsores.inf""",1,1
+
+[OldVirusScanFolder32]
+%50010%
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 64 bit
+[Install_Vista_X64]
+OldVirusScanRemoval64=EXE
+OldVirusScanFolder64=Delfolders
+VsoLiPresetup64=Setup
+VsoRC64=RenCopy
+[UnInstall_Vista_X64]
+VsoUninstall64=Setup
+
+
+
+[VsoLiPresetup64]
+AddReg=VsoLiRegistry64,VsoLiRegistrySubInfo
+
+
+
+[VsoUninstall64]
+Cleanup=1
+DelFiles=VsoRD64
+
+[VsoRC64]
+vso_pre.inf=%51000%
+vsoLI.inf=%51000%
+mcvsoins.dll=%51000%
+mcvsoins64.dll=%51000%
+
+[VsoRD64]
+vsoLI.inf,,,0x10004
+mcvsoins.dll,,,0x10020
+mcvsoins64.dll,,,0x10020
+
+[OldVirusScanRemoval64]
+%33200%\mcinst.exe=/nolog /uninstall /longpath """%51010%\vso64.inf""",1,1
+%33200%\mcinst.exe=/nolog /uninstall /longpath """%51010%\vsapi64.inf""",1,1
+%33200%\mcinst.exe=/nolog /uninstall /longpath """%51010%\vsores64.inf""",1,1
+
+[OldVirusScanFolder64]
+%51010%
+
+[VsoLiRegistrySubInfo]
+HKLM,Software\McAfee\VirusScan\InstallSettings\Substitute,"build", 0x1000,"23.0.139"
+HKLM,Software\McAfee\VirusScan\InstallSettings\Substitute,"buildli", 0x1000,"139"
+HKLM,Software\McAfee\VirusScan\InstallSettings\Substitute,"appcode", 0x1000,"vso"
+HKLM,Software\McAfee\VirusScan\InstallSettings\Substitute,"domain", 0x1000,"us.mcafee.com"
+HKLM,Software\McAfee\VirusScan\InstallSettings\Substitute,"version", 0x1000,"23.0"
+HKLM,Software\McAfee\VirusScan\InstallSettings\Substitute,"version2", 0x1000,"23.0"
+HKLM,Software\McAfee\VirusScan\InstallSettings\Substitute,"LangPack", 0x1000,"139"
+HKLM,Software\McAfee\VirusScan\InstallSettings\Substitute,"LCID", 0x1000,"1033"
+HKLM,Software\McAfee\VirusScan\InstallSettings\Substitute,"lang", 0x1000,"en-us"
+HKLM,Software\McAfee\VirusScan\InstallSettings\Substitute,"site_lang", 0x1000,"en-us"
+
+[VsoLiRegistry32]
+HKLM,Software\McAfee\VirusScan\InstallSettings,"Install Dir",,"%50000%"
+HKLM,Software\McAfee\VirusScan\InstallSettings,"LD_InstallDir",,"%50000%"
+HKLM,Software\McAfee\VirusScan\InstallSettings,"Data Dir",,"%54200%"
+
+[VsoLiRegistry64]
+HKLM,Software\McAfee\VirusScan\InstallSettings,"Install Dir", 0x1000,"%51000%"
+HKLM,Software\McAfee\VirusScan\InstallSettings,"Install Dir 64", 0x1000,"%51000%"
+HKLM,Software\McAfee\VirusScan\InstallSettings,"LD_InstallDir", 0x1000,"%51000%"
+HKLM,Software\McAfee\VirusScan\InstallSettings,"LD_InstallDir64", 0x1000,"%51000%"
+HKLM,Software\McAfee\VirusScan\InstallSettings,"Data Dir", 0x1000,"%54200%"
+
+
