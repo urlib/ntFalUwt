@@ -1,0 +1,134 @@
+[Installer_Config]
+AppID=MSC
+Shared=0
+
+;///////////////
+
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=instLD.inf
+
+[SourceDisksNames]
+1="SecurityCenter Main Language Installer INF","",1
+
+[Env-Var]
+%LCID%=$REG$Key=SOFTWARE\McAfee\MSC\AppInfo\Substitute:Name=lcid
+
+[Env-Var64]
+%LCID%=$REG$Key=SOFTWARE\McAfee\MSC\AppInfo\Substitute:Name=lcid
+
+[DirIds]
+;Env-Var Defined ==> Program Files
+;33100 ==> All Users\Application Data
+;33000 ==> Program Files\Common files
+;33200 ==> McIns.exe Module dir
+;33300 ==> ExtractCAB location
+;16422 ==> Program Files
+
+46150=%16422%\McAfee\MSC\%LCID%
+46151=%ProgramW6432%\McAfee\MSC\%LCID%
+
+46050=%33200%\1050		; Used during installation
+
+46051=%16422%\McAfee\MSC\1050		; Used for copying instld.inf as the lcid substitute key is not present yet
+46052=%ProgramW6432%\McAfee\MSC\1050		; Used for copying instld.inf as the lcid substitute key is not present yet
+
+46100=%16422%\McAfee\MSC
+46101=%ProgramW6432%\McAfee\MSC
+
+46600=%33000%\McAfee\NMC\%LCID%
+46601=%CommonProgramW6432%\McAfee\NMC\%LCID%
+
+[Install_NT]
+CabFilesLDCommon32=ExtractCab
+CabFilesLD32=ExtractCab
+InstallLD=RunINF
+DefaultInstall=Setup
+
+[Install_NT_x64]
+CabFilesLDCommon64=ExtractCab
+CabFilesLD64=ExtractCAB
+InstallLD=RunINF
+DefaultInstall64=Setup
+
+[UnInstall_NT]
+DefaultUninstall=Setup
+UnInstallLD=RunINF
+
+[UnInstall_NT_x64]
+DefaultUninstall64=Setup
+UnInstallLD64=RunINF
+
+[InstallLD]
+subst.inf
+msclcres.inf
+mscpstLD.inf
+mscdfoem.inf
+;nmclang.inf
+mclgtmpl.inf
+
+[UnInstallLD]
+;%46600%\nmclang.inf
+%46150%\msclcres.inf
+%46150%\mscpstLD.inf
+%46100%\mscdfoem.inf
+%46150%\subst.inf
+%46150%\mclgtmpl.inf
+
+
+[UnInstallLD64]
+;%46600%\nmclang.inf
+%46151%\msclcres.inf
+%46151%\mscpstLD.inf
+%46101%\mscdfoem.inf
+%46151%\subst.inf
+%46151%\mclgtmpl.inf
+
+[DestinationDirs]   
+; Destination Directories for CopyFiles/Delfiles Sections.
+; 10 indicates LDID_WIN - windows directory   
+MSCMainFiles=46051
+MSCMainFiles64=46052
+
+[DefaultInstall]
+CopyFiles=MSCMainFiles
+
+[DefaultInstall64]
+CopyFiles=MSCMainFiles64
+
+[DefaultUninstall]
+DelFiles=MSCMainFiles
+
+[DefaultUninstall64]
+DelFiles=MSCMainFiles64
+
+[MSCMainFiles]
+instLD.inf,,,65568
+
+[MSCMainFiles64]
+instLD.inf,,,65568
+
+[CabFilesLDCommon32]
+%46050%\subst.cab
+%46050%\msclcres.cab
+%46050%\mscpstLD.cab
+%46050%\mscdfoem.cab
+%46050%\mclgtmpl.cab
+
+[CabFilesLDCommon64]
+%46050%\subst64.cab
+%46050%\msclcres64.cab
+%46050%\mscpstLD64.cab
+%46050%\mscdfoem64.cab
+%46050%\mclgtmpl64.cab
+
+[CabFilesLD32]
+;%46050%\nmclang32.cab
+
+[CabFilesLD64]
+;%46050%\nmclang64.cab
+
+;This macro will be replaced with the list of files.
+;[INST_LD_LIST]
+
