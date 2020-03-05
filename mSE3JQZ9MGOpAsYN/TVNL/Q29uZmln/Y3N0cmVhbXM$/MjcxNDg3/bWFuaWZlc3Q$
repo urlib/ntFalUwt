@@ -1,0 +1,5 @@
+-- Copyright (C) 2007 McAfee, Inc.  All rights reserved.
+version=271487
+date="2020-03-05 11:21:47"
+File{type="rules", path="cstreams.lua", checksum="9386226530bc6445eab0daf0a275355ff019b421",hide=true}
+File{type="regex", path="cstreams.rgx", checksum="6bfc846beb4d0a6e289fd818d4ead0750b05747d"}
