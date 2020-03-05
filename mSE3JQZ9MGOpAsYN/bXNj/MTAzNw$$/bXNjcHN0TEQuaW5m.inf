@@ -1,0 +1,58 @@
+[Installer_Config]
+AppID=MSC
+Shared=0
+
+[Env-Var]
+; Turns out that factory prep for a 64-bit OS may run on a 32-bit Windows system so
+; copy the Env-Var64 section to ensure everything works in both cases
+%SELECTED_LCID%=$REG$Key=Software\McAfee\MSC\AppInfo\Substitute:Name=lcid
+
+[Env-Var64]
+%SELECTED_LCID%=$REG$Key=Software\McAfee\MSC\AppInfo\Substitute:Name=lcid
+
+[DirIds]
+;Env-Var Defined ==> Program Files
+;33100 ==> All Users\Application Data
+;33000 ==> Program Files\Common files
+;33200 ==> McIns.exe Module dir
+;33300 ==> ExtractCAB location
+;16422 ==> Program Files
+
+46100=%ProgramW6432%\McAfee\MSC
+46150=%ProgramW6432%\McAfee\MSC\%SELECTED_LCID%
+
+;///////////////
+
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=mscpstLD.inf
+
+[SourceDisksNames]
+1="SecurityCenter Post Installation Language File","",1
+
+[DestinationDirs]   
+; Destination Directories for CopyFiles/Delfiles Sections.
+; 10 indicates LDID_WIN - windows directory   
+MSCPostFiles=46100
+MSCPostFilesLD=46150
+
+[DefaultInstall]
+CopyFiles=MSCPostFiles,MSCPostFilesLD
+
+[DefaultUnInstall]
+DelFiles=MSCPostFiles,MSCPostFilesLD
+
+[Install_NT]
+DefaultInstall=Setup
+
+[UnInstall_NT]
+DefaultUnInstall=Setup
+
+[MSCPostFilesLD]
+mscpstLD.inf,,,65568
+instLD.inf,msc\instLD.inf,,65568
+
+[MSCPostFiles]
+mscLD.inf,msc\mscLD.inf,,65568
+
