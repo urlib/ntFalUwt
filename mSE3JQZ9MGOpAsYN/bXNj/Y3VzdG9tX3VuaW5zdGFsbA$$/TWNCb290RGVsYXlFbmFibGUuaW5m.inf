@@ -1,0 +1,10 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=mcbootdelayenable.inf
+
+[Installer_Config]
+AppID=McBootDelayStartSvc
+Shared=0
+
+
