@@ -1,0 +1,193 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=mcbootdssvc.inf
+
+[Installer_Config]
+AppID=McBootDelayStartSvc
+Shared=0
+
+[SourceDisksNames]
+1="McAfee BootDelayStartSvc Svc Files","",1
+
+[DestinationDirs]   
+SvcFileList=46000
+SvcFileList64=46300
+CustomInf64=46300, Custom_Uninstall
+CustomInf32=46000, Custom_Uninstall
+
+
+[DirIds]
+46000=%33500%\McAfee\MSC
+46200=%33000%\Mcafee\platform\McSvcHost
+46300=%ProgramW6432%\McAfee\MSC
+46400=%CommonProgramW6432%\McAfee\platform\McSvcHost
+
+
+;-------------------------------------------
+;	32 bit installation
+;-------------------------------------------
+[DefaultInstall]
+CopyFiles=CustomInf32
+AddReg=AddRegEntry
+DelReg=LegacyRegEntry
+
+[DefaultUnInstall]
+DelFiles=SvcFileList
+DelReg=DelRegEntry
+
+[SvcFileList]
+McBootDelayStartSvc.dll,,,65568
+McBootSvcSet.exe,,,65568
+
+[RenCopyList]
+McBootDelayStartSvc.dll=%46000%
+McBootSvcSet.exe=%46000%
+
+[AddRegEntry]
+HKLM,Software\McAfee\Platform\McSvcHost\McCoreSvc,"mcbootdelaystartsvc",0x00000000,"{1DD7B920-0AAE-457B-8A6B-077A92933F82}"
+
+;
+; McAfee services to delay (any 'McAfee' service with a BDStartOrder value will be delayed)
+;
+HKLM,Software\McAfee\ZeroBoot\services\mcpltsvc,"BDStartOrder",65537,0x8
+HKLM,Software\McAfee\ZeroBoot\services\McProxy,"BDStartOrder",65537,0x9
+HKLM,Software\McAfee\ZeroBoot\services\McMPFSvc,"BDStartOrder",65537,0xA
+HKLM,Software\McAfee\ZeroBoot\services\McAfee SiteAdvisor Service,"BDStartOrder",65537,0xC
+HKLM,Software\McAfee\ZeroBoot\services\McNaiAnn,"BDStartOrder",65537,0xD
+HKLM,Software\McAfee\ZeroBoot\services\MSK80Service,"BDStartOrder",65537,0xF
+HKLM,Software\McAfee\ZeroBoot\services\McAPExe,"BDStartOrder",65537,0x11
+
+
+;This is a hack for fixing Defect- https://bugzilla.corp.nai.org/bugzilla/show_bug.cgi?id=931817 which was for an emergency RR 1390
+; Basically we are overwriting the start-type setting for the following drivers to "Auto-start". McBootDSSvc due to bug, has marked them as "Manual-Start" and then it got disabled
+;because of which they got stuck in manual-start mode
+HKLM,SYSTEM\CurrentControlSet\services\mfewfpk,"Start",65537,0x0
+HKLM,SYSTEM\CurrentControlSet\services\mfehidk,"Start",65537,0x0
+HKLM,SYSTEM\CurrentControlSet\services\mfeavfk,"Start",65537,0x3
+;HKLM,SYSTEM\CurrentControlSet\services\mfeapfk,"Start",65537,0x3
+
+;
+; Remove stale entries (during update) that were previously added. Remove the StartOrder value so their start is no longer controlled.
+;
+[LegacyRegEntry]
+HKLM,SYSTEM\CurrentControlSet\services\mfefirek,"StartOrder"
+HKLM,SYSTEM\CurrentControlSet\services\mfevtp,  "StartOrder"
+HKLM,SYSTEM\CurrentControlSet\services\mfefire, "StartOrder"
+HKLM,SYSTEM\CurrentControlSet\services\mfeapfk, "StartOrder"
+HKLM,SYSTEM\CurrentControlSet\services\mferkdet,"StartOrder"
+HKLM,SYSTEM\CurrentControlSet\services\mcmscsvc,"StartOrder"
+HKLM,SYSTEM\CurrentControlSet\services\McNASvc, "StartOrder"
+HKLM,SYSTEM\CurrentControlSet\services\McODS,   "StartOrder"
+HKLM,SYSTEM\CurrentControlSet\services\mfecore, "StartOrder"
+HKLM,Software\McAfee\MSC\Update\Customization,"McBootDelayStartSvc.dll",,"%46300%"
+
+
+[DelRegEntry]
+HKLM,Software\McAfee\ZeroBoot
+
+
+[Install_NT]
+DefaultInstall=Setup
+RenCopyList=RenCopy
+RunBootSvcCreateAndStart=EXE
+
+
+[StopAndRemoveBootSvc]
+%46000%\McBootSvcSet.exe=/delete
+
+
+[UnInstall_NT]
+StopAndRemoveBootSvc=EXE
+DefaultUnInstall=Setup
+
+
+[CustomInf32]
+mcbootdssvc.inf,,,65568
+McBootDelayEnable.inf,,,65568
+
+[RunBootSvcCreateAndStart]
+%46000%\McBootSvcSet.exe=/enable
+
+
+;-------------------------------------------
+;	64 bit installation
+;-------------------------------------------
+
+[DefaultInstall64]
+CopyFiles=CustomInf64
+AddReg=AddRegEntry64
+DelReg=LegacyRegEntry
+
+
+[CustomInf64]
+mcbootdssvc.inf,,,65568
+McBootDelayEnable.inf,,,65568
+
+[DefaultUnInstall64]
+DelFiles=SvcFileList64
+DelReg=DelRegEntry64
+
+
+[SvcFileList64]
+McBootDelayStartSvc.dll,McBootDelayStartSvc64.dll,,65568
+McBootSvcSet.exe,McBootSvcSet64.exe,,65568
+
+
+[RenCopyList64]
+McBootDelayStartSvc64.dll=%46300%\McBootDelayStartSvc.dll
+McBootSvcSet64.exe=%46300%\McBootSvcSet.exe
+
+
+[AddRegEntry64]
+HKLM,Software\McAfee\Platform\McSvcHost\McCoreSvc,"mcbootdelaystartsvc",0x00000000,"{1DD7B920-0AAE-457B-8A6B-077A92933F82}"
+
+;
+; McAfee services to delay (any 'McAfee' service with a BDStartOrder value will be delayed)
+;
+HKLM,Software\McAfee\ZeroBoot\services\mcpltsvc,"BDStartOrder",0x00011001,0x8
+HKLM,Software\McAfee\ZeroBoot\services\McProxy,"BDStartOrder",0x00011001,0x9
+HKLM,Software\McAfee\ZeroBoot\services\McMPFSvc,"BDStartOrder",0x00011001,0xA
+HKLM,Software\McAfee\ZeroBoot\services\McAfee SiteAdvisor Service,"BDStartOrder",0x00011001,0xC
+HKLM,Software\McAfee\ZeroBoot\services\McNaiAnn,"BDStartOrder",0x00011001,0xD
+HKLM,Software\McAfee\ZeroBoot\services\MSK80Service,"BDStartOrder",0x00011001,0xF
+HKLM,Software\McAfee\ZeroBoot\services\McAPExe,"BDStartOrder",0x00011001,0x11
+
+
+;This is a hack for fixing Defect- https://bugzilla.corp.nai.org/bugzilla/show_bug.cgi?id=931817 which was for an emergency RR 1390
+; Basically we are overwriting the start-type setting for the following drivers to "Auto-start". McBootDSSvc due to bug, has marked them as "Manual-Start" and then it got disabled
+;because of which they got stuck in manual-start mode
+HKLM,SYSTEM\CurrentControlSet\services\mfewfpk,"Start",65537,0x0
+HKLM,SYSTEM\CurrentControlSet\services\mfehidk,"Start",65537,0x0
+HKLM,SYSTEM\CurrentControlSet\services\mfeavfk,"Start",65537,0x3
+;HKLM,SYSTEM\CurrentControlSet\services\mfeapfk,"Start",65537,0x3
+
+
+[DelRegEntry64]
+HKLM,Software\McAfee\ZeroBoot,,0x00003000
+
+
+[Install_Vista_x64]
+DefaultInstall64=Setup
+RenCopyList64=RenCopy
+RunBootSvcCreateAndStart64=EXE
+
+
+[RunBootSvcCreateAndStart64]
+%46300%\McBootSvcSet.exe=/enable
+
+
+[StopAndRemoveBootSvc64]
+%46300%\McBootSvcSet.exe=/delete
+
+
+[UnInstall_Vista_x64]
+StopAndRemoveBootSvc64=EXE
+DefaultUnInstall64=Setup
+
+
+
+[OCXRegister]
+McBootDelayStartSvc.dll
+
+
