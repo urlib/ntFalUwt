@@ -1,0 +1,146 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=vsouc.inf
+
+[SourceDisksNames]
+1="McAfee VirusScan OEM Files","",1
+
+[Installer_Config]
+AppID=VSO
+Shared=0
+
+[Env-Var]
+%VSINSTALL_DIR%=$REG$Key=Software\McAfee\VirusScan\InstallSettings:Name=Install Dir
+
+[Env-Var64]
+%VSINSTALL_DIR64%=$REG$Key=Software\McAfee\VirusScan\InstallSettings:Name=Install Dir 64
+
+[DirIds]
+52000=%VSINSTALL_DIR%
+53000=%VSINSTALL_DIR64%
+41111=%windir%\system32
+
+[DestinationDirs]
+VsoUcProduct32=52000
+VsoUcProduct64=53000
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 32 bit installation
+;
+[Install_NT]
+VsoUcInstall32=Setup
+Runprogram32=EXE
+
+[UnInstall_NT]
+VsoUcUninstall32=Setup
+
+[VsoUcInstall32]
+CopyFiles=VsoUcProduct32
+Delreg=Deleteregs32
+AddReg=Customization32
+
+
+[VsoUcUninstall32]
+;Cleanup=1
+;DelFiles=VsoUcProduct32
+DelReg=Customization32
+
+[VsoUcProduct32]
+mvsoem.dll,mvsoem.dll,,65540
+vsouc.inf,,,65540
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 64 bit installation
+;
+[Install_VISTA_x64]
+VsoUcInstall64=Setup
+Runprogram64=EXE
+Deleteregs64=DelReg64
+
+[UnInstall_VISTA_x64]
+VsoUcUninstall64=Setup
+
+
+[VsoUcInstall64]
+CopyFiles=VsoUcProduct64
+AddReg=Customization64
+DelReg=Deletevalues64
+
+
+[VsoUcUninstall64]
+;Cleanup=1
+;DelFiles=VsoUcProduct64
+DelFiles=VsoUcFiles
+DelReg=Customization64
+
+[DefaultUninstall]
+;Cleanup=1
+;DelFiles=OEMFiles
+;DelReg=Customization
+
+[VsoUcProduct64]
+mvsoem.dll,x64\mvsoem.dll,,65540
+vsouc.inf,,,65540
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; common entries
+;
+[Customization32]
+; REPLACE CUSTOMIZATION ENTRIES HERE
+
+; Global flag for VSO partner customizations - Arvind 6/10/2014
+;HKLM,SOFTWARE\McAfee\VirusScan\InstallSettings,settingsApplied,65537,0
+
+; Sample LAM identifier for first time migration from VSO to LAM - Arvind 4/17/17
+HKLM,Software\McAfee\VirusScan\Overrides\Partner\Settings\VSO,"VSOLAMAFFID",,105
+HKLM,Software\McAfee\VirusScan\Overrides\Partner\Settings\VSO,"VSOLAMBUILD",,16.0.23.507
+
+HKLM,Software\McAfee\VirusScan\Overrides\Partner\Settings\LAM,"VSOLAMAFFID",,105
+HKLM,Software\McAfee\VirusScan\Overrides\Partner\Settings\LAM,"VSOLAMBUILD",,16.0.23.507
+
+[Customization64]
+; REPLACE CUSTOMIZATION ENTRIES HERE
+
+; Global flag for VSO partner customizations - Arvind 6/10/2014
+;HKLM,SOFTWARE\McAfee\VirusScan\InstallSettings,settingsApplied,65537,0
+
+; Sample LAM identifier for first time migration from VSO to LAM - Arvind 4/17/17
+HKLM,Software\McAfee\VirusScan\Overrides\Partner\Settings\VSO,"VSOLAMAFFID",4096,105
+HKLM,Software\McAfee\VirusScan\Overrides\Partner\Settings\VSO,"VSOLAMBUILD",4096,16.0.23.507
+
+HKLM,Software\McAfee\VirusScan\Overrides\Partner\Settings\LAM,"VSOLAMAFFID",4096,105
+HKLM,Software\McAfee\VirusScan\Overrides\Partner\Settings\LAM,"VSOLAMBUILD",4096,16.0.23.507
+
+
+
+
+[Deleteregs32]
+;Deleteting below registries to migrate to LAM settings from 16.0 - Prakash/Arvind 3/27/2017
+HKLM,Software\McAfee\VirusScan\Overrides\Partner\Settings\VSO
+HKLM,Software\McAfee\VirusScan\Overrides\Partner\Settings\Casper\
+HKLM,Software\McAfee\AVSolution\MCSHIELDGLOBAL\GLOBAL,"scanprocessonstart",65537,0
+HKLM,Software\McAfee\AVSolution\OAS\DEFAULT,"enablebehavioural",65537,0
+HKLM,Software\McAfee\AVSolution\OAS\DISABLED,"enablebehavioural",65537,0
+HKLM,Software\McAfee\AVSolution\OAS\EMAIL,"enablebehavioural",65537,0
+HKLM,Software\McAfee\AVSolution\OAS\IM,"enablebehavioural",65537,0
+HKLM,Software\McAfee\AVSolution\OAS\LOW,"enablebehavioural",65537,0
+HKLM,Software\McAfee\AVSolution\OAS\OAS,"enablebehavioural",65537,0
+
+[Deleteregs64]
+;Deleteting below registries to migrate to LAM settings from 16.0 - Prakash/Arvind 3/27/2017
+64BitKey=HKLM,Software\McAfee\VirusScan\Overrides\Partner\Settings\VSO
+64BitKey=HKLM,Software\McAfee\VirusScan\Overrides\Partner\Settings\Casper\
+
+[Deletevalues64]
+HKLM,Software\McAfee\AVSolution\MCSHIELDGLOBAL\GLOBAL,"scanprocessonstart",69633,0
+HKLM,Software\McAfee\AVSolution\OAS\DEFAULT,"enablebehavioural",69633,0
+HKLM,Software\McAfee\AVSolution\OAS\DISABLED,"enablebehavioural",69633,0
+HKLM,Software\McAfee\AVSolution\OAS\EMAIL,"enablebehavioural",69633,0
+HKLM,Software\McAfee\AVSolution\OAS\IM,"enablebehavioural",69633,0
+HKLM,Software\McAfee\AVSolution\OAS\LOW,"enablebehavioural",69633,0
+HKLM,Software\McAfee\AVSolution\OAS\OAS,"enablebehavioural",69633,0
+
+
