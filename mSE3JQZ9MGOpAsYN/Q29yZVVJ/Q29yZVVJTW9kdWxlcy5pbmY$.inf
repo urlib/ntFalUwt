@@ -1,0 +1,133 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=CoreUIModules.inf
+
+[Installer_Config]
+AppID=CoreUI
+Shared=0
+
+[SourceDisksNames]
+1="CoreUIModules Files","",1
+
+[DirIds]
+;24 ==> root directory of the disk on which Windows files are installed
+52010=%24%\Program Files\McAfee\CoreUI
+53010=%24%\Program Files\Common Files\McAfee\ChromiumContainer
+54010=%24%\Program Files\Common Files\McAfee\CEF
+49400=%24%\Program Files\Common Files\McAfee\ModuleCore
+49410=%24%\Program Files\Common Files\McAfee\AlertManager
+46300=%24%\Program Files\Common Files\Mcafee\CSP
+
+[DestinationDirs]
+FileList=52010
+
+[AddRegEntries]
+HKLM,SOFTWARE\McAfee\CoreUI\CoreUIModules,"Version",,"18.4.142.1"
+
+[AddRegEntries64]
+HKLM,SOFTWARE\McAfee\CoreUI\CoreUIModules,"Version",4096,"18.4.142.1"
+
+[DelRegEntries]
+HKLM,SOFTWARE\McAfee\CoreUI\CoreUIModules
+
+[DelRegEntries64]
+64BitKey=HKLM,SOFTWARE\McAfee\CoreUI\CoreUIModules
+
+[DefaultInstall]
+AddReg=AddRegEntries
+CopyFiles=FileList
+
+[DefaultUninstall]
+DelFiles=FileList
+DelReg=DelRegEntries
+
+[DefaultInstall64]
+AddReg=AddRegEntries64
+CopyFiles=FileList
+
+[DefaultUninstall64]
+DelFiles=FileList
+
+[FileList]
+; 0x00014020 means "rename-copy"
+CoreUIModules.inf,,,65568
+AlertViewer.exe,,,0x00014020
+Launch.exe,,,0x00014020
+LayoutMgr.dll,,,0x00014020
+NotificationCenter.dll,,,0x00014020
+PamUpdater.dll,,,0x00014020
+CustMgr.dll,,,0x00014020
+CoreUIAlertViewer.dll,,,0x00014020
+CoreUIAlertViewer.xml,,,65568
+DADMessageBusProxy.dll,,,0x00014020
+
+[Install_NT]
+UnRegisterWithModuleCore=EXE
+DefaultInstall=Setup
+InstallChromiumContainer=EXE
+RegisterWithModuleCore=EXE
+RegisterDADProxyWithModuleCore=EXE
+
+[UnInstall_NT]
+UninstallChromiumContainer=EXE
+UnRegisterWithModuleCore=EXE
+UnRegisterDADProxyWithModuleCore=EXE
+;we removed install with csp, however, in upgrade case, we still need to uninstall with csp.
+UninstallMCSP=EXE
+DefaultUninstall=Setup
+Cleanup=DelFolders
+
+[Install_NT_X64]
+UnRegisterWithModuleCore=EXE
+DefaultInstall64=Setup
+InstallChromiumContainer=EXE
+RegisterWithModuleCore=EXE
+RegisterDADProxyWithModuleCore=EXE
+
+[UnInstall_NT_X64]
+UninstallChromiumContainer=EXE
+UnRegisterWithModuleCore=EXE
+UnRegisterDADProxyWithModuleCore=EXE
+;we removed install with csp, however, in upgrade case, we still need to uninstall with csp.
+UninstallMCSP=EXE
+DefaultUninstall64=Setup
+DelRegEntries64=DelReg64
+Cleanup=DelFolders
+
+[InstallChromiumContainer]
+; register CEF before ChromiumContainer because ChromiumContainer depends on CEF
+%54010%\CEFReg.exe="/register=CoreUI",1,1
+%53010%\ChromiumContainerReg.exe="/register=CoreUI",1,1
+
+[UninstallChromiumContainer]
+; unregister ChromiumContainer before CEF because ChromiumContainer depends on CEF
+%53010%\ChromiumContainerReg.exe="/unregister=CoreUI",1,1
+%54010%\CEFReg.exe="/unregister=CoreUI",1,1
+
+[RegisterWithModuleCore]
+%49400%\ModuleCoreService.exe="/register=PamUpdater /binaryFile=PamUpdater.dll /binaryPath=$(FOLDERID_ProgramFiles)\McAfee\CoreUI /startType=ondemand /messageTriggers=CoreUI.Policy.Refresh,Core.Subscription.SubscriptionUpdated,Core.Subscription.Expired,MBP.Approval.Accept,MBP.Approval.RemindMe,MBP.Approval.Reject",1,1
+%49400%\ModuleCoreService.exe="/register=CustMgr /binaryFile=CustMgr.dll /binaryPath=$(FOLDERID_ProgramFiles)\McAfee\CoreUI /startType=ondemand /messageTriggers=PDMgr.PDString.Refresh",1,1
+%49400%\ModuleCoreService.exe="/register=NotificationCenter /binaryFile=NotificationCenter.dll /binaryPath=$(FOLDERID_ProgramFiles)\McAfee\CoreUI /startType=ondemand /messageTriggers=CoreUI.NotificationCenter.Load,CoreUI.NotificationCenter.AdditionalNotifications.Request,CoreUI.NotificationCenter.AdditionalBalloons.Request,CoreUI.NotificationCenter.BadgeNumber.PublishRefresh,CoreUI.NotificationCenter.BadgeNumber.Request,CoreUI.NotificationCenter.RunningProcesses.Request,CoreUI.NotificationCenter.RecentActivities.Request,CoreUI.NotificationCenter.HistoryNotifications.Request,CoreUI.Widget.SecurityReport.Request,SettingsManager.Notify.Set.Core.Antivirus.ScanResults,SettingsManager.Notify.Set.Core.Quickclean.ScanResults,SettingsManager.Notify.Set.Core.Quickclean.CleanResults,SettingsManager.Notify.Set.Core.Shredder.ShredResults,SettingsManager.Notify.Set.Core.Vulnerability.ScanResults,SettingsManager.Notify.Set.Core.Vulnerability.UpdateResults,SettingsManager.Notify.Set.Core.Update.UpdateResults",1,1
+%49400%\ModuleCoreService.exe="/register=CoreUIAlertViewer /userMode=true /moduleConfigFile=$(FOLDERID_ProgramFiles)\McAfee\CoreUI\CoreUIAlertViewer.xml",1,1
+%49410%\AlertPluginRegister.exe="/registerViewer=CoreUI",1,1
+
+[UnRegisterWithModuleCore]
+%49400%\ModuleCoreService.exe="/unregister=PamUpdater",1,1
+%49400%\ModuleCoreService.exe="/unregister=CustMgr",1,1
+%49400%\ModuleCoreService.exe="/unregister=CoreUIAlertViewer",1,1
+%49400%\ModuleCoreService.exe="/unregister=NotifiationCenter",1,1
+%49410%\AlertPluginRegister.exe="/unregisterViewer=CoreUI",1,1
+
+[RegisterDADProxyWithModuleCore]
+%49400%\ModuleCoreService.exe="/register=DADMessageBusProxy /binaryFile=DADMessageBusProxy.dll /binaryPath=$(FOLDERID_ProgramFiles)\McAfee\CoreUI /startType=ondemand /messageTriggers=DADProxy.AddNewFeature.Request,DADProxy.AddNewFeature.Progress.Query,DADProxy.FeatureAdded.Query",1,1
+
+[UnRegisterDADProxyWithModuleCore]
+%49400%\ModuleCoreService.exe="/unregister=DADMessageBusProxy",1,1
+
+[UninstallMCSP]
+%46300%\mccspuninstall.exe="/app df77019b-eb61-4417-b1a7-ad644a389fb4",1
+
+[Cleanup]
+%52010%=1
+
