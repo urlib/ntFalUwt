@@ -1,0 +1,103 @@
+;----------------------------------------------------
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=instLD.inf
+
+[Installer_Config]
+AppID=MCP
+Shared=0
+LD=1
+
+[SourceDisksNames]
+1="McAfee MCP Files","",1
+
+[DirIds]
+;33000 ==> \Program Files\Common Files
+;33100 ==> \Documents and Settings\All Users\Application Data
+;33400 ==> \Program Files\Common Files\McAfee\Installer
+;33500 ==> \Program Files
+50000=%33500%\McAfee\MQS
+;50200=%33500%\McAfee\MQS\1033
+50200=%33500%\McAfee\MQS
+50099=%33100%\McAfee\MQS\Temp
+
+;50400=%ProgramW6432%\McAfee\MQS\1033
+50400=%ProgramW6432%\McAfee\MQS
+
+[DestinationDirs]
+FileList=50200
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Shared
+
+[CabFiles]
+;%33200%\1033\subst.cab
+%33200%\subst.cab
+
+[DefaultInstall]
+CopyFiles=FileList
+
+[DefaultUninstall]
+Delfiles=FileList
+Cleanup=Delfolders
+
+[FileList]
+;move this to subst.inf. subst.cab has a duplicated copy of instLd.inf just for copy file
+;instLD.inf,,,65568
+
+[InstallMCP]
+subst.inf
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 32bit
+
+;This is the starting point of the main installation
+;This section contains a list of ‘commands’ that the installer 
+;executes one after the other in order from top to bottom 
+[Install_NT]
+CabFiles=ExtractCAB
+DefaultInstall=Setup
+InstallMCP=RunINF
+
+[UnInstall_NT]
+UnInstallMCP=RunINF
+DefaultUninstall=Setup
+Cleanup=Delfolders
+
+[InstallMCP]
+subst.inf
+
+[UnInstallMCP]
+%50200%\subst.inf
+
+[Cleanup]
+%50099%=1
+%50200%=1
+%50200%=1
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 64bit
+
+;This is the starting point of the main installation
+;This section contains a list of ‘commands’ that the installer 
+;executes one after the other in order from top to bottom 
+[Install_Vista_X64]
+CabFiles=ExtractCAB
+DefaultInstall=Setup
+InstallMCP=RunINF
+
+[UnInstall_Vista_X64]
+UnInstallMCP=RunINF
+DefaultUninstall=Setup
+Cleanup64=Delfolders
+
+[UnInstallMCP64]
+%50400%\subst.inf
+
+[Cleanup64]
+%50099%=1
+%50400%=1
+%50400%=1
+
