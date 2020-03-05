@@ -1,0 +1,17 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=bsiuc.inf
+
+[Installer_Config]
+AppID=MSAD
+
+[Install_NT]
+CabFiles=ExtractCAB
+InstallUC=RunINF
+
+[CabFiles]
+msaduc.cab
+
+[InstallUC]
+msaduc.inf
