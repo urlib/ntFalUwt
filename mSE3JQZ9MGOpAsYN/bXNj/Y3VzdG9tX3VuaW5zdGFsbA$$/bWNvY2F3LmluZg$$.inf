@@ -1,0 +1,105 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=mcocaw.inf
+ 
+[Installer_Config]
+AppID=mcocaw
+Shared=0
+ 
+[SourceDisksNames]
+1="McAfee OOBE Files","",1
+
+[DestinationDirs]   
+FileList32=46110
+FileList64=46210
+CustomInf32=46100, Custom_Uninstall
+CustomInf64=46200, Custom_Uninstall
+ 
+[DirIds]
+46100=%33500%\McAfee\MSC
+46110=%33500%\McAfee\MSC\OOBE
+
+46200=%ProgramW6432%\McAfee\MSC
+46210=%ProgramW6432%\McAfee\MSC\OOBE
+
+;46300=%33000%\McAfee\MSC
+46300=%CommonProgramW6432%\McAfee\platform
+46310=%CommonProgramW6432%\McAfee\MSC
+
+46400=%33000%\McAfee\Installer
+46410=%CommonProgramW6432%\McAfee\Installer
+
+46500=%SystemRoot%\System32
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; XP OS Entries 
+[Install_NT]
+DefaultInstall=Setup
+RenCopyList32=RenCopy
+
+
+; intentionally leave blank so that if OS is XP no entries are written to the registry
+[RegKeysNoXPSupport]
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 64 Bit Vista and Windows 7 OS Entries 
+[Install_Vista_x64]
+DefaultInstall64=Setup
+RenCopyList64=RenCopy
+
+
+[DefaultInstall64]
+CopyFiles=CustomInf64
+AddReg=Regentries64
+
+[FileList64]
+mcocaw.dll,x64\mcocaw.dll,,65568
+
+[RenCopyList64]
+x64\mcocaw.dll=%46210%\mcocaw.dll
+
+[CustomInf64]
+mcocaw.inf,,,65568
+mcocdis.inf,,,65568
+mcocena.inf,,,65568
+
+[Regentries64]
+HKLM,Software\McAfee\MSC\Update\Customization,"mcocaw.dll",0x00001000,"%46210%"
+HKLM,Software\McAfee\MSC\Settings\ActWiz,"ActWizPath",0x00001000,"""%46300%\mcuicnt.exe"" ""%46210%\mcocaw.dll"""
+HKLM,SOFTWARE\McAfee\MSC\OEM,"OOBE_BackgroundImage",0x00001000,"BackgroundDefault.jpg"
+HKLM,SOFTWARE\McAfee\MSC\OEM,"OOBE_Imagepath",0x00001000,"%46500%\oobe\info\backgrounds"
+HKLM,SOFTWARE\McAfee\MSC\OEM,"OOBE_ImageSearchPath",0x00001000,"%46500%\oobe\info\backgrounds\background*.jpg"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 32 Bit Vista and Windows 7 OS Entries 
+[Install_Vista]
+DefaultInstall=Setup
+RenCopyList32=RenCopy
+
+[DefaultInstall]
+CopyFiles=CustomInf32
+AddReg=Regentries32
+
+[FileList32]
+mcocaw.dll,,,65568
+
+[RenCopyList32]
+mcocaw.dll=%46110%
+
+[CustomInf32]
+mcocaw.inf,,,65568
+mcocdis.inf,,,65568
+mcocena.inf,,,65568
+
+[Regentries32]
+HKLM,Software\McAfee\MSC\Update\Customization,"mcocaw.dll",,"%46110%"
+HKLM,Software\McAfee\MSC\Settings\ActWiz,"ActWizPath",,"""%33000%\mcafee\platform\mcuicnt.exe"" ""%46110%\mcocaw.dll"""
+HKLM,SOFTWARE\McAfee\MSC\OEM,"OOBE_BackgroundImage",,"BackgroundDefault.jpg"
+HKLM,SOFTWARE\McAfee\MSC\OEM,"OOBE_Imagepath",,"%46500%\oobe\info\backgrounds"
+HKLM,SOFTWARE\McAfee\MSC\OEM,"OOBE_ImageSearchPath",,"%46500%\oobe\info\backgrounds\background*.jpg"
+
+[ExecuteInf32]
+mcocena.inf=%46100%\Custom_Uninstall
+
+[ExecuteInf64]
+mcocena.inf=%46200%\Custom_Uninstall
