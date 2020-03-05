@@ -1,0 +1,6 @@
+-- Copyright (C) 2020 McAfee, Inc.  All rights reserved.
+version=7193
+date="2020-03-04 17:45:02"
+File{type="rules", path="inlines.lua", checksum="e595a61b230353a11cdd64e184486bae8ebd3a81"}
+File{type="script", path="inlines-metas.lua", checksum="16a28ebc2d8b7b2ec3d5feeb3b5a4683c6c87b4b"}
+File{type="regex", path="inlines.rgx", checksum="6e14df778f8a4f54e897f2764fe26096e8562c91"}
