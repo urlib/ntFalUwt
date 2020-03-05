@@ -1,0 +1,144 @@
+--Copyright (C) 2013 McAfee, Inc.  All rights reserved.
+nwlAny=RegexOptions.new()
+nwlAny:SetNwlAny()
+SetRegexFile("inlines.rgx")
+Rule{
+ params={
+   value=CrtRgx(0),
+   name="subject",
+   },
+ group="header",
+ name="__INLINE_HEADER_0",
+ type="regexnamed",
+ }
+Rule{
+ params=CrtRgx(1),
+ group="body1",
+ name="__INLINE_BODY_0",
+ type="regex",
+ }
+Rule{
+ params={
+   value=CrtRgx(2),
+   name="subject",
+   },
+ group="header",
+ name="__INLINE_HEADER_1",
+ type="regexnamed",
+ }
+Rule{
+ params=CrtRgx(3),
+ group="body1",
+ name="__INLINE_BODY_1",
+ type="regex",
+ }
+Rule{
+ params={
+   value=CrtRgx(4),
+   name="subject",
+   },
+ group="header",
+ name="__INLINE_HEADER_2",
+ type="regexnamed",
+ }
+Rule{
+ params=CrtRgx(5),
+ group="body1",
+ name="__INLINE_BODY_2",
+ type="regex",
+ }
+Rule{
+ params={
+   value=CrtRgx(6),
+   name="subject",
+   },
+ group="header",
+ name="__INLINE_HEADER_3",
+ type="regexnamed",
+ }
+Rule{
+ params=CrtRgx(7),
+ group="body1",
+ name="__INLINE_BODY_3",
+ type="regex",
+ }
+Rule{
+ params={
+   value=CrtRgx(8),
+   name="subject",
+   },
+ group="header",
+ name="__INLINE_HEADER_4",
+ type="regexnamed",
+ }
+Rule{
+ params=CrtRgx(9),
+ group="body1",
+ name="__INLINE_BODY_4",
+ type="regex",
+ }
+Rule{
+ params={
+   value=CrtRgx(10),
+   name="subject",
+   },
+ group="header",
+ name="__INLINE_HEADER_5",
+ type="regexnamed",
+ }
+Rule{
+ params=CrtRgx(11),
+ group="body1",
+ name="__INLINE_BODY_5",
+ type="regex",
+ }
+Rule{
+ params={
+   value=CrtRgx(12),
+   name="subject",
+   },
+ group="header",
+ name="__INLINE_HEADER_6",
+ type="regexnamed",
+ }
+Rule{
+ params=CrtRgx(13),
+ group="body1",
+ name="__INLINE_BODY_6",
+ type="regex",
+ }
+Rule{
+ params={
+   value=CrtRgx(14),
+   name="subject",
+   },
+ group="header",
+ name="__INLINE_HEADER_7",
+ type="regexnamed",
+ }
+Rule{
+ params=CrtRgx(15),
+ group="body1",
+ name="__INLINE_BODY_7",
+ type="regex",
+ }
+Rule{
+ params={
+   value=CrtRgx(16),
+   name="subject",
+   },
+ group="header",
+ name="__INLINE_HEADER_8",
+ type="regexnamed",
+ }
+Rule{
+ params=CrtRgx(17),
+ group="body1",
+ name="__INLINE_BODY_8",
+ type="regex",
+ }
+Rule{
+ group="custom",
+ name="NAI_INLINES",
+ score=10,
+ }
