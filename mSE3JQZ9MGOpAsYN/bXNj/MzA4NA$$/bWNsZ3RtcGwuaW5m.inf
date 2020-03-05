@@ -1,0 +1,57 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=mclgtmpl64.inf
+
+[Installer_Config]
+AppID=MSC
+Shared=0
+
+[SourceDisksNames]
+1="McAfee log templates","",1
+
+[DefaultInstall]
+CopyFiles=SettingsDAT,FileListLD
+;AddReg=LogSettings
+
+[DefaultUnInstall]
+DelFiles=SettingsDAT,FileListLD
+;DelReg=LogSettings
+
+[DestinationDirs]   
+SettingsDAT=46400
+FileListLD=46150
+
+[Env-Var]
+; Turns out that factory prep for a 64-bit OS may run on a 32-bit Windows system so
+; copy the Env-Var64 section to ensure everything works in both cases
+%SELECTED_LCID%=$REG$Key=Software\McAfee\MSC\AppInfo\Substitute:Name=lcid
+
+[Env-Var64]
+%SELECTED_LCID%=$REG$Key=Software\McAfee\MSC\AppInfo\Substitute:Name=lcid
+
+[DirIds]
+46100=%ProgramW6432%\McAfee\MSC
+46050=%33300%\%LCID%
+46150=%ProgramW6432%\McAfee\MSC\%SELECTED_LCID%
+46200=%MSCCMN_INSTALL_DIR%
+46300=%CommonProgramW6432%\Mcafee\McSvcHost
+;33100 ==> All Users\Application Data
+46400=%33100%\McAfee\MSC\Logs
+41111=%windir%\system32
+
+[Install_NT]
+DefaultInstall=Setup
+
+[UnInstall_NT]
+DefaultUnInstall=Setup
+
+[LogSettings]
+HKLM,Software\McAfee\MSC\LogMgr,"MaxEvents",69633,30
+HKLM,Software\McAfee\MSC\LogMgr,"MaxLogDays",69633,180
+
+[SettingsDAT]
+settings.dat,,,65568
+
+[FileListLD]
+mclgtmpl.inf,,,65568
