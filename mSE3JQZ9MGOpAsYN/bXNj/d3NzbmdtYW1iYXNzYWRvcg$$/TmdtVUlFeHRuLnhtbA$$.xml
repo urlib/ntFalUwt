@@ -1,0 +1,6 @@
+<Module name="NGM" binary_file="NgmUIExtn.dll" binary_path="$(FOLDERID_ProgramFiles)/McAfee/MSC/WssNgmAmbassador" config_file="" config_path="" log_group_name="" start_type="ondemand" factory_enabled="false">
+	<RegexSubscription name="AlertManager.Viewer.NGM.Show.+" trigger_load="true" session_filter="false"/>
+	<RegexSubscription name="AlertManager.Viewer.NGM.Delete.+" trigger_load="true" session_filter="false"/>
+</Module>
+
+
