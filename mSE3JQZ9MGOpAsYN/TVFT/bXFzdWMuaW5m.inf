@@ -1,0 +1,115 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+;QuickClean master inf file
+LayoutFile=mqsuc.inf
+
+[SourceDisksNames]
+1="McAfee QuickClean and Shredder UC files","",1
+
+[Installer_Config]
+AppID=MQS
+
+[DirIds]
+;33000 ==> \Program Files\Common Files
+;33100 ==> \Documents and Settings\All Users\Application Data
+;33400 ==> \Program Files\Common Files\McAfee\Installer
+;33500 ==> \Program Files
+50002=%33500%\McAfee\MQS
+50003=%ProgramW6432%\McAfee\MQS
+
+[DestinationDirs]
+FileList=50002
+FileList64=50003
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 32-bit
+
+;This is the starting point of the main installation
+;This section contains a list of ‘commands’ that the installer 
+;executes one after the other in order from top to bottom 
+[Install_NT]
+;CabFiles=ExtractCAB
+DefaultInstall=Setup
+
+[UnInstall_NT]
+DefaultUninstall=Setup
+Cleanup=Delfolders
+
+;[CabFiles]
+;mcshr.cab
+;mcshrres.cab
+
+[DefaultInstall]
+CopyFiles=FileList
+AddReg=Customization32
+
+[DefaultUninstall]
+Delfiles=FileList
+DelReg=Delete_Registry
+Cleanup=Delfolders
+
+[FileList]
+mqsuc.dll,,,65540
+mqsuc.inf,,,65540
+
+[Add_Registry]
+HKLM,Software\McAfee\MQS\OEM,"TaskSchedulerPane",65537,1
+
+
+[Delete_Registry]
+HKLM,Software\McAfee\MQS\OEM
+
+
+
+[Cleanup]
+%50002%=1
+
+[FolderList]
+%50002%
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 64-bit
+
+;This is the starting point of the main installation
+;This section contains a list of ‘commands’ that the installer 
+;executes one after the other in order from top to bottom 
+[Install_Vista_X64]
+;CabFiles=ExtractCAB
+DefaultInstall_Vista_X64=Setup
+
+[UnInstall_Vista_X64]
+DefaultUninstall_Vista_X64=Setup
+Delete_Registry64=DelReg64
+Cleanup=Delfolders
+
+[DefaultInstall_Vista_X64]
+CopyFiles=FileList64
+AddReg=Customization64
+
+[DefaultUninstall_Vista_X64]
+Delfiles=FileList64
+Cleanup=Delfolders
+
+[FileList64]
+mqsuc.dll,,,65540
+mqsuc.inf,,,65540
+
+[Add_Registry]
+HKLM,Software\McAfee\MQS\OEM,"TaskSchedulerPane",69633,1
+
+
+[Delete_Registry64]
+64BitKey=HKLM,Software\McAfee\MQS\OEM
+
+[Cleanup]
+%50003%=1
+
+[FolderList]
+%50003%
+
+[Customization32]
+
+[Customization64]
+
+
