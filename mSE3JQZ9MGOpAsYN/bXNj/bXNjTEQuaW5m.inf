@@ -1,0 +1,58 @@
+[Installer_Config]
+AppID=MSC
+Shared=0
+LD=1
+
+;///////////////
+
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=mscLD.inf
+
+[SourceDisksNames]
+1="SecurityCenter Main Language File","",1
+
+[Env-Var]
+%LCID%=$REG$Key=SOFTWARE\McAfee\MSC\AppInfo\Substitute:Name=lcid
+%McAfeeLocaleID%=$DEFAULT$:value=2052
+
+[Env-Var64]
+%LCID%=$REG$Key=SOFTWARE\McAfee\MSC\AppInfo\Substitute:Name=lcid
+%McAfeeLocaleID%=$DEFAULT$:value=2052
+
+[DirIds]
+;Env-Var Defined ==> Program Files
+;33100 ==> All Users\Application Data
+;33000 ==> Program Files\Common files
+;33200 ==> McIns.exe Module dir
+;33300 ==> ExtractCAB location
+;16422 ==> Program Files
+
+46100=%16422%\McAfee\MSC
+46101=%ProgramW6432%\McAfee\MSC
+46050=%33200%\%McAfeeLocaleID%		; Used during installation
+46150=%16422%\McAfee\MSC\%LCID%		; Used during uninstallation
+46151=%ProgramW6432%\McAfee\MSC\%LCID%		; Used during uninstallation
+
+[Install_NT]
+InstallLDFiles=RunINF2
+
+[Install_NT_x64]
+InstallLDFiles=RunINF2
+
+[UnInstall_NT]
+UnInstallLDFiles=RunINF
+
+[UnInstall_NT_x64]
+UnInstallLDFiles64=RunINF
+
+[InstallLDFiles]
+instLD.inf=%46050%	;Will be loaded from this location
+
+[UnInstallLDFiles]
+%46150%\instLD.inf
+
+[UnInstallLDFiles64]
+%46151%\instLD.inf
+
