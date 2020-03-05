@@ -1,0 +1,125 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=subst.inf
+
+[Installer_Config]
+AppID=MSC
+Shared=0
+
+[SourceDisksNames]
+1="McAfee SecurityCenter Substitute Info","",1
+
+[DefaultInstall]
+CopyFiles=Common
+DelFiles=DanglingFile
+AddReg=LegacySourceDisk,SubstInfo,AgentInfo
+;DelReg=AffIdReg
+;SubstInfo, StaticUrls
+
+[DefaultUnInstall]
+DelFiles=Common
+DelReg=LegacySourceDisk,SubstInfo,AffIdReg
+
+; SubstInfo, StaticUrls
+
+[Common]
+subst.inf,,,65568
+
+;During up-to-date install, the OEM step runs the older MSC's subst.inf. This will go ahead and 
+;overwrite the Substitute values with 9.x values and will ALSO overwrite the isdu value with 
+;an unsubstituted one (containing %xx%). This messes with instrumentation reporting. 
+;The CD cant be changed. The solution is to run the Pearl subst2.inf which has been specifically created for this
+;purpose. It's just a copy of the Pearl subst.inf We cannot run subst.inf because the oemstep has already overwritten it with the 9.x version.
+; --->
+subst2.inf,,,65568
+
+;This dummy file is used to trigger update of subst in Calamari
+subst_updater.txt,,,65568
+
+[DanglingFile]
+subst.inf,,,65568
+
+[Install_NT]
+DefaultInstall=Setup
+;SubstInfo=RegObfuscate
+LegacyVersionInfo=RegObfuscate
+InstruInfo=RegObfuscate
+
+[UnInstall_NT]
+DefaultUnInstall=Setup
+
+[DirIds]
+46100=%ProgramW6432%\McAfee\MSC
+45000=%ProgramW6432%\McAfee.com\Agent
+
+[DestinationDirs]   
+Common=46100
+DanglingFile=11
+
+[AgentInfo]
+HKLM,Software\McAfee\MSC,"Agent Dir",4096,"%45000%"
+
+[AffIdReg]
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"AffId",4096,
+HKLM,Software\McAfee\MSC\OEM,"ActiveOemId",4096,
+
+; these are static Urls that will never be massaged dynamically.
+[StaticUrls]
+
+; This to fake old MSC installations (all prior to 7.0) into assuming
+; that a newer version is installed.
+[LegacySourceDisk]
+HKLM,Software\McAfee.com\Agent,"SourceDisk",4096,"Source=%sdomain%,Version=7.0,Build=7000,Lang=%slang%,Date=2006/07/31 12:00:00"
+
+; This to fake old MSC installations (all prior to 7.0) into assuming
+; that a newer version is installed.
+[LegacyVersionInfo]
+HKLM,Software\McAfee.com\Agent,"VersionInfo",4096,"Source=%sdomain%,Version=7.0,Build=7000,Lang=%slang%,Date=2006/07/31 12:00:00"
+
+; Application Information. Required for Instrumentation.
+; ALL fields will be filled in at run time.
+[InstruInfo]
+HKLM,Software\McAfee\MSC\AppInfo,"isdudata",4096,"Source=%domain%	Version=%version2%	Build=%buildnum%	Lang=%lang%	Date=%date%	AffId=%affid%	LangPack=%buildnumLD%"
+HKLM,Software\McAfee\MSC\AppInfo,"isdu",4096,"https://%sdomain%/apps/%appcode%/submgr/appinstru.asp"
+
+[SubstInfo]
+HKLM,Software\McAfee\MSC\AppInfo,"wuiv_o",4096,"12.0"
+HKLM,Software\McAfee\MSC\AppInfo,"wuiv_l",4096,"11.0"
+HKLM,Software\McAfee\MSC\AppInfo\Substitute,"domain",4096,"%sdomain%"
+HKLM,Software\McAfee\MSC\AppInfo\Substitute,"lang",4096,"%slang%"
+HKLM,Software\McAfee\MSC\AppInfo\Substitute,"appcode",4096,"%appcode%"
+HKLM,Software\McAfee\MSC\AppInfo\Substitute,"version2",4096,"%version%"
+HKLM,Software\McAfee\MSC\AppInfo\Substitute,"buildLD",4096,"%thisbuild%"
+HKLM,Software\McAfee\MSC\AppInfo\Substitute,"buildnumLD",4096,"%thisbuildnum%"
+HKLM,Software\McAfee\MSC\AppInfo\Substitute,"lcid",4096,"%lcid%"
+
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"lang",4096,"%slang%"
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"lcid",4096,"%lcid%"
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"langid",4096,"%langid%"
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"culture",4096,"zh-CN"
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"rcode",4096,"WSS16024"
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"version",4096,"%version%"
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"wuiv",4098,"11.0"
+
+[strings]
+sdomain=cn.mcafee.com
+slang=zh-cn
+appcode="msc"
+
+; contains major.minor version. E.g. 7.0
+version=18.4
+
+; contains major.minor.build. E.g. 7.0.1234
+thisbuild=18.4.143
+
+;contains just the integer build number
+thisbuildnum=143
+
+; LCID
+lcid=2052
+
+langid=23
+
+
+
