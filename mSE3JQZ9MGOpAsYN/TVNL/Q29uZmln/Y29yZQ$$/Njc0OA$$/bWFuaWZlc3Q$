@@ -1,0 +1,17 @@
+-- Copyright (C) 2020 McAfee, Inc.  All rights reserved.
+version=6748
+date="2020-03-04 10:15:15"
+mailscansize={default=1024}
+File{type="script", path="main.lua", checksum="db9dacc412d1aa27b1bd4512f3f3c24299bfc969",hide=true}
+File{type="script", path="scoremapper.lua", checksum="0d18385e2764ef9fa7bb04b0db31decfa9280ae9",hide=true}
+File{type="script", path="phish.lua", checksum="f1055831ac175473ae29ed02660cf00f8cad70d0",hide=true}
+File{type="script", path="custom.lua", checksum="e3ab79bf45e68f4dad1cde1b56161c6269d2248e",hide=true}
+File{type="rules", path="overrides.lua", checksum="9a587702e49d6879f4acbfc175bf35eb18ad78ed",hide=true}
+File{type="config", path="tlds.lua", checksum="c6916ac0283c39b88224893fc98b51c67af76fb7",hide=true}
+File{type="script", path="received.lua", checksum="7cffbccfbe4b4a32104a438f42ab53c5888f8af9",hide=true}
+File{type="script", path="filter.lua", checksum="e2a2337c51006b5239d2b27f411a535f62db84e6",hide=true}
+File{type="script", path="utils.lua", checksum="d2b9aa5b5940fc981eae80e8d1588844556b6c17",hide=true}
+File{type="script", path="dometa.lua", checksum="2c8adff0b109ecc7266fe297bac947d4d46b6204",hide=true}
+File{type="config", path="config.lua", checksum="21d111cd35535e5ed400374ad70728faa8f9db50",hide=true}
+File{type="rules", path="core.lua", checksum="f4b9f8787455e9c093621ab39a3655b06b010dcb",hide=true}
+File{type="regex", path="core.rgx", checksum="f3ce56dc5f65d9626599211bd16e95e78da96f00"}
