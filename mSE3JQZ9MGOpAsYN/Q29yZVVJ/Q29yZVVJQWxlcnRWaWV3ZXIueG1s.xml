@@ -1,0 +1,4 @@
+<Module name="CoreUIAlertViewer" binary_file="CoreUIAlertViewer.dll" binary_path="$(FOLDERID_ProgramFiles)\McAfee\CoreUI" config_file="" config_path="" log_group_name="" start_type="ondemand" factory_enabled="false">
+	<RegexSubscription name="AlertManager.Viewer.CoreUI.Show.+" trigger_load="true" session_filter="true"/>
+	<RegexSubscription name="AlertManager.Viewer.CoreUI.Delete.+" trigger_load="true" session_filter="true"/>
+</Module>
