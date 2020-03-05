@@ -1,0 +1,41 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=AlertViewer.inf
+
+[Installer_Config]
+AppID=CoreUI
+Shared=0
+
+[SourceDisksNames]
+1="AlertViewer Files","",1
+
+[DirIds]
+;24 ==> root directory of the disk on which Windows files are installed
+52010=%24%\Program Files\McAfee\CoreUI
+
+[DestinationDirs]
+FileList=52010
+
+[DefaultInstall]
+CopyFiles=FileList
+
+[DefaultUninstall]
+DelFiles=FileList
+
+[FileList]
+; 0x00014020 means "rename-copy"
+AlertViewer.inf,,,65568
+AlertViewer.pam,,,0x00014020
+AlertViewer.res.pam,,,0x00014020
+
+[Install_NT]
+DefaultInstall=Setup
+
+[UnInstall_NT]
+DefaultUninstall=Setup
+Cleanup=DelFolders
+
+[Cleanup]
+%52010%=1
+
