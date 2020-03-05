@@ -1,0 +1,160 @@
+[Installer_Config]
+AppID=MSC
+Shared=0
+
+[DirIds]
+;Env-Var Defined ==> Program Files
+;33100 ==> All Users\Application Data
+;33000 ==> Program Files\Common files
+;33200 ==> McIns.exe Module dir
+;33300 ==> ExtractCAB location
+;16422 ==> Program Files
+
+45000=%ProgramW6432%\McAfee.com\Agent
+46000=%ProgramW6432%\McAfee.com\Shared
+45100=%ProgramW6432%\McAfee.com\Agent\uninst
+45101=%ProgramW6432%\McAfee\MSC
+
+; For explcitily copying files to x86
+45111=%33000%\McAfee\Platform
+45112=%33000%\McAfee\Platform\McUtil
+45001=%ProgramFiles%\McAfee\MSC
+46100=%CommonProgramW6432%\McAfee\Platform
+
+41111=%windir%\system32
+
+[Install_NT]
+DefaultInstall=Setup
+RenCopyList=RenCopy
+RegisterMcBr3264=EXE
+MSCWinLogonTask=EXE
+
+[UnInstall_NT]
+UnRegPlatformFWPS=EXE
+DefaultUninstall=Setup
+PlatformWinLogonTask=EXE
+DeleteMcItInfoLogonTask=EXE
+
+; Because mcbr3264 needs to be unregistered after the others.
+; First unregister it
+UnRegisterMcBr3264=EXE
+; .. then delete
+UninstallMcBr3264=Setup
+
+[UnRegPlatformFWPS]
+%11%\regsvr32.exe="/u /s ""%45111%\PlatformServiceFWPS.dll""",1
+
+[RegisterMcBr3264]
+%11%\regsvr32.exe="/s ""%45111%\PlatformServiceFWPS.dll""",1
+%11%\regsvr32.exe="/s ""%46100%\PlatformServiceFW.dll""",1
+%11%\regsvr32.exe="/s /n /i:{39BE9FE5-916F-4F01-86D8-46D1B843C8DD},{F7520A2F-82E1-4DD5-A4BF-9D56BCF1D743} ""%45111%\mcbr3264.dll""",1
+%11%\regsvr32.exe="/s /n /i:{9BE8D7B2-329C-442A-A4AC-ABA9D7572602},{447CAE10-7647-45F9-9AD8-68243ED5A2DA} ""%45111%\mcbr3264.dll""",1
+%11%\regsvr32.exe="/s /n /i:{83748E14-8F60-4AB3-8A81-7CECBE2B1CBE},{2F4C0E0C-80AD-4105-9A0F-4BA90BB64296} ""%45111%\mcbr3264.dll""",1
+%11%\regsvr32.exe="/s /n /i:{516A0FE6-CA82-49F9-97EF-B5091F4B2E5A},{874f654B-C2A6-4F89-9195-6C6C3EEB779A} ""%45111%\mcbr3264.dll""",1
+
+[UnRegisterMcBr3264]
+%11%\regsvr32.exe="/u /s /n /i:{39BE9FE5-916F-4F01-86D8-46D1B843C8DD},{F7520A2F-82E1-4DD5-A4BF-9D56BCF1D743},{447CAE10-7647-45F9-9AD8-68243ED5A2DA},{83748E14-8F60-4AB3-8A81-7CECBE2B1CBE} ""%45111%\mcbr3264.dll""",1
+%11%\regsvr32.exe="/u /s /n /i:{2F4C0E0C-80AD-4105-9A0F-4BA90BB64296},{516A0FE6-CA82-49F9-97EF-B5091F4B2E5A},{874f654B-C2A6-4F89-9195-6C6C3EEB779A},{BB3CEFCA-6E78-4bd6-9582-047A8F377767} ""%45111%\mcbr3264.dll""",1
+;%11%\regsvr32.exe="/u /s ""%45111%\PlatformServiceFWPS.dll""",1
+
+[OCXRegister]
+mcagent.exe
+mcmscui.dll
+mcvsshld.dll
+mcagent.dll
+mcupdui.dll
+mcinsctl.dll
+mcgdmgr.dll
+coreps.dll
+mispps.dll
+
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=msclgmis.inf
+
+[DefaultInstall]
+CopyFiles=AgentDumy,Fix505300,Mcbr3264,Fix523304
+AddReg=RegEntryFix523304
+AddReg=AddAlertEntry
+DelReg=DelMSCRunKey
+
+[Mcbr3264]
+; add 0x00004000 (COPYFLG_IN_USE_RENAME)
+mcbr3264.dll,,,81952
+registerbridge.inf,,,65568
+
+[UninstallMcBr3264]
+DelFiles=Mcbr3264
+
+[DefaultUninstall]
+DelFiles=AgentDumy,Common,ActiveXObj,MiscFiles,Fix505300
+DelReg=AddAlertEntry
+
+[RegEntryFix523304]
+HKLM,SOFTWARE\McAfee\MSC,"mcutil32_install_dir",4096,"%45112%"
+
+[Fix523304]
+mcutil.dll,mcutil32.dll,,65568
+
+[Fix505300]
+; add 0x00004000 (COPYFLG_IN_USE_RENAME)
+coreps.dll,,,81952
+mispps.dll,,,81952
+PlatformServiceFWPS.dll,,,81952
+
+
+[MiscFiles]
+mcregwiz.exe,,,65568
+
+[AgentDumy]
+mcagent.exe,,,65568
+WSCUpgrader.exe,,,65568
+
+[RenCopyList]
+mcupdui.dll=%45101%
+mcmscui.dll=%45101%
+MSCAlertPlugin.dll=%45101%
+mcagent.dll=%45101%
+mcvsshld.dll=%45101%
+msclgmis.inf=%45101%
+WSCRegUpgrader.dll=%45101%
+
+[Common]
+mcupdui.dll,,,65568
+mcmscui.dll,,,65568
+MSCAlertPlugin.dll,,,65568
+mcagent.dll,,,65568
+mcvsshld.dll,,,65568
+msclgmis.inf,,,65568
+WSCRegUpgrader.dll,,,65568
+
+[ActiveXObj]
+mcinsctl.dll,,,65568
+mcgdmgr.dll,,,65568
+
+[SourceDisksNames]
+1="McAfee Legacy Files","",1
+
+[DestinationDirs]   
+Fix505300=45111
+Fix523304=45112
+Mcbr3264=45111
+AgentDumy=45000
+Common=45101
+MiscFiles=45000
+ActiveXObj=11
+
+[AddAlertEntry]
+HKLM,Software\McAfee\Platform\PlatformAlerts\msc_alertplugin, "dll_path",4096,"%45101%\MSCAlertPlugin.dll"
+
+[DelMSCRunKey]
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Run,"mcpltui_exe"
+
+[MSCWinLogonTask]
+%46100%\McPltCmd.exe=/regwinlogontask_runkey,1,1
+
+[PlatformWinLogonTask]
+%46100%\McPltCmd.exe=/regwinlogontask,1,1
+[DeleteMcItInfoLogonTask]
+%11%\schtasks.exe="/delete /tn ""McAfee McItInfo"" /f",1,1
