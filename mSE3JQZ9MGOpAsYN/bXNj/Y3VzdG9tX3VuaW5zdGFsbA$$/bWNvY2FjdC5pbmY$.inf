@@ -1,0 +1,87 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=McOcAct.inf
+ 
+[Installer_Config]
+AppID=mcocact
+Shared=0
+ 
+[SourceDisksNames]
+1="McAfee PC Instrumentation Files","",1
+
+[DestinationDirs]   
+FileList32=46100
+FileList64=46200
+CustomInf32=46110, Custom_Uninstall
+CustomInf64=46210, Custom_Uninstall
+ 
+[DirIds]
+46100=%33500%\McAfee\MSC\OOBE
+46110=%33500%\McAfee\MSC
+46120=%33500%\McAfee\MSC\Custom_Uninstall
+46200=%ProgramW6432%\McAfee\MSC\OOBE
+46210=%ProgramW6432%\McAfee\MSC
+46220=%ProgramW6432%\McAfee\MSC\Custom_Uninstall
+
+46300=%33000%\McAfee\MSC
+46310=%CommonProgramW6432%\McAfee\MSC
+
+46400=%33000%\McAfee\Installer
+46410=%CommonProgramW6432%\McAfee\Installer
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; XP OS Entries 
+[Install_NT]
+DefaultInstall=Setup
+RenCopyCommon=RenCopy
+
+; intentionally leave blank so that if OS is XP no entries are written to the registry
+[RegKeysNoXPSupport]
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 64 Bit Vista and Windows 7 OS Entries 
+[Install_Vista_x64]
+DefaultInstall64=Setup
+RenCopyCommon64=RenCopy
+
+[DefaultInstall64]
+;CopyFiles=FileList64, CustomInf64
+AddReg=Regentries64
+
+[FileList64]
+mcocact.dll,x64\mcocact.dll,,65568
+
+[RenCopyCommon]
+mcocact.dll=%46100%
+mcocact.inf=%46120%
+
+[RenCopyCommon64]
+x64\mcocact.dll=%46200%\mcocact.dll
+mcocact.inf=%46220%\mcocact.inf
+
+[CustomInf64]
+mcocact.inf,,,65568
+
+[Regentries64]
+HKLM,Software\McAfee\MSC\Update\Customization,"McOcact.dll",0x00001000,"%46200%"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 32 Bit Vista and Windows 7 OS Entries 
+[Install_Vista]
+DefaultInstall=Setup
+RenCopyCommon=RenCopy
+
+[DefaultInstall]
+;CopyFiles=FileList32, CustomInf32
+AddReg=Regentries32
+
+[FileList32]
+McOCAct.dll,,,65568
+
+[CustomInf32]
+McOcAct.inf,,,65568
+
+[Regentries32]
+HKLM,Software\McAfee\MSC\Update\Customization,"McOcact.dll",,"%46100%"
+
