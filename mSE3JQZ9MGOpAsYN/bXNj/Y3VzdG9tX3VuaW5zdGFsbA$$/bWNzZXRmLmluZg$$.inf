@@ -1,0 +1,282 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=mcsetf.inf
+ 
+[Installer_Config]
+AppID=mcsetf
+Shared=0
+ 
+[SourceDisksNames]
+1="McAfee Partner Factory Settings","",1
+
+ [Env-VAR]
+%BuildKey%=$reg$:key=SOFTWARE\McAfee\UPDMGR\InstallSettings:name="Install Dir"
+
+[Env-Var64]
+%BuildKey%=$reg$:key=SOFTWARE\McAfee\UPDMGR\InstallSettings:name="Install Dir"
+
+[DestinationDirs]   
+FileList=46100
+FileList64=46200
+CustomInf32=46100, Custom_Uninstall
+CustomInf64=46200, Custom_Uninstall
+AMMarkClean32=46502
+AMMarkClean64=46602
+ 
+[DirIds]
+46100=%33500%\McAfee\MSC
+46200=%ProgramW6432%\McAfee\MSC
+46300=%CommonProgramW6432%\McAfee\platform
+46400=%33500%\McAfee\MSC\Custom_Uninstall
+46500=%ProgramW6432%\McAfee\MSC\Custom_Uninstall
+46401=%16428%\McAfee\Installer
+46501=%33000%\McAfee\ActWiz
+46601=%CommonProgramW6432%\McAfee\ActWiz
+46665=%BuildKey%
+46666=%BuildKey%\mcupdutl.exe
+46502=%33000%\McAfee\AMCore
+46503=%33000%\McAfee\OOBE
+46602=%CommonProgramW6432%\McAfee\AMCore
+46603=%CommonProgramW6432%\McAfee\OOBE
+45001=%16422%\McAfee.com\Agent
+45000=%ProgramW6432%\McAfee.com\Agent
+ 
+[Install_NT]
+CabFilesNT= ExtractCAB
+DefaultInstall=Setup
+RegKeys=RegObfuscate
+RegKeysInstallSnapshot32=RegObfuscate
+;LaunchExe32=EXE
+
+[Install_Vista_x64]
+CabFilesNT= ExtractCAB
+DefaultInstall64=Setup
+RegKeys64=RegObfuscate
+RegKeysInstallSnapshot64=RegObfuscate
+DeleteReg64=DelReg64
+;LaunchExe64=EXE
+
+[DefaultInstall]
+AddReg=Regentries32, LanguagePacks32, appcodes32, Customization32, RegEntries32Pef
+CopyFiles=CustomInf32, AMMarkClean32
+Delreg=DeleteReg32
+
+[DefaultInstall64]
+AddReg=Regentries64, LanguagePacks64, appcodes64, Customization64, RegEntries64Pef
+CopyFiles=CustomInf64, AMMarkClean64
+
+
+[UnInstall_NT]
+DefaultUnInstall=Setup
+
+[UnInstall_Vista_x64]
+DefaultUnInstall64=Setup
+
+[DefaultUnInstall]
+DelFiles=CustomInf32
+
+[DefaultUnInstall64]
+DelFiles=CustomInf64
+
+[CustomInf32]
+mcsetf.inf,,,65568
+
+[CustomInf64]
+mcsetf.inf,,,65568
+
+[CabFilesNT]
+OEMCheckPoint.cab
+
+[AMMarkClean32]
+OEMCheckPoint.exe,x86\OEMCheckPoint.exe,,65568
+
+[AMMarkClean64]
+OEMCheckPoint.exe,x64\OEMCheckPoint.exe,,65568
+
+[Regentries32]
+HKLM,Software\McAfee\MSC\OEM,"OOBEDone",0x00010001,0
+HKLM,Software\McAfee\MSC\OEM,"Facmode",0x00010001,1
+HKLM,Software\McAfee\MSC\OEM,"FUAllow",0x00010001,1
+Hklm,software\mcafee\oeminfo,"ucxml", ,%11%\oobe\info\userchoices.xml
+Hklm,software\mcafee\oeminfo,"ub", , %11%\oobe\info\userdata.blob
+Hklm,software\mcafee\oeminfo,"sb", ,%11%\oobe\info\sessionkey.blob
+HKLM,Software\McAfee\OemInfo\AWProgress, "NextRunValue", 0x00010001,15
+Hklm,software\mcafee\oeminfo,"winoobefolder", ,"%11%\oobe\info\"
+HKLM,Software\McAfee\OemInfo, "RegRetry",,1
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"AWVersion", ,4.0
+;HKLM,Software\McAfee\MSC\packages,"flex_pkg_id",,430
+
+[Regentries64]
+HKLM,Software\McAfee\MSC\OEM,"OOBEDone",69633,0
+HKLM,Software\McAfee\MSC\OEM,"Facmode",69633,1
+HKLM,Software\McAfee\MSC\OEM,"FUAllow",69633,1
+Hklm,software\mcafee\oeminfo,"ucxml",4096,%11%\oobe\info\userchoices.xml
+Hklm,software\mcafee\oeminfo,"ub",4096, %11%\oobe\info\userdata.blob
+Hklm,software\mcafee\oeminfo,"sb",4096,%11%\oobe\info\sessionkey.blob
+HKLM,Software\McAfee\OemInfo\AWProgress, "NextRunValue",69633,15
+Hklm,software\mcafee\oeminfo,"winoobefolder",4096,"%11%\oobe\info\"
+HKLM,Software\McAfee\OemInfo, "RegRetry",4096,1
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"AWVersion",4096,4.0
+;HKLM,Software\McAfee\MSC\packages,"flex_pkg_id",4096,430
+;HKLM,Software\McAfee\MSC\packages,"flex_pkg_id",4096,430
+
+[RegEntries32Pef]
+; Adding Oemmager exe into PEF scheudler as a post oobe task
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"Name",0,"WssOemMgr"
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"Description",0,"OemManager post oobe task"
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"Type",65537,2
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"LaunchMode",65537,1
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"Param",0,""
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"IntervalInSec",65537,0
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"Path",0,"%46503%\mcoemmgr.exe"
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"Settings",65537,0
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"RebootWaitCount",65537,0
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"EnvWaitIntervalInSec",65537,0
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"WaitForComplete",65537,1
+
+; Adding autoreg exe into PEF scheudler as a post oobe task
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"Name",0,"zAutoreg"
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"Description",0,"WSS Autoreg task"
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"Type",65537,2
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"LaunchMode",65537,1
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"Param",0,"/autoactivate"
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"IntervalInSec",65537,600
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"Path",0,"%46501%\mcautoreg.exe"
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"Settings",65537,0
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"RebootWaitCount",65537,0
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"EnvWaitIntervalInSec",65537,0
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"WaitForComplete",65537,1
+
+[RegEntries64Pef]
+; Adding Oemmager exe into PEF scheudler as a reboot task
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"Name",4096,"WssOemMgr"
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"Description",4096,"OemManager post oobe task"
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"Type",69633,2
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"LaunchMode",69633,1
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"Param",4096,""
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"IntervalInSec",69633,0
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"Path",4096,"%46603%\mcoemmgr.exe"
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"Settings",69633,0
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"RebootWaitCount",69633,0
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"EnvWaitIntervalInSec",69633,0
+HKLM,Software\McAfee\PEF\SCHEDULER\WssOemMgr,"WaitForComplete",69633,1
+
+; Adding autoreg exe into PEF scheudler as a post oobe task
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"Name",4096,"zAutoreg"
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"Description",4096,"WSS Autoreg task"
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"Type",69633,2
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"LaunchMode",69633,1
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"Param",4096,"/autoactivate"
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"IntervalInSec",69633,600
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"Path",4096,"%46601%\mcautoreg.exe"
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"Settings",69633,0
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"RebootWaitCount",69633,0
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"EnvWaitIntervalInSec",69633,0
+HKLM,Software\McAfee\PEF\SCHEDULER\zAutoreg,"WaitForComplete",69633,1
+
+[LanguagePacks32]
+HKLM,Software\McAfee\MSC\OEM\Manage\MUI,"RemoveLangPacks",0x00010001,0
+
+[LanguagePacks64]
+HKLM,Software\McAfee\MSC\OEM\Manage\MUI,"RemoveLangPacks",69633,0
+ 
+[RegKeys]
+HKLM,Software\McAfee\MSC\OEM,"oobe_rkey", ,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\State"
+HKLM,Software\McAfee\MSC\OEM,"oobe_vname", ,"ImageState"
+HKLM,Software\McAfee\MSC\OEM,"oobe_value", ,"IMAGE_STATE_COMPLETE"
+HKLM,Software\McAfee\MSC\OEM,"oobe_type", 0x00010001,1
+HKLM,Software\McAfee\MSC\Settings\McProMgr,"LaunchMcUIMgrWait",0x00010001,300
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode_msc\cmd_msc_oobe,"runcmd",,"%33000%\mcafee\installer\mcinst.exe"
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode_msc\cmd_msc_oobe,"cmdargs",," /install /DoNotDeleteSetupFiles mscoobe.inf"
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode_msc\cmd_msc_oobe,"curdir",,"%46100%"
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode_msc\cmd_msc_oobe,"wait", 0x00010001,1
+HKLM,Software\McAfee\MSC\OEM,"OEMMgr",0x00010001,1
+HKLM,Software\McAfee\MSC\OEM\Manage,"oemmode",,"C:\Sysprep"
+HKLM,Software\McAfee\MSC\OEM\Manage,"OemBootCount",0x00010001,1
+HKLM,Software\McAfee\MSC\OEM,"DisableServices",0x00010001,1
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\oobeof_cmd,"runcmd",,"%46501%\McAutoReg.Exe"
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\oobeof_cmd,"cmdargs",," /autoactivate"
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\oobeof_cmd,"curdir",,"%46501%"
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\oobeof_cmd,"wait", 0x00010001,0
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\oobeof_cmd,"bootcount", 0x00010001,1
+HKLM,Software\McAfee\MSC\OEM\Manage\RGW,"actwizargsSilentAct",,"ignoreparam: nosplash: /autoreg"
+
+[RegKeys64]
+HKLM,Software\McAfee\MSC\OEM,"oobe_rkey",4096,"SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\State"
+HKLM,Software\McAfee\MSC\OEM,"oobe_vname",4096,"ImageState"
+HKLM,Software\McAfee\MSC\OEM,"oobe_value",4096,"IMAGE_STATE_COMPLETE"
+HKLM,Software\McAfee\MSC\OEM,"oobe_type",69633,1
+HKLM,Software\McAfee\MSC\Settings\McProMgr,"LaunchMcUIMgrWait",69633,300
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode_msc\cmd_msc_oobe,"runcmd",4096,"%46401%\mcinst.exe"
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode_msc\cmd_msc_oobe,"cmdargs",4096," /install /DoNotDeleteSetupFiles mscoobe.inf"
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode_msc\cmd_msc_oobe,"curdir",4096,"%46200%"
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode_msc\cmd_msc_oobe,"wait",69633,1
+HKLM,Software\McAfee\MSC\OEM,"OEMMgr",69633,1
+HKLM,Software\McAfee\MSC\OEM\Manage,"oemmode",4096,"C:\Sysprep"
+HKLM,Software\McAfee\MSC\OEM\Manage,"OemBootCount",69633,1
+HKLM,Software\McAfee\MSC\OEM,"DisableServices",69633,1
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\oobeof_cmd,"runcmd",4096,"%46601%\McAutoReg.Exe"
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\oobeof_cmd,"cmdargs",4096," /autoactivate"
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\oobeof_cmd,"curdir",4096,"%46601%"
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\oobeof_cmd,"wait",69633,0
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\oobeof_cmd,"bootcount",69633,1
+HKLM,Software\McAfee\MSC\OEM\Manage\RGW,"actwizargsSilentAct",4096,"ignoreparam: nosplash: /autoreg"
+
+[RegKeysInstallSnapshot32]
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotAFFID,"runcmd",,%46666%
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotAFFID,"cmdargs",," /setaffid default %AFFID%"
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotAFFID,"curdir",,%46665%
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotAFFID,"wait", 0x00010001,0
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotAFFID,"bootcount", 0x00010001,1
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotAFFID,"BuildKey",,9A2E141E-4559-4C02-B8C9-61F473E7E959
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotLangID,"runcmd",,%46666%
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotLangID,"cmdargs",," /setlangid default %LANGID%"
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotLangID,"curdir",,%46665%
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotLangID,"wait", 0x00010001,0
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotLangID,"bootcount", 0x00010001,1
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotLangID,"BuildKey",,9A2E141E-4559-4C02-B8C9-61F473E7E959
+
+[RegKeysInstallSnapshot64]
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotAFFID,"runcmd",4096,%46666%
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotAFFID,"cmdargs",4096," /setaffid default %AFFID%"
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotAFFID,"curdir",4096,%46665%
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotAFFID,"wait",69633,0
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotAFFID,"bootcount",69633,1
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotAFFID,"BuildKey",4096,9A2E141E-4559-4C02-B8C9-61F473E7E959
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotLangID,"runcmd",4096,%46666%
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotLangID,"cmdargs",4096," /setlangid default %LANGID%"
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotLangID,"curdir",4096,%46665%
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotLangID,"wait",69633,0
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotLangID,"bootcount",69633,1
+HKLM,Software\McAfee\MSC\Oem\Manage\usermode\WSS_UpdateInstallSnapshotLangID,"BuildKey",4096,9A2E141E-4559-4C02-B8C9-61F473E7E959
+
+[DeleteReg32]
+
+[DeleteReg64]
+
+[LaunchExe32]
+;%46502%\AMMarkClean.exe
+
+[LaunchExe64]
+;%46602%\AMMarkClean.exe
+
+[Bootdelayenable32]
+
+[Bootdelayenable64]
+
+[Customization32]
+HKLM,SOFTWARE\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\JEULA,"cdjeuladefversion",,"eula_v2017"
+
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"wuiv",,12.0
+
+
+[Customization64]
+HKLM,SOFTWARE\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\JEULA,"cdjeuladefversion",4096,"eula_v2017"
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"wuiv",4096,12.0
+
+[appcodes32]
+HKLM,Software\McAfee\MSC\Packages\431,"features",,"NMC;VSO"
+
+[appcodes64]
+HKLM,Software\McAfee\MSC\Packages\431,"features",4096,"NMC;VSO"
