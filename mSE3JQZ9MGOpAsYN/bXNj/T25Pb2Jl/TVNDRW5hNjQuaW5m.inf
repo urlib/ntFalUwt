@@ -1,0 +1,43 @@
+[Installer_Config]
+AppID=MSC
+Shared=0
+
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=mscena.inf
+
+[Env-Var64]
+%SELECTED_LCID%=$REG$Key=Software\McAfee\MSC\AppInfo\Substitute:Name=lcid
+%MCAPEXE_PATH%=$REG$Key=SOFTWARE\McAfee\AP\McVscIns:Name=szBackupDir64
+
+[DirIds]
+;Env-Var Defined ==> Program Files
+;33100 ==> All Users\Application Data
+;33000 ==> Program Files\Common files
+;33200 ==> McIns.exe Module dir
+;33300 ==> ExtractCAB location
+;16422 ==> Program Files
+
+;46100=$REG$:KEY=SOFTWARE\McAfee\MSC:NAME=Install Dir
+45000=%ProgramW6432%\McAfee.com\Agent
+46100=%ProgramW6432%\McAfee\MSC
+46150=%ProgramW6432%\McAfee\MSC\%SELECTED_LCID%
+46200=%MCAPEXE_PATH%
+41700=%CommonProgramW6432%\McAfee\McProxy
+41111=%windir%\system32
+
+[DefaultInstall]
+AddReg=EnableAP
+
+[Install_NT]
+DefaultInstall=Setup
+StartAPService=EXE
+
+[EnableAP]
+HKLM,SOFTWARE\McAfee\AP\McVSCIns,"APEnabled",69633,1
+
+[StartAPService]
+%46200%\McAPExe.exe=/auto
+%11%\sc.exe=start McAPExe,1,1
+
