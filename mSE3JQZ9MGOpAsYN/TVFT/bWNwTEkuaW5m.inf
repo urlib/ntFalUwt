@@ -1,0 +1,146 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+;mcp master inf file
+LayoutFile=mcpLI.inf
+
+[Installer_Config]
+AppID=MQS
+Shared=0
+
+[DirIds]
+;33000 ==> \Program Files\Common Files
+;33100 ==> \Documents and Settings\All Users\Application Data
+;33200 ==> McInst.exe Module dir
+;33400 ==> \Program Files\Common Files\McAfee\Installer
+;33500 ==> \Program Files
+50000=%33500%\McAfee\MQS
+50100=%33500%\McAfee\MSC
+
+50003=%ProgramW6432%\McAfee\MQS
+50101=%ProgramW6432%\McAfee\MSC
+
+[SourceDisksNames]
+1="McAfee MCP Files","",1
+
+[DestinationDirs]
+FileList=50000
+FileList64=50003
+
+[LDInstall]
+mcpLD.inf=%33200%
+
+[LIInstall]
+instLD.inf
+mcpins.inf
+mcqc.inf
+mcshr.inf
+mqsuc.inf
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 32 Bit
+
+;This is the starting point of the main installation
+;This section contains a list of ‘commands’ that the installer 
+;executes one after the other in order from top to bottom 
+[Install_NT]
+LDInstall=RunINF2
+CabFiles=ExtractCAB
+DefaultInstall=Setup
+LIInstall=RunINF
+SubInfo=EXE
+
+[UnInstall_NT]
+LIUnInstall=RunINF
+DefaultUninstall=Setup
+LDUninstall=RunINF
+Cleanup=Delfolders
+
+[CabFiles]
+mcqc.cab
+mcshr.cab
+mcpins.cab
+mqsuc.cab
+
+[LDUninstall]
+%50000%\mcpLD.inf
+
+[DefaultInstall]
+CopyFiles=FileList
+
+[SubInfo]
+%50100%\mispreg.exe=/s /1="""%33200%\subinfo.dat""",1,1
+
+[DefaultUninstall]
+Delfiles=FileList
+
+
+[FileList]
+;move this into mcpins.cab
+;mcpLI.inf,,,65568
+
+
+
+
+[LIUnInstall]
+%50000%\mqsuc.inf
+%50000%\mcpins.inf
+%50000%\mcqc.inf
+%50000%\mcshr.inf
+
+[Cleanup]
+%50000%=1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 64 Bit
+
+;This is the starting point of the main installation
+;This section contains a list of ‘commands’ that the installer 
+;executes one after the other in order from top to bottom 
+[Install_Vista_X64]
+LDInstall=RunINF2
+CabFiles64=ExtractCAB
+DefaultInstall_Vista_X64=Setup
+LIInstall=RunINF
+SubInfo64=EXE
+
+[UnInstall_NT]
+LIUnInstall64=RunINF
+DefaultUninstall_Vista_X64=Setup
+LDUninstall64=RunINF
+Cleanup64=Delfolders
+
+[CabFiles64]
+mcqc64.cab
+mcshr64.cab
+mcpins.cab
+mqsuc.cab
+
+[SubInfo64]
+%50101%\mispreg.exe=/s /1="""%33200%\subinfo.dat""",1,1
+
+[LDUninstall64]
+%50003%\mcpLD.inf
+
+[DefaultInstall_Vista_X64]
+CopyFiles=FileList64
+
+[DefaultUninstall_Vista_X64]
+Delfiles=FileList
+
+
+[FileList64]
+;move this into mcpins.cab
+;mcpLI.inf,,,65568
+
+[LIUnInstall64]
+%50003%\mcpins.inf
+%50003%\mcqc.inf
+%50003%\mcshr.inf
+%50003%\mqsuc.inf
+
+
+[Cleanup64]
+%50003%=1
+
+
