@@ -1,0 +1,139 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+;QuickClean master inf file
+LayoutFile=mcshr.inf
+
+[SourceDisksNames]
+1="McAfee Shredder Files","",1
+
+[Installer_Config]
+AppID=MQS
+
+[DirIds]
+;33000 ==> \Program Files\Common Files
+;33100 ==> \Documents and Settings\All Users\Application Data
+;33400 ==> \Program Files\Common Files\McAfee\Installer
+;33500 ==> \Program Files
+50002=%33500%\McAfee\MQS
+50003=%ProgramW6432%\McAfee\MQS
+
+[DestinationDirs]
+FileList=50002
+FileList64=50003
+
+[OCXRegister]
+ShrCore.dll
+ShredShm.dll
+ShredExt.dll
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 32-bit
+
+;This is the starting point of the main installation
+;This section contains a list of ‘commands’ that the installer 
+;executes one after the other in order from top to bottom 
+[Install_NT]
+;CabFiles=ExtractCAB
+RenCopyMQSFiles=RenCopy
+DefaultInstall=Setup
+
+[UnInstall_NT]
+DefaultUninstall=Setup
+Cleanup=Delfolders
+
+;[CabFiles]
+;mcshr.cab
+;mcshrres.cab
+
+[RenCopyMQSFiles]
+ShrCore.dll=%50002%
+ShredShm.dll=%50002%
+ShrCL.exe=%50002%
+mcshr.inf=%50002%
+ShredExt.dll=%50002%
+
+[DefaultInstall]
+;CopyFiles=FileList
+AddReg=Add_Registry
+
+[DefaultUninstall]
+Delfiles=FileList
+DelReg=Delete_Registry
+
+
+[FileList]
+ShrCore.dll,,,65568
+ShredShm.dll,,,65568
+ShrCL.exe,,,65568
+mcshr.inf,,,65540
+ShredExt.dll,,,65568
+
+[Add_Registry]
+HKLM,Software\McAfee\MQS,Install Dir,0,%50002%
+HKLM,Software\McAfee\MQS,"CtxMenuIcon",65537,1
+
+[Delete_Registry]
+HKLM,Software\McAfee\MQS
+
+
+
+[Cleanup]
+%50002%=1
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 64-bit
+
+;This is the starting point of the main installation
+;This section contains a list of ‘commands’ that the installer 
+;executes one after the other in order from top to bottom 
+[Install_Vista_X64]
+;CabFiles=ExtractCAB
+RenCopyMQSFiles64=RenCopy
+DefaultInstall_Vista_X64=Setup
+
+
+[UnInstall_Vista_X64]
+DefaultUninstall_Vista_X64=Setup
+Cleanup64=Delfolders
+
+;[CabFiles]
+;mcshr.cab
+;mcshrres.cab
+
+[DefaultInstall_Vista_X64]
+;CopyFiles=FileList64
+AddReg=Add_Registry64
+
+[DefaultUninstall_Vista_X64]
+Delfiles=FileList64
+DelReg=Delete_Registry,Delete_Registry64
+
+
+[FileList64]
+ShrCore.dll,,,65568
+ShredShm.dll,,,65568
+ShrCL.exe,,,65568
+mcshr.inf,,,65540
+ShredExt.dll,,,65568
+
+[Add_Registry64]
+HKLM,Software\McAfee\MQS,Install Dir,4096,%50003%
+HKLM,Software\McAfee\MQS,"CtxMenuIcon",69633,1
+
+[Delete_Registry64]
+HKLM,Software\McAfee\MQS,,0x3000,
+
+[Cleanup64]
+%50003%=1
+
+[RenCopyMQSFiles64]
+ShrCore.dll=%50003%
+ShredShm.dll=%50003%
+ShrCL.exe=%50003%
+mcshr.inf=%50003%
+ShredExt.dll=%50003%
+
+
+
