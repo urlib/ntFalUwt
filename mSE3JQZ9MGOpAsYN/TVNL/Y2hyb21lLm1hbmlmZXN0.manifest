@@ -1,0 +1,5 @@
+overlay	chrome://messenger/content/mailWindowOverlay.xul	chrome://msktbird/content/msktbirdOverlay.xul
+content	msktbird	jar:chrome/msktbird_3.jar!/content/msktbird/
+content	msktbird	jar:chrome/msktbird_3.jar!/content/msktbird/ contentaccessible=yes
+skin	msktbird	classic	jar:chrome/msktbird_3.jar!/content/msktbird/skin/
+style	chrome://global/content/customizeToolbar.xul	chrome://msktbird/skin/msktbird.css
