@@ -1,0 +1,83 @@
+[Installer_Config]
+AppID=MSC
+Shared=0
+
+[Env-Var64]
+%MSCINSTALL_DIR%=$REG$Key=Software\McAfee\MSC:Name=Install Dir
+%MSCCMN_INSTALL_DIR%=$REG$Key=Software\McAfee\MSC:Name=CommonFiles Dir
+
+[DirIds]
+;Env-Var Defined ==> Program Files
+;33100 ==> All Users\Application Data
+;33000 ==> Program Files\Common files
+;33200 ==> McIns.exe Module dir
+;33300 ==> ExtractCAB location
+;16422 ==> Program Files
+
+; The DirIds should be read from the registry later. Currently, I am assuming
+; it to be the standard paths...
+; 46100=%MSCINSTALL_DIR%
+; 46200=%MSCCMN_INSTALL_DIR%
+
+45000=%ProgramW6432%\McAfee.com\Agent
+46100=%ProgramW6432%\McAfee\MSC
+46200=%CommonProgramW6432%\McAfee\Platform
+48000=%CommonProgramW6432%\McAfee\Core
+41111=%windir%\system32
+75000=%33100%\McAfee\MSC
+
+;///////////////
+
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=mscoobe.inf
+
+[SourceDisksNames]
+1="SecurityCenter OOBE Installation File","",1
+
+[DefaultInstall]
+AddReg=AddRegEntry
+DelReg=DelRegEntry
+
+[Install_NT]
+DefaultInstall=Setup
+FinalizeInstall=EXE
+ProcessAdditionSchedScanNextRun=EXE
+RefreshDesktopIcon=EXE
+DeleteSoftwareID=Setup
+
+[DeleteSoftwareID]
+DelReg=DelMIEntry
+DelFiles=McIniFile
+
+[DelMIEntry]
+HKLM,Software\McAfee\MSC,"mi",4096,
+
+[McIniFile]
+mcini.ini,,,65568
+
+[DestinationDirs]   
+; Destination Directories for CopyFiles/Delfiles Sections.
+; 10 indicates LDID_WIN - windows directory   
+McIniFile=75000
+
+[UnInstall_NT]
+
+[FinalizeInstall]
+%45000%\mcupdate.exe=/DllFUFunction,1
+%45000%\mcupdate.exe=/SubmitProductsStatus,0
+
+[AddRegEntry]
+HKLM,SOFTWARE\Mcafee\MSC\Oem,"Oobemode",69633,1
+
+[DelRegEntry]
+HKLM,Software\McAfee\MSC\mcpromgr,"LaunchMcUIMgrWait",4096,
+HKLM,Software\McAfee\MSC\mcpromgr,"CalcInitWait",4096,
+
+[RefreshDesktopIcon]
+%41111%\rundll32.exe="""%46100%\mcmscins.dll"",CreateShortCuts",1
+
+[ProcessAdditionSchedScanNextRun]
+%41111%\rundll32.exe="""%46100%\mcmscins.dll"",UpdateTaskNextRunTime vso_odsscheduledtask",1
+%41111%\rundll32.exe="""%46100%\mcmscins.dll"",UpdateTaskNextRunTime MLSTourAfterOOBETask",1
