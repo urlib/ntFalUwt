@@ -1,0 +1,55 @@
+[Env-Var]
+%SELECTED_LCID%=$REG$Key=Software\McAfee\MSC\AppInfo\Substitute:Name=lcid
+
+[Installer_Config]
+AppID=MQS
+LD=1
+
+[DirIds]
+;Env-Var Defined ==> Program Files
+;33100 ==> All Users\Application Data
+;33000 ==> Program Files\Common files
+;33200 ==> McIns.exe Module dir
+;33300 ==> ExtractCAB location
+50000=%33500%\McAfee\MQS
+
+;for installation
+;50001=%33200%\%McAfeeLocaleID%
+50001=%33200%
+;for uninstallation
+;50002=%33500%\McAfee\MQS\%SELECTED_LCID%
+50002=%33500%\McAfee\MQS
+;50003=%ProgramW6432%\McAfee\MQS\%SELECTED_LCID%
+50003=%ProgramW6432%\McAfee\MQS
+
+
+[Install_NT]
+InstallLD=RunINF2
+
+[UnInstall_NT]
+UninstallLD=RunINF
+
+[UnInstall_Vista_X64]
+UninstallLD64=RunINF
+
+[InstallLD]
+instLD.inf=%50001%
+
+[UninstallLD]
+%50002%\instLD.inf
+
+[UninstallLD64]
+%50003%\instLD.inf
+
+
+;///////////////
+
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=mcpLD.inf
+
+[SourceDisksNames]
+1="MCP Language Dependent Files","",1
+
+
