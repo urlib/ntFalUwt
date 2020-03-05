@@ -1,0 +1,30 @@
+cguid="3EFC7473C8EC4D51BF5AFDFEDC171593"
+updatetime=1583410460
+updateperiod=0
+components={
+    {
+        name="core",
+        version=6748,
+        checksum="2ef79b29d1c80b366f94644230e7eb7739ed952c"
+    },
+    {
+        name="cstreams",
+        version=271487,
+        checksum="f24821749854282dd001700b9eee54314c720c7e"
+    },
+    {
+        name="inlines",
+        version=7193,
+        checksum="2870206f4bade293834b79c916adceb5b16cc7d0"
+    },
+    {
+        name="rbl",
+        version=5,
+        checksum="3b640bbcf04902be1d5698a77b6d86177805db37"
+    },
+    {
+        name="sentag",
+        version=69064,
+        checksum="3866344f66b4a23a7c04ac2911b54aaad138f207"
+    },
+}
