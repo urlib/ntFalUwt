@@ -1,0 +1,96 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=mcocdis.inf
+ 
+[Installer_Config]
+AppID=mcocdis
+Shared=0
+ 
+[SourceDisksNames]
+1="McAfee OOBE V3 Settings","",1
+
+[DestinationDirs]   
+CustomInf32=46100, Custom_Uninstall
+CustomInf64=46200, Custom_Uninstall
+ 
+[DirIds]
+46100=%33500%\McAfee\MSC
+46110=%33500%\McAfee\MSC\OOBE
+
+46200=%ProgramW6432%\McAfee\MSC
+46210=%ProgramW6432%\McAfee\MSC\OOBE
+
+46300=%33000%\McAfee\MSC
+46310=%CommonProgramW6432%\McAfee\MSC
+
+46400=%33000%\McAfee\Installer
+46410=%CommonProgramW6432%\McAfee\Installer
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; XP OS Entries 
+[Install_NT]
+DefaultInstall=Setup
+
+; intentionally leave blank so that if OS is XP no entries are written to the registry
+[RegKeysNoXPSupport]
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 64 Bit Vista and Windows 7 OS Entries 
+[Install_Vista_x64]
+DefaultInstall64=Setup
+RemoveRegistry64=DelReg64
+
+[DefaultInstall64]
+AddReg=Regentries64
+; Remove 32-bit and 64-bit entries
+DelReg=RemoveRegistry64,RemoveRegistry
+
+[CustomInf64]
+mcocdis.inf,,,65568
+
+[Regentries64]
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"OCEnable",0x00001000,"0"
+;HKLM,Software\McAfee\MSC\OEM\Activation\OneClick\QueryParams,"OCEnable",0x00001000,"0"
+HKLM,Software\McAfee\oeminfo\Activation\OneClick\QueryParams,"OCEnable",0x00001000,"0"
+
+[RemoveRegistry64]
+64BitKey=HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"EULAState",0x1000
+64BitKey=HKLM,Software\McAfee\oeminfo\Activation\OneClick\QueryParams,"EULAState",0x1000
+64BitKey=HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"EULADt",0x1000
+64BitKey=HKLM,Software\McAfee\oeminfo\Activation\OneClick\QueryParams,"EULADt",0x1000
+64BitKey=HKLM,SOFTWARE\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\activation,"graceperiod",0x1000
+64BitKey=HKLM,SOFTWARE\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\activation,"pre2",0x1000
+64BitKey=HKLM,SOFTWARE\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\activation,"pre1",0x1000
+64BitKey=HKLM,SOFTWARE\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\activation,"post1",0x1000
+64BitKey=HKLM,SOFTWARE\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\activation,"post2",0x1000
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 32 Bit Vista and Windows 7 OS Entries 
+[Install_Vista]
+DefaultInstall=Setup
+
+[DefaultInstall]
+AddReg=Regentries32
+DelReg=RemoveRegistry
+
+[CustomInf64]
+mcocdis.inf,,,65568
+
+
+[Regentries32]
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"OCEnable",,"0"
+;HKLM,Software\McAfee\MSC\OEM\Activation\OneClick\QueryParams,"OCEnable",,"0"
+HKLM,Software\McAfee\oeminfo\Activation\OneClick\QueryParams,"OCEnable",,"0"
+
+[RemoveRegistry]
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"EULAState"
+HKLM,Software\McAfee\oeminfo\Activation\OneClick\QueryParams,"EULAState"
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"EULADt"
+HKLM,Software\McAfee\oeminfo\Activation\OneClick\QueryParams,"EULADt"
+HKLM,SOFTWARE\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\activation,"graceperiod"
+HKLM,SOFTWARE\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\activation,"pre2"
+HKLM,SOFTWARE\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\activation,"pre1"
+HKLM,SOFTWARE\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\activation,"post1"
+HKLM,SOFTWARE\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\activation,"post2"
+
