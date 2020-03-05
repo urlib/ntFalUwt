@@ -1,0 +1,395 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+;QuickClean master inf file
+LayoutFile=mcqc.inf
+
+[SourceDisksNames]
+1="McAfee QuickClean Files","",1
+
+[Env-Var]
+%LCID%=$REG$Key=SOFTWARE\McAfee\MSC\AppInfo\Substitute:Name=lcid
+
+
+[Installer_Config]
+AppID=MQS
+
+[DirIds]
+;33000 ==> \Program Files\Common Files
+;33100 ==> \Documents and Settings\All Users\Application Data
+;33400 ==> \Program Files\Common Files\McAfee\Installer
+;33500 ==> \Program Files
+
+50000=%33500%\McAfee\MQS
+50001=%SystemRoot%
+;50002=%33500%\McAfee\MQS\%LCID%
+50002=%33500%\McAfee\MQS
+50098=%33100%\McAfee\MQS
+50099=%33100%\McAfee\MQS\Temp
+80000=%33000%\McAfee\ModuleCore
+
+50004=%ProgramW6432%\McAfee\MQS
+;50005=%ProgramW6432%\McAfee\MQS\%LCID%
+50005=%ProgramW6432%\McAfee\MQS
+80001=%CommonProgramW6432%\McAfee\ModuleCore
+
+[DestinationDirs]
+FileList=50000
+FileList64=50004
+MQSModuleConfig=33300
+
+[OCXRegister]
+QcShm.exe
+QCLite.dll
+QCProgressIcon.dll
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 32 Bits
+
+;This is the starting point of the main installation
+;This section contains a list of ‘commands’ that the installer executes one after the other in order from top to bottom
+[Install_NT]
+UnregisterModule86=EXE
+RenCopyFileList=RenCopy
+DefaultInstall=Setup
+AddRegistry=Setup
+ObfuscateRegEntry=RegObfuscate
+RegisterModule86=EXE
+DelModuleConfig=Setup
+
+[Install_VISTA]
+UnregisterModule86=EXE
+RenCopyFileList=RenCopy
+DefaultInstall=Setup
+AddVistaRegistry=Setup
+ObfuscateRegEntry=RegObfuscate
+RegisterModule86=EXE
+DelModuleConfig=Setup
+
+[UnInstall_NT]
+UnregisterModule86=EXE
+DefaultUninstall=Setup
+Cleanup=Delfolders
+ObfuscateRegEntry=RegObfuscate
+
+[DefaultInstall]
+CopyFiles=FileList
+
+[AddRegistry]
+AddReg=Add_Registry, MSCPlugins, PresetTasks
+
+[AddVistaRegistry]
+AddReg=Add_RegVista, MSCPlugins, PresetTasks
+
+[DefaultUninstall]
+Delfiles=FileList
+DelReg=Delete_Registry, MSCPlugins, PresetTasks, Del_MSCPlugins, Del_MQCTasks, ObfuscateRegEntry
+
+[FileList]
+MRU.ini,,,65540
+QcShm.exe,,,65568
+QCLite.dll,,,65568
+QCProgressIcon.dll,,,65568
+QcConsol.exe,,,65568
+QCJsRes.dll,,,65568
+QCJsResO.dll,,,65568
+mcqc.inf,,,65540
+MqsRes.dll,,,65568
+MqsModule.dll,,,65568
+
+[RenCopyFileList]
+;MRU.ini=%50000%
+QcShm.exe=%50000%
+QCLite.dll=%50000%
+QCProgressIcon.dll=%50000%
+QcConsol.exe=%50000%
+QCJsRes.dll=%50000%
+QCJsResO.dll=%50000%
+;mcqc.inf=%50000%
+MqsRes.dll=%50000%
+MqsModule.dll=%50000%
+
+[Add_Registry]
+HKLM,Software\McAfee\MQS,Install Dir,0,%50000%
+HKLM,Software\McAfee\Defrag,CommandLine,0,%50001%\system32\dfrg.msc
+;Freemium Changes
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A6,"rule",,mqs
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A6,"appid",,mqs
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A6\installed,LinkContext,0,shredder
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A6\installed,LinkType,65537,1
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A8\installed,LinkContext,0,quickclean
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A8\installed,LinkType,65537,1
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"LinkContext",, dfrg.msc
+
+[Add_RegVista]
+HKLM,Software\McAfee\MQS,Install Dir,0,%50000%
+HKLM,Software\McAfee\Defrag,CommandLine,0,%50001%\system32\dfrgui.exe
+;Freemium Changes
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A6,"rule",,mqs
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A6,"appid",,mqs
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A6\installed,LinkContext,0,shredder
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A6\installed,LinkType,65537,1
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A8\installed,LinkContext,0,quickclean
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A8\installed,LinkType,65537,1
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"LinkContext",, dfrgui.exe
+
+[Delete_Registry]
+HKLM,Software\McAfee\Defrag
+HKLM,Software\McAfee\MQS
+HKLM,Software\McAfee\MSC\MCP
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA24\0F167695-3F7C-421c-89E8-40544CE9D1A8
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A8
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A6
+;this reg key is not deleted on Vista becase Elevation\Enable is added by us.
+
+[Delete_Registry64]
+HKLM,Software\McAfee\Defrag,,0x3000,
+HKLM,Software\McAfee\MQS,,0x3000,
+HKLM,Software\McAfee\MSC\MCP,,0x3000,
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA24\0F167695-3F7C-421c-89E8-40544CE9D1A8,,0x3000,
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A8,,0x3000,
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A6,,0x3000,
+
+
+[MSCPlugins]
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1,"NameResId",65537, 2107
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1,"SectionGuid",, {7F7BB30F-D5D3-43F8-8B93-E2EEF69EBB4D}
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1,"UiVisible",65537,1
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1,"LinkType",65537,1
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1,"LinkContext",, quickclean
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1,"NotesResId",65537, 2296
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1,"DisplayOrder",65537, 66
+;For Freemium changes
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1\rule,"rulename",,mqs
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1\rule,"appid",,mqs
+
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MQS,"ResDll",,%50000%\MqsRes.dll
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MQS,"UIDll",,%50000%\QCJsRes.dll
+
+;shredder entries
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D,"NameResId",65537, 2108
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D,"SectionGuid",, {7F7BB30F-D5D3-43F8-8B93-E2EEF69EBB4D}
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D,"UiVisible",65537,1
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D,"LinkType",65537,1
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D,"LinkContext",, shredder
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D,"NotesResId",65537, 2295
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D,"DisplayOrder",65537, 77
+;For Freemium changes
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D\rule,"rulename",,mqs
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D\rule,"appid",,mqs
+;defrag
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"NameResId",65537, 2320
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"SectionGuid",, {7F7BB30F-D5D3-43F8-8B93-E2EEF69EBB4D}
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"UiVisible",65537,1
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"LinkType",65537,2
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"NotesResId",65537, 2321
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"DisplayOrder",65537, 88
+
+[Del_MSCPlugins]
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MQS
+
+[Del_MSCPlugins64]
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MQS,,0x3000,
+
+[PresetTasks]
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\0,DescriptionResId,65537,9000
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\0,Interval,65537,1
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\0,DayOfWeekMask,65537,4
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\0,Hour,65537,4
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\0,Minute,65537,0
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\0,Active,65537,1
+
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\1,DescriptionResId,65537,9001
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\1,Interval,65537,2
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\1,DayOfWeekMask,65537,4
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\1,Hour,65537,4
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\1,Minute,65537,0
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\1,Active,65537,1
+
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\2,DescriptionResId,65537,9002
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\2,Interval,65537,3
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\2,DayOfWeekMask,65537,4
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\2,Hour,65537,4
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\2,Minute,65537,0
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\2,Active,65537,1
+
+[Del_MQCTasks]
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC
+
+[Del_MQCTasks64]
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC,,0x3000,
+
+[Cleanup]
+%50099%
+%50098%
+%50000%=1
+
+[ObfuscateRegEntry]
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"LaunchFlags",65537, 1
+
+[RegisterModule86]
+%80000%\ModuleCoreService.exe=/register=MqsModule /moduleConfigFile="""%33300%"""\MqsModuleConfig.xml /userMode=true,1,1
+
+[UnregisterModule86]
+%80000%\ModuleRegister.exe=/unregister=MqsModule,1,1
+%80000%\ModuleCoreService.exe=/unregister=MqsModule /userMode=true,1,1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 64 Bits
+
+;This is the starting point of the main installation
+;This section contains a list of ‘commands’ that the installer executes one after the other in order from top to bottom
+[Install_Vista_X64]
+UnregisterModule64=EXE
+RenCopyFileList64=RenCopy
+DefaultInstall_Vista_X64=Setup
+AddVistaRegistry64=Setup
+ObfuscateRegEntry64=RegObfuscate
+RegisterModule64=EXE
+DelModuleConfig=Setup
+
+[UnInstall_Vista_X64]
+UnregisterModule64=EXE
+DefaultUninstall_Vista_X64=Setup
+Cleanup64=Delfolders
+ObfuscateRegEntry64=RegObfuscate
+
+[DefaultInstall_Vista_X64]
+CopyFiles=FileList64
+
+[AddVistaRegistry64]
+AddReg=Add_RegVista64, MSCPlugins64, PresetTasks64
+
+[DefaultUninstall_Vista_X64]
+Delfiles=FileList64
+DelReg=Delete_Registry, MSCPlugins, PresetTasks, Del_MSCPlugins, Del_MQCTasks, ObfuscateRegEntry
+DelReg=Delete_Registry64,Del_MSCPlugins64,Del_MQCTasks64
+
+
+[DelModuleConfig]
+Delfiles=MQSModuleConfig
+
+[MQSModuleConfig]
+MqsModuleConfig.xml
+
+[FileList64]
+MRU.ini,,,65540
+QcShm.exe,,,65568
+QCLite.dll,,,65568
+QCProgressIcon.dll,,,65568
+QcConsol.exe,,,65568
+QcCons32.exe,,,65568
+QCJsRes.dll,,,65568
+QCJsResO.dll,,,65568
+mcqc.inf,,,65540
+MqsRes.dll,,,65568
+MqsModule.dll,,,65568
+
+[RenCopyFileList64]
+;MRU.ini=%50004%
+QcShm.exe=%50004%
+QCLite.dll=%50004%
+QCProgressIcon.dll=%50004%
+QcConsol.exe=%50004%
+QcCons32.exe=%50004%
+QCJsRes.dll=%50004%
+QCJsResO.dll=%50004%
+;mcqc.inf=%50004%
+MqsRes.dll=%50004%
+MqsModule.dll=%50004%
+
+[Add_RegVista64]
+HKLM,Software\McAfee\MQS,Install Dir,0,%50004%
+HKLM,Software\McAfee\Defrag,CommandLine,0,%50001%\system32\dfrgui.exe
+;Freemium Changes
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A6,"rule",4096,mqs
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A6,"appid",4096,mqs
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A6\installed,LinkContext,4096,shredder
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A6\installed,LinkType,69633,1
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A8\installed,LinkContext,4096,quickclean
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A8\installed,LinkType,69633,1
+
+[MSCPlugins64]
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1,"NameResId",69633, 2107
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1,"SectionGuid",4096, {7F7BB30F-D5D3-43F8-8B93-E2EEF69EBB4D}
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1,"UiVisible",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1,"LinkType",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1,"LinkContext",4096, quickclean
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1,"NotesResId",69633, 2296
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1,"DisplayOrder",69633, 66
+;For Freemium changes
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1\rule,"rulename",4096,mqs
+HKLM,Software\McAfee\MSC\Settings\toc\3ADE2570-DEB3-466a-9836-D29C6C0519A1\rule,"appid",4096,mqs
+
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MQS,"ResDll",4096,%50004%\MqsRes.dll
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MQS,"UIDll",4096,%50004%\QCjsres.dll
+; To add WOW6432Node entry to support downgrade over install
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MQS,"ResDll",0x4000,%50004%\MqsRes.dll
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MQS,"UIDll",0x4000,%50004%\QCJsRes.dll
+
+;shredder entries
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D,"NameResId",69633, 2108
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D,"SectionGuid",4096, {7F7BB30F-D5D3-43F8-8B93-E2EEF69EBB4D}
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D,"UiVisible",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D,"LinkType",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D,"LinkContext",4096, shredder
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D,"NotesResId",69633, 2295
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D,"DisplayOrder",69633, 77
+
+;For Freemium changes
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D\rule,"rulename",4096,mqs
+HKLM,Software\McAfee\MSC\Settings\toc\C846F4CB-C4C9-4b5f-8B10-5A242438EA9D\rule,"appid",4096,mqs
+;defrag
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"NameResId",69633, 2320
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"SectionGuid",4096, {7F7BB30F-D5D3-43F8-8B93-E2EEF69EBB4D}
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"UiVisible",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"LinkType",69633,2
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"LinkContext",4096, %50001%\system32\dfrgui.exe
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"NotesResId",69633, 2321
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"DisplayOrder",69633, 88
+
+[Del_MSCPlugins64]
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MQS
+
+[PresetTasks64]
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\0,DescriptionResId,69633,9000
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\0,Interval,69633,1
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\0,DayOfWeekMask,69633,4
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\0,Hour,69633,4
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\0,Minute,69633,0
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\0,Active,69633,1
+
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\1,DescriptionResId,69633,9001
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\1,Interval,69633,2
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\1,DayOfWeekMask,69633,4
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\1,Hour,69633,4
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\1,Minute,69633,0
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\1,Active,69633,1
+
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\2,DescriptionResId,69633,9002
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\2,Interval,69633,3
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\2,DayOfWeekMask,69633,4
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\2,Hour,69633,4
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\2,Minute,69633,0
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC\2,Active,69633,1
+
+[Del_MQCTasks64]
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\MQC
+
+[Cleanup64]
+%50099%
+%50098%
+%50004%=1
+
+[ObfuscateRegEntry64]
+HKLM,Software\McAfee\MSC\Settings\toc\F3ACA90A-6D67-4697-973E-3FA05E39995D,"LaunchFlags",69633, 1
+; To add WOW6432Node entry to support downgrade over install
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MQS,"Flag",0x14001,1
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MQS,"AppInfoCLSID",0x4000,"{2F4C0E0C-80AD-4105-9A0F-4BA90BB64296}"
+
+[RegisterModule64]
+%80001%\ModuleCoreService.exe=/register=MqsModule /moduleConfigFile="""%33300%"""\MqsModuleConfig.xml /userMode=true,1,1
+
+[UnregisterModule64]
+%80001%\ModuleRegister.exe=/unregister=MqsModule,1,1
+%80001%\ModuleCoreService.exe=/unregister=MqsModule /userMode=true,1,1
