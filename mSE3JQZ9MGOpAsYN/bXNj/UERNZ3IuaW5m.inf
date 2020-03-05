@@ -1,0 +1,84 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=PDMgr.inf
+
+[Installer_Config]
+AppID=PDMgr
+Shared=0
+
+[SourceDisksNames]
+1="PDMgr Modules Files","",1
+
+[DirIds]
+;24 ==> root directory of the disk on which Windows files are installed
+46100=%24%\Program Files\McAfee\MSC
+49400=%24%\Program Files\Common Files\McAfee\ModuleCore
+
+[DestinationDirs]
+FileList=46100
+
+[AddRegEntries]
+HKLM,SOFTWARE\McAfee\PDMgr,"Install Dir",,"%46100%"
+HKLM,SOFTWARE\McAfee\PDMgr,Version,,"18.4.141.1"
+
+[AddRegEntries64]
+HKLM,SOFTWARE\McAfee\PDMgr,"Install Dir",4096,"%46100%"
+HKLM,SOFTWARE\McAfee\PDMgr,Version,4096,"18.4.141.1"
+
+[DelRegEntries]
+HKLM,SOFTWARE\McAfee\PDMgr
+
+[DelRegEntries64]
+64BitKey=HKLM,SOFTWARE\McAfee\PDMgr
+
+[DefaultInstall]
+AddReg=AddRegEntries
+CopyFiles=FileList
+
+[DefaultUninstall]
+DelFiles=FileList
+DelReg=DelRegEntries
+
+[DefaultInstall64]
+AddReg=AddRegEntries64
+CopyFiles=FileList
+
+[DefaultUninstall64]
+DelFiles=FileList
+
+[FileList]
+PDMgr.inf,,,65568
+PDMgr.dll,,,0x00014020
+PDMgr.xml,,,65568
+
+[Install_NT]
+UnRegisterWithModuleCore=EXE
+DefaultInstall=Setup
+RegisterWithModuleCore=EXE
+
+[UnInstall_NT]
+UnRegisterWithModuleCore=EXE
+DefaultUninstall=Setup
+Cleanup=DelFolders
+
+[Install_NT_X64]
+UnRegisterWithModuleCore=EXE
+DefaultInstall64=Setup
+RegisterWithModuleCore=EXE
+
+[UnInstall_NT_X64]
+UnRegisterWithModuleCore=EXE
+DefaultUninstall64=Setup
+DelRegEntries64=DelReg64
+Cleanup=DelFolders
+
+[Cleanup]
+%46100%=1
+
+[RegisterWithModuleCore]
+%49400%\ModuleCoreService.exe="/register=PDMgr /binaryFile=PDMgr.dll /binaryPath=$(FOLDERID_ProgramFiles)\McAfee\MSC /configFile=PDMgr.xml /configPath=$(FOLDERID_ProgramFiles)\McAfee\MSC /startType=ondemand /messageTriggers=PDMgr.ProvisionID.Request,PDMgr.PDSettings.Request,PDMgr.PDString.Request,Core.Subscription.Sync,Core.Application.FirstStart,Core.Installer.Complete,CoreUI.NavBar.Request",1,1
+
+[UnRegisterWithModuleCore]
+%49400%\ModuleCoreService.exe="/unregister=PDMgr",1,1
+
