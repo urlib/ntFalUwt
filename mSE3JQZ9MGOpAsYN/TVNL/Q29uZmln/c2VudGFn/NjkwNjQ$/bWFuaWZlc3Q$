@@ -1,0 +1,5 @@
+-- Copyright (C) 2008 McAfee, Inc. All rights reserved.
+version=69064
+File{type="hashes", path="sentence.lut", checksum="880816275dee515dfac0d9173a92b087ab5ceb47"}
+File{type="hashes", path="tags.lut", checksum="65982f7423e0f0a5a043444a53cf4a8dce71b150"}
+File{type="rules", path="sentag.lua", hide=true}
