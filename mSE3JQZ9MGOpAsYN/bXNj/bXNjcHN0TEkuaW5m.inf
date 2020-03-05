@@ -1,0 +1,251 @@
+[Installer_Config]
+AppID=MSC
+Shared=0
+
+[Env-Var64]
+%MSCINSTALL_DIR%=$REG$Key=Software\McAfee\MSC:Name=Install Dir
+%MSCCMN_INSTALL_DIR%=$REG$Key=Software\McAfee\MSC:Name=CommonFiles Dir
+%SELECTED_LCID%=$REG$Key=Software\McAfee\MSC\AppInfo\Substitute:Name=lcid
+
+[DirIds]
+;Env-Var Defined ==> Program Files
+;33100 ==> All Users\Application Data
+;33000 ==> Program Files\Common files
+;33200 ==> McIns.exe Module dir
+;33300 ==> ExtractCAB location
+;16422 ==> Program Files
+
+; The DirIds should be read from the registry later. Currently, I am assuming
+; it to be the standard paths...
+; 46100=%MSCINSTALL_DIR%
+; 46200=%MSCCMN_INSTALL_DIR%
+
+45000=%ProgramW6432%\McAfee.com\Agent
+45001=%ProgramW6432%
+46100=%ProgramW6432%\McAfee\MSC
+46101=%ProgramFiles%\McAfee\MSC
+46200=%CommonProgramW6432%\McAfee\Platform
+48000=%CommonProgramW6432%\McAfee\Core
+46050=%ProgramW6432%\McAfee\MSC\%SELECTED_LCID%
+41111=%windir%\system32
+
+47300=%CommonProgramW6432%\McAfee\CSP
+47400="%CommonProgramW6432%\McAfee\PEF\Installer"
+47401=%CommonProgramW6432%\McAfee\MSGSDK
+48400="%CommonProgramW6432%\McAfee\ClientAnalytics"
+49400="%CommonProgramW6432%\McAfee\ModuleCore"
+50400="%CommonProgramW6432%\McAfee\WACModule"
+67401="%CommonProgramW6432%\McAfee\TaskScheduler"
+51401="%CommonProgramW6432%\McAfee\AlertManager"
+50500=%CommonProgramW6432%\McAfee\Sustainability
+99999=%ProgramData%\McAfee\
+;///////////////
+
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=mscpstLI.inf
+
+[SourceDisksNames]
+1="SecurityCenter Post Installation File","",1
+
+[DestinationDirs]
+; Destination Directories for CopyFiles/Delfiles Sections.
+; 10 indicates LDID_WIN - windows directory
+MSCPostFiles=46100
+; mcmscins.dll will be un-installed through mscli.inf
+MSCUninPostFiles=46100
+
+
+[DefaultInstall]
+CopyFiles=MSCPostFiles
+AddReg=RegEntry
+AddReg=AddUpdateEntry
+DelReg=HomeNetOverrides
+
+[DefaultUnInstall]
+;DelFiles=MSCPostFiles
+DelFiles=MSCUninPostFiles
+DelReg=RegEntry
+DelReg=AddUpdateEntry
+DelReg=ExtraKeys,ExtraKeys64
+DelReg=MCIniKey
+
+[MCIniKey]
+HKLM,Software\McAfee,"mi",0x1000,
+
+
+[Install_NT]
+DefaultInstall=Setup
+ProductInfo=RegObfuscate
+Links=RegObfuscate
+;AppFeatures=RegObfuscate
+InstallMCSP64=EXE
+InstallPEF=EXE
+InstallModuleCore64=EXE
+InstallAnalyticsSDK64=EXE
+InstallWACModule64=EXE
+InstallSustainability64=EXE
+InstallChromiumContainer64=EXE
+FinalizeInstall=EXE
+InstallMessagingSDK64=EXE
+InstallTaskScheduler64=EXE
+InstallAlertManager64=EXE
+
+[UnInstall_NT]
+FinalizeUnInstall=EXE
+ProductInfo=RegObfuscate
+Links=RegObfuscate
+;AppFeatures=RegObfuscate
+DefaultUnInstall=Setup
+
+[FinalizeUnInstall]
+%41111%\rundll32.exe="""%46100%\mcmscins.dll"",DllUninstallFunction %33200%",1
+
+[FinalizeInstall]
+%41111%\rundll32.exe="""%46100%\mcmscins.dll"",DllInstallFunction",1
+
+[MSCPostFiles]
+mscpstLI.inf,,,65568
+mscoobe.inf,,,65568
+mscrem.inf,,,65568
+mcmscins.dll,,,65568
+mscLI.inf,msc\mscLI.inf,,65568
+mscinres.dll,,,81952
+mcFullClean.inf,,,65568
+
+[MSCUninPostFiles]
+mscpstLI.inf,,,65568
+mscoobe.inf,,,65568
+mscrem.inf,,,65568
+;mcmscins.dll,,,65568
+mscLI.inf,msc\mscLI.inf,,65568
+mscinres.dll,,,65568
+
+[AppFeatures]
+HKLM,SOFTWARE\McAfee.com\Agent\Apps\VSO,"Features",69633,1
+HKLM,SOFTWARE\McAfee.com\Agent\Apps\MPF,"Features",69633,1
+HKLM,SOFTWARE\McAfee.com\Agent\Apps\MPS,"Features",69633,1
+HKLM,SOFTWARE\McAfee.com\Agent\Apps\MSK,"Features",69633,1
+
+[ProductInfo]
+HKLM,Software\McAfee\MSC\AppInfo,"ProductInfo",4096,"Language="%lang"%;Build="%build"%;Version="%version2"%;LangPack="%BuildLD"%"
+HKLM,Software\McAfee\MSC\Settings,"SCFixIt",4096,"%45000%\mcupdate.exe"
+
+[Links]
+HKLM,Software\McAfee\MSC\Links,"CustSupport",4096,"http://"%domain"%/custsupport.asp"
+HKLM,Software\McAfee\MSC\Links,"Store",4096,"http://"%domain"%/store.asp"
+
+[RegEntry]
+; Write both these. _Install Dir will get replaced with Install Dir after reboot
+HKLM,Software\McAfee\MSC,"_Install Dir",4096,"%46100%"
+HKLM,Software\McAfee\MSC,"_CommonFiles Dir",4096,"%46200%"
+HKLM,Software\McAfee\MSC,"Install Dir64",4096,"%46100%"
+HKLM,Software\McAfee\MSC,"CommonFiles Dir64",4096,"%46200%"
+; Write a value that ALWAYS points to the 32-bit location on ALL platforms
+HKLM,Software\McAfee\MSC,"Install Dir32",4096,"%46101%"
+
+HKLM,Software\McAfee\MSC,"ReleaseName",4096,"wss16.0.24"
+;HKLM,Software\McAfee\MSC,"ReleaseName",4096,"WSS16.0.24"
+
+;HKLM,Software\McAfee\MSC,"MarketReleaseName",4096,"[MARKETRELEASENAME]"
+HKLM,Software\McAfee\MSC,"MarketReleaseName",4096,"16.0 R24"
+;HKLM,Software\McAfee\MSC,"MarketReleaseVer",4096,"[MARKETRELEASENVER]"
+HKLM,Software\McAfee\MSC,"MarketReleaseVer",4096,"16.0"
+
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MSC,"DisplayIcon",,"""%46200%\mcuicnt.exe"",-0"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MSC,"UninstallString",,"%46100%\mcuihost.exe /body:misp://MSCJsRes.dll::uninstall.html /id:uninstall"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MSC,"InstallLocation",,"%45001%\McAfee"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MSC,"Publisher",,"McAfee, LLC."
+
+;HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MSC,"VersionMajor",,"18"
+;HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MSC,"VersionMinor",,"4"
+;HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MSC,"DisplayVersion",,"%libuild%"
+;////as required by Marketing, now the MTP version info shown on Windows Control Panel are temporally hardcoded
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MSC,"VersionMajor",,"16"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MSC,"VersionMinor",,"0"
+;//// Salmoni - I want the uninstall version to be the same as Help about box
+;HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MSC,"DisplayVersion",,"%uninstall_ver%"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MSC,"DisplayVersion",,"16.0 R24"
+
+
+HKLM,SOFTWARE\McAfee\MSC\Update,"UseWinInet",69633,0
+;UPAO start day
+HKLM,SOFTWARE\McAfee\MSC\Settings\McProMgr,"UPAOStartDay",69633,5
+
+; Write the path to the LCID folder. This is required for updates to get the versions of the resource DLL's
+HKLM,Software\McAfee\MSC,"Install_LD Dir",4096,"%46050%"
+
+; the build number to be displayed in the About box should be the LI build number
+HKLM,Software\McAfee\MSC\AppInfo\Substitute,"build",4096,"%libuild%"
+HKLM,Software\McAfee\MSC\AppInfo\Substitute\QueryParams,"build",4096,"%libuild%"
+
+; instrumentation requires the integer part of the build
+HKLM,Software\McAfee\MSC\AppInfo\Substitute,"buildnum",4096,"%libuildnum%"
+
+
+; this is required for MSC 6.0 => MSC 8.0 Upgrades. MSC 6.0's mcagent didnt have this key. An upgrade to MSC 8.0 puts mcagent
+; in the pending files and its registration is put in RunKey. The service starts mcagent via COM before that. As "Interactive User"
+; is missing mcagent gets started in SYSTEM account.
+HKCR,AppID\{813673A2-75E0-47a2-B77F-6FBF2DA05146},"RunAs",,"Interactive User"
+
+; This is required to fix  Bug 499637 - Falcon over Pearl overinstall
+HKLM,Software\McAfee\MWL\AppInfo\Substitute,"build",4096,"4.0.0.0"
+HKLM,Software\McAfee\MHN,"Build",4096,"4.0.0.0"
+
+[ExtraKeys]
+HKLM,Software\McAfee\MWL
+HKLM,Software\McAfee\MHN
+
+[ExtraKeys64]
+HKLM,Software\McAfee\MWL,,0x3000,
+HKLM,Software\McAfee\MHN,,0x3000,
+
+[strings]
+; contains major.minor.build. E.g. 7.0.1234
+libuild=18.4.139
+libuildnum=139
+uninstall_ver=14.0.139
+
+[AddUpdateEntry]
+HKLM,Software\McAfee\MSC\Update\Checksums,"mscpstLI.inf",4096,"%46100%"
+;turn on MHN for MSSB
+HKLM,Software\McAfee\MSC\Settings\Misc,"HideMHNPackages",4096,""
+HKLM,Software\McAfee\MSC\Settings481\toc\4776FB3D-A5E3-46b8-ACAA-181CB546FD67,UiVisible,69633,1
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A7\installed,UiVisible,69633,1
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A7\notinstalled,UiVisible,69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\4776FB3D-A5E3-46b8-ACAA-181CB546FD67,UiVisible,69633,1
+HKLM,Software\McAfee\HomeNet\Network Trust,mpf_follows_nmc_trust,69633,1
+HKLM,Software\McAfee\HomeNet\Network Trust,nmc_follows_mpf_trust,69633,1
+
+;remove override entries of MHN done for MSSB
+[HomeNetOverrides]
+HKLM,Software\McAfee\HomeNet\Overrides
+
+[InstallMCSP64]
+%47300%\mccspinstall.exe="/app a053060c-3a34-11e4-8a01-005056b7244f",1
+
+[InstallPEF]
+%47400%\InstallPEF.exe=/appid:WSS ,1
+
+[InstallAnalyticsSDK64]
+%48400%\ClientAnalyticsReg.exe="/register=msc",1,1 
+
+[InstallModuleCore64]
+%49400%\ModuleCoreReg.exe="/register=MSC",1,1
+
+[InstallWACModule64]
+%50400%\WACModuleReg.exe="/register=MSC",1,1 
+
+[InstallSustainability64]
+%50500%\SustainabilityFrameworkReg.exe="/register=msc",1,1
+
+[InstallMessagingSDK64]
+%47401%\MessagingSDKReg.exe="/register=MSC",1,1
+
+[InstallTaskScheduler64]
+%67401%\TaskSchedulerReg.exe="/register=MSC",1,1
+
+[InstallAlertManager64]
+%51401%\AlertManagerReg.exe="/register=MSC",1,1
+
