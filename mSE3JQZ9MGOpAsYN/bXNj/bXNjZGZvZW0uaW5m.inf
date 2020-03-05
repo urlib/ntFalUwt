@@ -1,0 +1,1219 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=mscdfoem.inf
+
+[Installer_Config]
+AppID=MSC
+Shared=0
+
+[Env-Var64]
+%SELECTED_LCID%=$REG$Key=Software\McAfee\MSC\AppInfo\Substitute:Name=lcid
+
+[DirIds]
+;Env-Var Defined ==> Program Files
+;33100 ==> All Users\Application Data
+;33000 ==> Program Files\Common files
+;33200 ==> McIns.exe Module dir
+;33300 ==> ExtractCAB location
+;16422 ==> Program Files
+
+46100=%ProgramW6432%\McAfee\MSC
+46150=%ProgramW6432%\McAfee\MSC\%SELECTED_LCID%
+45000=%ProgramW6432%\McAfee.com
+
+[SourceDisksNames]
+1="McAfee Default OEM Configuration Files","",1
+
+[DefaultInstall]
+CopyFiles=LDFileList
+AddReg=Customizations,Links,Links_Extradata,AddUpdateEntry,MetroFileAssoc,SCPConnection
+DelReg=RemoveCategory
+
+[DefaultUnInstall]
+DelFiles=LDFileList
+
+; Do not remove any of the links or customizations. They might be required for the uninstaller.
+; Let the uninstaller remove the entire MCafee key once all apps are uninstalled
+;DelReg=Customizations,Links,Links_Extradata
+DelReg=AddUpdateEntry,Metro,MetroFileAssoc,MetroStateLinkRank,MetroData,MetroPackages,SCPConnection
+
+[DestinationDirs]
+; for Sapphire we are copying the LD files in mscdfoem to MSC folder instead of MSC\LCID because partner versions of these files will not be copied
+; to LCID folder; reason being that partner CABs will not be ready by the time MSC goes to production...   
+LDFileList=46100
+
+[LDFileList]
+mscdfoem.inf,,,65568
+override.inf,,,65568
+; This is only used to trigger mscdfoem update in Calamari
+mscdfoem_updater.txt,,,65568
+
+[Install_NT]
+DefaultInstall=Setup
+ObfuscateRegEntry=RegObfuscate
+ApplyOverrides=RunINF2
+MetroData=RegObfuscate
+
+[UnInstall_NT]
+DefaultUnInstall=Setup
+
+[AddUpdateEntry]
+HKLM,Software\McAfee\MSC\Update\Checksums,"mscdfoem.inf",4096,"%46100%"
+
+[MetroData]
+HKLM,SOFTWARE\McAfee\MSC\Settings\Metro\Data,"Action",4096,"WNSAuth"
+HKLM,SOFTWARE\McAfee\MSC\Settings\Metro\Data,"Application",4096,"D6B8804997F743678418E584CF0A2MSC"
+HKLM,SOFTWARE\McAfee\MSC\Settings\Metro\Data,"Format",4096,"%Y$%m=@%m#,%d.%H%M-%S"
+HKLM,SOFTWARE\McAfee\MSC\Settings\Metro\Data,"Payload",4096,"Metro"
+HKLM,SOFTWARE\McAfee\MSC\Settings\Metro\Data,"Shared",4096,"A02CC785#BfC4DF3X1A65338a0AZ7985BC4M4F6D"
+
+[MetroFileAssoc]
+HKCR,McAfeeExtn\DefaultIcon,"",,"""%46100%\McAfee.ico"""
+HKCR,McAfeeExtn\shell\open\command,"",,"""%45000%\Agent\McUpdate.exe"" ""%1"""
+HKCR,.mfe,"",,"McAfeeExtn"
+
+[SCPConnection]
+HKLM,Software\McAfee\MSC\Settings\ShipToPaid,"TimesToRetry",69633,30
+HKLM,Software\McAfee\MSC\Settings\ShipToPaid,"ConnectionTimeout",69633,1800
+HKLM,Software\McAfee\MSC\Settings\ShipToPaid,"ConnectionTimeoutOnRetry",69633,300
+HKLM,Software\McAfee\MSC\Settings\ShipToPaid,"TimeBetweenRetrys",69633,7200
+HKLM,Software\McAfee\MSC\Settings\ShipToPaid,"CSPPokeDelay",69633,60
+
+[Links]
+HKLM,Software\McAfee\MSC\Settings\links,"metrocloudurl",4096,https://app.mcafee.com/metro/default.aspx
+HKLM,Software\McAfee\MSC\Settings\links,"renew",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=renew&source=msc&cid=80416
+HKLM,Software\McAfee\MSC\Settings\links,"renewfromalert",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=renew&source=expiryalert&cid=80427
+HKLM,Software\McAfee\MSC\Settings\links,"buyfromalert",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=buy&source=expiryalert&cid=80417
+HKLM,Software\McAfee\MSC\Settings\links,"buyasubscription",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=buy&source=msc&cid=80417
+HKLM,Software\McAfee\MSC\Settings\links,"addlicense",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=licenses&source=msc&cid=80419
+HKLM,Software\McAfee\MSC\Settings\links,"editprofile",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=profileupdate&source=msc&cid=80421
+HKLM,Software\McAfee\MSC\Settings\links,"editbilling",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=billingupdate&source=msc&cid=80422
+HKLM,Software\McAfee\MSC\Settings\links,"managesubscription",4096,http://home.mcafee.com/appsupport/common/secure/inproduct?action=subscriptions&source=msc&cid=80424
+HKLM,Software\McAfee\MSC\Settings\links,"whyshouldirenew",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=whyrenew&source=msc&cid=80565
+HKLM,Software\McAfee\MSC\Settings\links,"addlicensemays",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=licenses&source=mays&cid=80425
+HKLM,Software\McAfee\MSC\Settings\links,"deactivate",4096,http://home.mcafee.com/appsupport/common/secure/inproduct?action=deactivate&cid=80561&source=msc
+HKLM,Software\McAfee\MSC\Settings\links,"reactivate",4096,http://home.mcafee.com/appsupport/common/secure/inproduct?action=reactivate&cid=80562&source=msc
+HKLM,Software\McAfee\MSC\Settings\links,"deactivatebuy",4096,http://home.mcafee.com/appsupport/common/secure/inproduct?action=deactivatebuy&cid=80563&source=msc
+HKLM,Software\McAfee\MSC\Settings\links,"cleanboot",4096,http://home.mcafee.com/appsupport/common/secure/inproduct?action=cleanboot&cid=80564
+HKLM,Software\McAfee\MSC\Settings\links,"learnallaccess",4096,"http://home.mcafee.com/appsupport/securityadvisor/transition.aspx?action=mlsmicrosite"
+
+HKLM,Software\McAfee\MSC\Settings\links,"support",4096,http://home.mcafee.com/campaign.aspx?cid=71446
+HKLM,Software\McAfee\MSC\Settings\links,"maasupport",4096,http://home.mcafee.com/root/campaign.aspx?cid=111095
+HKLM,Software\McAfee\MSC\Settings\links,"vmap",4096,https://www.hackerwatch.org/ThreatMap/MetroWeb/default.aspx
+HKLM,Software\McAfee\MSC\Settings\links,"vinfotoc",4096,http://home.mcafee.com/VirusInfo
+HKLM,Software\McAfee\MSC\Settings\links,"vinfosearch",4096,http://home.mcafee.com/VirusInfo/ThreatSearch.aspx
+HKLM,Software\McAfee\MSC\Settings\links,"myaccount",4096,http://home.mcafee.com/campaign.aspx?cid=71447
+HKLM,Software\McAfee\MSC\Settings\links,"store",4096,http://home.mcafee.com/campaign.aspx?cid=22953
+HKLM,Software\McAfee\MSC\Settings\links,"hackerwatch",4096,http://www.hackerwatch.org
+HKLM,Software\McAfee\MSC\Settings\links,"surveyexperience",4096,http://home.mcafee.com/campaign.aspx?cid=33207
+HKLM,Software\McAfee\MSC\Settings\links,"virtualtechnician",4096,http://mvt.mcafee.com/mvt/index.asp
+HKLM,Software\McAfee\MSC\Settings\links,"technicalsupport",4096,http://home.mcafee.com/campaign.aspx?cid=43590
+HKLM,Software\McAfee\MSC\Settings\links,"mays_userfriendly",4096,http://home.mcafee.com/campaign.aspx?cid=61176
+HKLM,Software\McAfee\MSC\Settings\links,"mays_emaillanding",4096,http://home.mcafee.com/campaign.aspx?cid=61176
+HKLM,Software\McAfee\MSC\Settings\links,"intruderinfo",4096,http://home.mcafee.com/campaign.aspx?cid=61176
+HKLM,Software\McAfee\MSC\Settings\links,"getstarted",4096,http://home.mcafee.com/campaign.aspx?cid=67811
+HKLM,Software\McAfee\MSC\Settings\links,"instru",4096,"https://us.mcafee.com/apps/msc/submgr/appinstru.asp"
+HKLM,Software\McAfee\MSC\Settings\links,"installinstru",4096,"https://us.mcafee.com/apps/msc/instru/installinstru.asp"
+HKLM,Software\McAfee\MSC\Settings\links,"onlinehelp",4096,"https://smarthelp.mcafee.com/?ver=%version2%&lang=%lcid%&os=%os%&ui=%ui%&affid=%affid%&pkgid=%pkgid%&entitledlist=%entitledlist%&inbrowser=1&topic=GUID-%topicid%.xml"
+HKLM,Software\McAfee\MSC\Settings\links,"localhelp",4096,"file://%46100%/help/mcafee.html"
+HKLM,Software\McAfee\MSC\Settings\links,"logo",4096,"misp://@{tk:logo_pkg.png}"
+HKLM,Software\McAfee\MSC\Settings\links,"upsell",4096,http://home.mcafee.com/campaign.aspx?cid=71448
+HKLM,Software\McAfee\MSC\Settings\links,"subscription_management",4096,https://home.mcafee.com/appsupport/common/secure/inproduct
+HKLM,Software\McAfee\MSC\Settings\links,"renew_browser_msc",4096,home.mcafee.com/Root/RenewProduct.aspx
+HKLM,Software\McAfee\MSC\Settings\links,"bootprotectionfaq",4096,http://home.mcafee.com/campaign.aspx?cid=82070
+HKLM,Software\McAfee\MSC\Settings\links,"WebServiceUpdateURL",4096,https://us.mcafee.com/apps/msc/webupdates/mscconfig.asp
+HKLM,Software\McAfee\MSC\Settings\links,"EULA",4096,https://home.mcafee.com/Root/AboutUs.aspx?id=eula
+HKLM,Software\McAfee\MSC\Settings\links,"mip",4096,https://home.mcafee.com/Secure/AppSupport/MyAccount/MIP
+HKLM,Software\McAfee\MSC\Settings\links,"privacypolicy",4096,http://mcafee.com/legal
+HKLM,Software\McAfee\MSC\Settings\links,"incompatibleLink",4096,http://service.mcafee.com/FAQDocument.aspx?lc=%lcid%&id=TS101083
+HKLM,Software\McAfee\MSC\Settings\links,"telemetryURL",4096,https://us.mcafee.com/apps/msc/telemetry/telemetry.asp
+HKLM,Software\McAfee\MSC\Settings\links,"ProgramInfoUrl",4096,https://sm.mcafee.com/showalert.aspx?ProductKey=%ProductKey%&pid=%pid%&Culture=%culture%&affid=%affid%&NDays=%NDays%&AlertType=%AlertType%&loc=%loc%&AcctId=%AcctId%
+; uninstall customization screen buy and renew url
+HKLM,Software\McAfee\MSC\Settings\links,"uninst_buysubscription",4096,http://home.mcafee.com/root/campaign.aspx?cid=96527
+HKLM,Software\McAfee\MSC\Settings\links,"uninst_renewfromalert",4096,http://home.mcafee.com/root/campaign.aspx?cid=96527
+HKLM,Software\McAfee\MSC\Settings\links,"inappsupport",4096,https://service.mcafee.com/webcenter/portal/cp/home/articleview
+
+; ipr entry
+HKLM,Software\McAfee\MSC\Settings\links,"ipr",4096,"http://home.mcafee.com/root/campaign.aspx?cid=92447"
+
+; hidden ipr entry
+HKLM,Software\McAfee\MSC\Settings\links,"hiddenipr",4096,"http://home.mcafee.com/root/campaign.aspx?cid=157159"
+
+; hidden ipr entry for MTK
+HKLM,Software\McAfee\MSC\Settings\links,"mtkhiddenipr",4096,"http://home.mcafee.com/root/campaign.aspx?cid=162268"
+
+; provisioning ipr entry
+HKLM,Software\McAfee\MSC\Settings\links,"provipr",4096,"http://home.mcafee.com/root/campaign.aspx?cid=159688"
+
+;MLSAwarenessTour entry
+HKLM,Software\McAfee\MSC\Settings\links,"MLSAwarenessTour",4096,"https://app.mcafee.com/tour/wss?dest=0"
+; setup password entry
+HKLM,Software\McAfee\MSC\Settings\links,"stp",4096,"http://home.mcafee.com/root/campaign.aspx?cid=127030"
+
+;deep security view
+HKLM,Software\McAfee\MSC\Settings\links,"deepsecurity",4096,"https://platform.mcafee.com/dashboard/UI/?ce=1&display=wss"
+
+;MTK provision
+HKLM,Software\McAfee\MSC\Settings\links,"provmtk",4096,"https://www.truekey.com/promo/mcafee#?"
+
+; In app registration entry
+HKLM,Software\McAfee\MSC\Settings\links,"iar",4096,"http://home.mcafee.com/root/campaign.aspx?cid=127031"
+
+; Provisioning Validate Email
+HKLM,Software\McAfee\MSC\Settings\links,"validateemail",4096,"https://appsvc.mcafee.com/eapi/Account/ValidateEmail"
+
+; Provisioning Key Card Email
+HKLM,Software\McAfee\MSC\Settings\links,"adddevice",4096,"https://appsvc.mcafee.com/eapi/provisioning/KeyCardEmail"
+
+; SMS Customization
+HKLM,Software\McAfee\MSC\Settings\links,"sms_customization",4096,"https://platform.mcafee.com/Dashboard/settings/ProductDefination"
+
+; subdb repair entry
+HKLM,Software\McAfee\MSC\Settings\links,"subdbrepair",4096,"https://service.mcafee.com/webcenter/portal/cp/home/articleview?articleId=TS101424"
+
+; URLs for Freemium Learn More, Buy and Renew Actions
+;
+; Note: As of Oct 2015, these URLs are specific to Lenovo and we do not have generic links since Lenovo is the first partner to distribute the product with freemium subscriptions.
+;
+; Template Links
+;  These are used if there is a corresponding marketing campaign identifier (CID) value in the product definition.
+;  The %CID placeholder will be replaced with the corresponding version from the Product Definition.
+;
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_template_learnmore",4096,https://home.mcafee.com/root/campaign.aspx?action=learnmore&cid=%CID
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_template_buy",4096,https://home.mcafee.com/root/campaign.aspx?action=buy&cid=%CID
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_template_renew",4096,https://home.mcafee.com/root/campaign.aspx?action=renew&cid=%CID
+;
+; Welcome Period Links
+;  These links will be used during the welcome period for all alerts and any buy/renew links/buttons within the product.
+;  This period is hardcoded to 16 days or more before expiry in the implementation of OpenUrlInContainer() as of June 15, 2016.
+;
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_welcome_learnmore",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=learnmore&cid=178835
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_welcome_buy",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=buy&cid=178837
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_welcome_renew",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=renew&cid=178837
+;
+; First Pre-Expiry Period Links
+;  These links will be used during the *first* pre-expiry period for all alerts and any buy/renew links/buttons within the product.
+;  This period is hardcoded to 15 days until 4 days before expiry inclusive in the implementation of OpenUrlInContainer() as of June 15, 2016.
+;  NOTE: The first pre-expiry period is called "pre2" to be consistent with the non-freemium expiry milestones which occur in the order pre2, pre1, event, post1, post2.
+;
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_pre2_learnmore",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=learnmore&cid=178836
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_pre2_buy",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=buy&cid=178837
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_pre2_renew",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=renew&cid=178837
+;
+; Second Pre-Expiry Period Links
+;  These links will be used during the *second* pre-expiry period for all alerts and any buy/renew links/buttons within the product.
+;  This period is hardcoded to 3 days until 1 day before expiry inclusive in the implementation of OpenUrlInContainer() as of June 15, 2016.
+;  NOTE: The second pre-expiry period is called "pre1" to be consistent with the non-freemium expiry milestones which occur in the order pre2, pre1, event, post1, post2.
+;
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_pre1_learnmore",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=learnmore&cid=178838
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_pre1_buy",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=buy&cid=178839
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_pre1_renew",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=renew&cid=178839
+;
+; Day of Expiry Links
+;  These links will be used on the day of expiry for all alerts and any buy/renew links/buttons within the product.
+;
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_event_learnmore",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=learnmore&cid=178840
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_event_buy",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=buy&cid=178841
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_event_renew",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=renew&cid=178841
+;
+; Post-Expiry Links
+;  These links will be used starting the day after expiry for all alerts and any buy/renew links/buttons within the product.
+;
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_postexpiry_learnmore",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=learnmore&cid=178842
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_postexpiry_buy",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=buy&cid=178842
+HKLM,Software\McAfee\MSC\Settings\links,"freemium_postexpiry_renew",4096,https://home.mcafee.com/appsupport/common/secure/inproduct?action=renew&cid=178842
+
+;Additional entries to support inplace content
+[Links_Extradata]
+HKLM,Software\McAfee\MSC\Settings\links\onlinehelp_extradata, "OpenInplace",69633,0
+HKLM,Software\McAfee\MSC\Settings\links\onlinehelp_extradata, "title",4096,"2285"
+HKLM,Software\McAfee\MSC\Settings\links\onlinehelp_extradata, "optionJson",4096,"gwfwOptions_Help"
+HKLM,Software\McAfee\MSC\Settings\links\onlinehelp_extradata, "id",4096,"onlinehelp"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\editprofile_extradata, "OpenInplace",69633,0
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\editprofile_extradata, "InterceptFlags",69633,3
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\managesubscription_extradata, "OpenInplace",69633,0
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\managesubscription_extradata, "InterceptFlags",69633,3
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\myaccount_extradata, "OpenInplace",69633,0
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\myaccount_extradata, "InterceptFlags",69633,3
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\reactivate_extradata, "OpenInplace",69633,0
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\reactivate_extradata, "InterceptFlags",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\deactivate_extradata, "OpenInplace",69633,0
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\deactivate_extradata, "InterceptFlags",69633,3
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\deactivatebuy_extradata, "OpenInplace",69633,0
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\deactivatebuy_extradata, "InterceptFlags",69633,1
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\addlicensemays_extradata, "OpenInplace",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\addlicensemays_extradata, "InterceptFlags",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\addlicensemays_extradata, "title",4096,"26876"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\addlicensemays_extradata, "optionJson",4096,"gwfwOptions_NoWaitTitle"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\addlicensemays_extradata, "alturl",4096,"http://home.mcafee.com/appsupport/common/secure/inproduct?action=licenses&source=mays&cid=80426"
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\addlicense_extradata, "OpenInplace",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\addlicense_extradata, "InterceptFlags",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\addlicense_extradata, "title",4096,"26876"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\addlicense_extradata, "optionJson",4096,"gwfwOptions_NoWaitTitle"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\addlicense_extradata, "alturl",4096,"http://home.mcafee.com/appsupport/common/secure/inproduct?action=licenses&source=msc&cid=80420"
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\learnallaccess_extradata, "OpenInplace",69633,0
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\learnallaccess_extradata, "InterceptFlags",69633,0
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\tpwelcome_extradata, "OpenInplace",69633,0
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\tpwelcome_extradata, "InterceptFlags",69633,3
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\buyasubscription_extradata, "OpenInplace",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\buyasubscription_extradata, "InterceptFlags",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\buyasubscription_extradata, "title",4096,"26881"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\buyasubscription_extradata, "optionJson",4096,"gwfwOptions_NoWaitTitle"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\buyasubscription_extradata, "alturl",4096,"http://home.mcafee.com/appsupport/common/secure/inproduct?action=buy&cid=80418&source=msc"
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\buyfromalert_extradata, "OpenInplace",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\buyfromalert_extradata, "InterceptFlags",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\buyfromalert_extradata, "title",4096,"26881"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\buyfromalert_extradata, "optionJson",4096,"gwfwOptions_NoWaitTitle"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\buyfromalert_extradata, "alturl",4096,"http://home.mcafee.com/appsupport/common/secure/inproduct?action=buy&cid=80417&source=expiryalert"
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\freemium_pre2_buy_extradata, "InterceptFlags",69633,1
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\freemium_pre1_buy_extradata, "InterceptFlags",69633,1
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\freemium_event_buy_extradata, "InterceptFlags",69633,1
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\freemium_pre2_renew_extradata, "InterceptFlags",69633,1
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\freemium_pre1_renew_extradata, "InterceptFlags",69633,1
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\freemium_event_renew_extradata, "InterceptFlags",69633,1
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\editbilling_extradata, "OpenInplace",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\editbilling_extradata, "InterceptFlags",69633,3
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\editbilling_extradata, "title",4096,"26878"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\editbilling_extradata, "optionJson",4096,"gwfwOptions_NoWaitTitle"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\editbilling_extradata, "alturl",4096,"http://home.mcafee.com/appsupport/common/secure/inproduct?action=billingupdate&source=msc&cid=80423"
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\renewfromalert_extradata, "OpenInplace",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\renewfromalert_extradata, "InterceptFlags",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\renewfromalert_extradata, "title",4096,"26867"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\renewfromalert_extradata, "optionJson",4096,"gwfwOptions_NoWaitTitle"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\renewfromalert_extradata, "alturl",4096,"http://home.mcafee.com/Root/RenewProduct.aspx"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\renewfromalert_extradata, "textParams",69633,1
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\renew_extradata, "OpenInplace",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\renew_extradata, "InterceptFlags",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\renew_extradata, "title",4096,"26867"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\renew_extradata, "optionJson",4096,"gwfwOptions_NoWaitTitle"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\renew_extradata, "alturl",4096,"http://home.mcafee.com/Root/RenewProduct.aspx"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\renew_extradata, "textParams",69633,1
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\whyshouldirenew_extradata, "OpenInplace",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\whyshouldirenew_extradata, "InterceptFlags",69633,0
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\whyshouldirenew_extradata, "title",4096,"26867"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\whyshouldirenew_extradata, "optionJson",4096,"gwfwOptions_NoWaitTitle"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\whyshouldirenew_extradata, "alturl",4096,"http://home.mcafee.com/appsupport/common/secure/inproduct?action=whyrenew&source=msc&cid=80566"
+
+HKLM,Software\McAfee\MSC\Settings\links\EULA_extradata, "OpenInplace",69633,0
+HKLM,Software\McAfee\MSC\Settings\links\EULA_extradata, "title",4096,"20558"
+HKLM,Software\McAfee\MSC\Settings\links\EULA_extradata, "optionJson",4096,"gwfwOptions_NoWaitTitle"
+
+HKLM,Software\McAfee\MSC\Settings\links\mip_extradata, "OpenInplace",69633,1
+HKLM,Software\McAfee\MSC\Settings\links\mip_extradata, "title",4096,"20558"
+HKLM,Software\McAfee\MSC\Settings\links\mip_extradata, "optionJson",4096,"gwfwOptions_WaitTitle"
+
+HKLM,Software\McAfee\MSC\Settings\links\vmap_extradata, "OpenInplace",69633,1
+HKLM,Software\McAfee\MSC\Settings\links\vmap_extradata, "title",4096,"2267"
+HKLM,Software\McAfee\MSC\Settings\links\vmap_extradata, "optionJson",4096,"gwfwOptions_NoWaitTitle"
+HKLM,Software\McAfee\MSC\Settings\links\vmap_extradata, "overrideIPT",69633,1
+
+; IPR extra data
+HKLM,Software\McAfee\MSC\Settings\links\ipr_extradata,"optionJson",4096,"gwfwOptions_NoWaitTitle"
+HKLM,Software\McAfee\MSC\Settings\links\ipr_extradata,"title",4096,"36309"
+HKLM,Software\McAfee\MSC\Settings\links\ipr_extradata,"OpenInPlace",69633,1
+HKLM,Software\McAfee\MSC\Settings\links\ipr_extradata, "overrideIPT",69633,1
+
+; hidden IPR extra data
+HKLM,Software\McAfee\MSC\Settings\links\hiddenipr_extradata,"optionJson",4096,"gwfwOptions_WaitTitleHide"
+HKLM,Software\McAfee\MSC\Settings\links\hiddenipr_extradata,"title",4096,"36309"
+HKLM,Software\McAfee\MSC\Settings\links\hiddenipr_extradata,"OpenInPlace",69633,2
+HKLM,Software\McAfee\MSC\Settings\links\hiddenipr_extradata, "overrideIPT",69633,1
+HKLM,Software\McAfee\MSC\Settings\links\hiddenipr_extradata, "hide",69633,1
+HKLM,Software\McAfee\MSC\Settings\links\hiddenipr_extradata, "id",4096,"Global\hiddenipr"
+HKLM,Software\McAfee\MSC\Settings\links\hiddenipr_extradata, "refreshable",4096,"0"
+
+; hidden IPR for MTK extra data
+HKLM,Software\McAfee\MSC\Settings\links\mtkhiddenipr_extradata,"optionJson",4096,"gwfwOptions_WaitTitleHide"
+HKLM,Software\McAfee\MSC\Settings\links\mtkhiddenipr_extradata,"title",4096,"36309"
+HKLM,Software\McAfee\MSC\Settings\links\mtkhiddenipr_extradata,"OpenInPlace",69633,2
+HKLM,Software\McAfee\MSC\Settings\links\mtkhiddenipr_extradata, "overrideIPT",69633,1
+HKLM,Software\McAfee\MSC\Settings\links\mtkhiddenipr_extradata, "hide",69633,1
+HKLM,Software\McAfee\MSC\Settings\links\mtkhiddenipr_extradata,"pageTimeout",4096,"300"
+HKLM,Software\McAfee\MSC\Settings\links\mtkhiddenipr_extradata, "id",4096,"Global\hiddenipr"
+HKLM,Software\McAfee\MSC\Settings\links\mtkhiddenipr_extradata, "refreshable",4096,"0"
+
+; MLSAutoLaunchTour extra data
+HKLM,Software\McAfee\MSC\Settings\links\MLSAutoLaunchTour_extradata,"optionJson",4096,"gwfwOptions_WaitNoTitle"
+HKLM,Software\McAfee\MSC\Settings\links\MLSAutoLaunchTour_extradata,"OpenInPlace",69633,2
+HKLM,Software\McAfee\MSC\Settings\links\MLSAutoLaunchTour_extradata,"overrideIPT",69633,1
+HKLM,Software\McAfee\MSC\Settings\links\MLSAutoLaunchTour_extradata, "id",4096,"Global\MLSAwarenessTour"
+HKLM,Software\McAfee\MSC\Settings\links\MLSAutoLaunchTour_extradata, "intercept",4096,"interceptTour.html"
+HKLM,Software\McAfee\MSC\Settings\links\MLSAutoLaunchTour_extradata, "intercept_links",4096,"4005,dest=0~4008,q"
+HKLM,Software\McAfee\MSC\Settings\links\MLSAutoLaunchTour_extradata, "intercept_text",4096,"4000~4001~4002"
+
+; MLSAwarenessTour extra data
+HKLM,Software\McAfee\MSC\Settings\links\MLSAwarenessTour_extradata,"optionJson",4096,"gwfwOptions_WaitNoTitle"
+HKLM,Software\McAfee\MSC\Settings\links\MLSAwarenessTour_extradata,"OpenInPlace",69633,2
+HKLM,Software\McAfee\MSC\Settings\links\MLSAwarenessTour_extradata,"overrideIPT",69633,1
+HKLM,Software\McAfee\MSC\Settings\links\MLSAwarenessTour_extradata, "id",4096,"Global\MLSAwarenessTour"
+
+; provmtk extra data
+HKLM,Software\McAfee\MSC\Settings\links\provmtk_extradata,"optionJson",4096,"gwfwOptions_WaitNoTitle"
+HKLM,Software\McAfee\MSC\Settings\links\provmtk_extradata,"OpenInPlace",69633,0
+HKLM,Software\McAfee\MSC\Settings\links\provmtk_extradata,"overrideIPT",69633,1
+HKLM,Software\McAfee\MSC\Settings\links\provmtk_extradata,"textparams",69633,1
+HKLM,Software\McAfee\MSC\Settings\links\provmtk_extradata, "id",4096,"tktour"
+HKLM,Software\McAfee\MSC\Settings\links\provmtk_extradata, "version",4096,"2"
+
+
+; deep security extra data
+HKLM,Software\McAfee\MSC\Settings\links\deepsecurity_extradata,"optionJson",4096,"gwfwOptions_NoWaitNoTitle"
+HKLM,Software\McAfee\MSC\Settings\links\deepsecurity_extradata,"OpenInPlace",69633,2
+HKLM,Software\McAfee\MSC\Settings\links\deepsecurity_extradata,"overrideIPT",69633,1
+HKLM,Software\McAfee\MSC\Settings\links\deepsecurity_extradata, "id",4096,"Global\deepsecurity"
+HKLM,Software\McAfee\MSC\Settings\links\deepsecurity_extradata, "version",4096,"2"
+HKLM,Software\McAfee\MSC\Settings\links\deepsecurity_extradata, "width",4096,"844"
+HKLM,Software\McAfee\MSC\Settings\links\deepsecurity_extradata, "height",4096,"740"
+
+
+; Setup password extra data
+HKLM,Software\McAfee\MSC\Settings\links\stp_extradata,"optionJson",4096,"gwfwOptions_WaitTitle"
+HKLM,Software\McAfee\MSC\Settings\links\stp_extradata,"title",4096,"36310"
+HKLM,Software\McAfee\MSC\Settings\links\stp_extradata,"OpenInPlace",69633,1
+HKLM,Software\McAfee\MSC\Settings\links\stp_extradata, "overrideIPT",69633,1
+
+; In app registration entry
+HKLM,Software\McAfee\MSC\Settings\links\iar_extradata,"alturl",4096,"http://home.mcafee.com/root/campaign.aspx?cid=127031"
+HKLM,Software\McAfee\MSC\Settings\links\iar_extradata,"textParams",69633,1
+HKLM,Software\McAfee\MSC\Settings\links\iar_extradata,"optionJson",4096,"gwfwOptions_WaitTitle"
+HKLM,Software\McAfee\MSC\Settings\links\iar_extradata,"title",4096,"36310"
+HKLM,Software\McAfee\MSC\Settings\links\iar_extradata,"OpenInPlace",69633,2
+
+; IPR ecode redemption
+HKLM,Software\McAfee\MSC\Settings\myaccount,"hide_ecode_extension",69633,1
+HKLM,Software\McAfee\MSC\Settings\links,"ecodeextension",4096,"http://home.mcafee.com/root/campaign.aspx?cid=100227"
+HKLM,Software\McAfee\MSC\Settings\links\ecodeextension_extradata,"OpenInplace",69633, 1
+HKLM,Software\McAfee\MSC\Settings\links\ecodeextension_extradata,"InterceptFlags",69633, 0
+HKLM,Software\McAfee\MSC\Settings\links\ecodeextension_extradata, "title",4096,"26889"
+HKLM,Software\McAfee\MSC\Settings\links\ecodeextension_extradata, "optionJson",4096,"gwfwOptions_NoWaitTitle" 
+HKLM,Software\McAfee\MSC\Settings\links\ecodeextension_extradata, "alturl",4096,"http://home.mcafee.com/root/campaign.aspx?cid=100228"
+; Uninstall customimzation buy and renew url extra data
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\uninst_buysubscription_extradata, "OpenInplace",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\uninst_buysubscription_extradata, "title",4096,"26881"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\uninst_buysubscription_extradata, "optionJson",4096,"gwfwOptions_NoWaitTitle"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\uninst_buysubscription_extradata, "alturl",4096,"http://home.mcafee.com/root/campaign.aspx?cid=95845"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\uninst_buysubscription_extradata, "InterceptFlags",69633,1
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\uninst_renewfromalert_extradata, "OpenInplace",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\uninst_renewfromalert_extradata, "InterceptFlags",69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\uninst_renewfromalert_extradata, "title",4096,"26867"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\uninst_renewfromalert_extradata, "optionJson",4096,"gwfwOptions_NoWaitTitle"
+HKLM,SOFTWARE\McAfee\MSC\Settings\links\uninst_renewfromalert_extradata, "alturl",4096,"http://home.mcafee.com/root/campaign.aspx?cid=95845"
+
+; subdb repair extra data
+HKLM,Software\McAfee\MSC\Settings\links\subdbrepair_extradata,"OpenInPlace",69633,0
+HKLM,Software\McAfee\MSC\Settings\links\subdbrepair_extradata,"InterceptFlags",69633, 0
+HKLM,Software\McAfee\MSC\Settings\links\subdbrepair_extradata, "alturl",4096,"https://service.mcafee.com/webcenter/portal/cp/home/articleview?articleId=TS101424"
+
+
+[Customizations]
+
+;Provisioning toast alert schedule and freqency:
+;Trial – 5th day post activation
+;Paid – 5th and 120th day post activation
+HKLM,SOFTWARE\McAfee\MSC\Settings\adddevices,ToastLaunchDaysForTrial,4096,"5"
+HKLM,SOFTWARE\McAfee\MSC\Settings\adddevices,ToastLaunchDays,4096,"5,120"
+HKLM,SOFTWARE\McAfee\MSC\Settings\adddevices,ToastLaunchFreq,69633,2000
+
+; wait time before start protection status calculation after wake up from hibernation
+HKLM,Software\McAfee\MSC\Settings\McProMgr, "PwrResumeCalWait",69633,600
+
+; Trigger for MCUI shutdown
+HKLM,Software\McAfee\MSC\Settings\UI\shSequence\trigger,,4096,
+
+HKLM,Software\McAfee\MSC\Settings\Help,"useonline",69633,1
+
+; expiration refresh...
+HKLM,Software\McAfee\MSC\Settings\ProgramInfo,"defaultinterval",69633,14400
+HKLM,Software\McAfee\MSC\Settings\ProgramInfo,"defaultuserclosedinterval",69633,28800
+
+; general settings...
+HKLM,Software\McAfee\MSC\Settings\generalSettings\gensettings,"ShowInformationAlerts",69633,1
+
+
+; TOC sections...
+; Features
+HKLM,Software\McAfee\MSC\Settings\tocSection\{7F7BB30F-D5D3-43F8-8B93-E2EEF69EBB4D},"UiVisible",69633,1
+
+; Tools
+HKLM,Software\McAfee\MSC\Settings\tocSection\{3DF1A705-F928-4DEE-92FE-8FBF2AEDB8F9},"UiVisible",69633,1
+
+; Settings
+HKLM,Software\McAfee\MSC\Settings\tocSection\{DAEB7967-0E66-4924-BA41-AB58A95FDAD7},"UiVisible",69633,1
+
+; Resources
+HKLM,Software\McAfee\MSC\Settings\tocSection\{E4167172-3EA9-4E90-AD34-6204363BA819},"UiVisible",69633,1
+
+; Reports
+HKLM,Software\McAfee\MSC\Settings\tocSection\{1ECAAA5E-ED97-44b1-81F8-1D0F680603A9},"UiVisible",69633,1
+
+; Automatic Updates...
+HKLM,Software\McAfee\MSC\Settings\toc\9565B0EA-A1D8-4c22-A19D-2EC3B91E34ED,"NameResId",69633,2231
+HKLM,Software\McAfee\MSC\Settings\toc\9565B0EA-A1D8-4c22-A19D-2EC3B91E34ED,"SectionGuid",4096,{7F7BB30F-D5D3-43F8-8B93-E2EEF69EBB4D}
+HKLM,Software\McAfee\MSC\Settings\toc\9565B0EA-A1D8-4c22-A19D-2EC3B91E34ED,"UiVisible",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\9565B0EA-A1D8-4c22-A19D-2EC3B91E34ED,"LinkType",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\9565B0EA-A1D8-4c22-A19D-2EC3B91E34ED,"LinkContext",4096,update_settings
+HKLM,Software\McAfee\MSC\Settings\toc\9565B0EA-A1D8-4c22-A19D-2EC3B91E34ED,"NotesResId",69633,2270
+HKLM,Software\McAfee\MSC\Settings\toc\9565B0EA-A1D8-4c22-A19D-2EC3B91E34ED,"DisplayOrder",69633,99
+
+; General Settings...
+HKLM,Software\McAfee\MSC\Settings\toc\B6229FD2-AB40-40ac-B70A-68E0303E0546,"NameResId",69633,2229
+HKLM,Software\McAfee\MSC\Settings\toc\B6229FD2-AB40-40ac-B70A-68E0303E0546,"SectionGuid",4096,{DAEB7967-0E66-4924-BA41-AB58A95FDAD7}
+HKLM,Software\McAfee\MSC\Settings\toc\B6229FD2-AB40-40ac-B70A-68E0303E0546,"UiVisible",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\B6229FD2-AB40-40ac-B70A-68E0303E0546,"LinkType",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\B6229FD2-AB40-40ac-B70A-68E0303E0546,"LinkContext",4096,general_settings
+HKLM,Software\McAfee\MSC\Settings\toc\B6229FD2-AB40-40ac-B70A-68E0303E0546,"NotesResId",69633,0
+HKLM,Software\McAfee\MSC\Settings\toc\B6229FD2-AB40-40ac-B70A-68E0303E0546,"DisplayOrder",69633,22
+
+; Personlization / Add features...
+HKLM,Software\McAfee\MSC\Settings\toc\FA077F27-4E6D-472e-9425-590D90FD87C1,"NameResId",69633,2310
+HKLM,Software\McAfee\MSC\Settings\toc\FA077F27-4E6D-472e-9425-590D90FD87C1,"SectionGuid",4096,{DAEB7967-0E66-4924-BA41-AB58A95FDAD7}
+HKLM,Software\McAfee\MSC\Settings\toc\FA077F27-4E6D-472e-9425-590D90FD87C1,"UiVisible",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\FA077F27-4E6D-472e-9425-590D90FD87C1,"UiVisibleMask",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\FA077F27-4E6D-472e-9425-590D90FD87C1,"LinkType",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\FA077F27-4E6D-472e-9425-590D90FD87C1,"LinkContext",4096,personalization
+HKLM,Software\McAfee\MSC\Settings\toc\FA077F27-4E6D-472e-9425-590D90FD87C1,"NotesResId",69633,0
+HKLM,Software\McAfee\MSC\Settings\toc\FA077F27-4E6D-472e-9425-590D90FD87C1,"DisplayOrder",69633,33
+
+; My Account...
+HKLM,Software\McAfee\MSC\Settings\toc\A0BA4929-17F1-4b0f-9E68-D428309ED7CF,"NameResId",69633,2265
+HKLM,Software\McAfee\MSC\Settings\toc\A0BA4929-17F1-4b0f-9E68-D428309ED7CF,"SectionGuid",4096,{DAEB7967-0E66-4924-BA41-AB58A95FDAD7}
+HKLM,Software\McAfee\MSC\Settings\toc\A0BA4929-17F1-4b0f-9E68-D428309ED7CF,"UiVisible",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\A0BA4929-17F1-4b0f-9E68-D428309ED7CF,"LinkType",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\A0BA4929-17F1-4b0f-9E68-D428309ED7CF,"LinkContext",4096,my_account
+HKLM,Software\McAfee\MSC\Settings\toc\A0BA4929-17F1-4b0f-9E68-D428309ED7CF,"NotesResId",69633,0
+HKLM,Software\McAfee\MSC\Settings\toc\A0BA4929-17F1-4b0f-9E68-D428309ED7CF,"DisplayOrder",69633,11
+
+; Help\Support...
+HKLM,Software\McAfee\MSC\Settings\toc\E7167E8C-F6D8-4a50-B2A9-684E9C758309,"NameResId",69633,2266
+HKLM,Software\McAfee\MSC\Settings\toc\E7167E8C-F6D8-4a50-B2A9-684E9C758309,"SectionGuid",4096,{E4167172-3EA9-4E90-AD34-6204363BA819}
+HKLM,Software\McAfee\MSC\Settings\toc\E7167E8C-F6D8-4a50-B2A9-684E9C758309,"UiVisible",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\E7167E8C-F6D8-4a50-B2A9-684E9C758309,"LinkType",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\E7167E8C-F6D8-4a50-B2A9-684E9C758309,"LinkContext",4096,help_support
+HKLM,Software\McAfee\MSC\Settings\toc\E7167E8C-F6D8-4a50-B2A9-684E9C758309,"NotesResId",69633,0
+HKLM,Software\McAfee\MSC\Settings\toc\E7167E8C-F6D8-4a50-B2A9-684E9C758309,"DisplayOrder",69633,11
+
+; Virus Information Library...
+HKLM,Software\McAfee\MSC\Settings\toc\F1B1F3E0-04EF-499a-9B35-BDCCA48031D2,"NameResId",69633,2268
+HKLM,Software\McAfee\MSC\Settings\toc\F1B1F3E0-04EF-499a-9B35-BDCCA48031D2,"SectionGuid",4096,{E4167172-3EA9-4E90-AD34-6204363BA819}
+HKLM,Software\McAfee\MSC\Settings\toc\F1B1F3E0-04EF-499a-9B35-BDCCA48031D2,"UiVisible",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\F1B1F3E0-04EF-499a-9B35-BDCCA48031D2,"LinkType",69633,3
+HKLM,Software\McAfee\MSC\Settings\toc\F1B1F3E0-04EF-499a-9B35-BDCCA48031D2,"LinkContext",4096,substlink:vinfotoc
+HKLM,Software\McAfee\MSC\Settings\toc\F1B1F3E0-04EF-499a-9B35-BDCCA48031D2,"NotesResId",69633,0
+HKLM,Software\McAfee\MSC\Settings\toc\F1B1F3E0-04EF-499a-9B35-BDCCA48031D2,"DisplayOrder",69633,33
+
+; Virus Map...
+HKLM,Software\McAfee\MSC\Settings\toc\92EDE1E9-272F-404b-ABB1-5090200CCB28,"NameResId",69633,2267
+HKLM,Software\McAfee\MSC\Settings\toc\92EDE1E9-272F-404b-ABB1-5090200CCB28,"SectionGuid",4096,{E4167172-3EA9-4E90-AD34-6204363BA819}
+HKLM,Software\McAfee\MSC\Settings\toc\92EDE1E9-272F-404b-ABB1-5090200CCB28,"UiVisible",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\92EDE1E9-272F-404b-ABB1-5090200CCB28,"LinkType",69633,9
+HKLM,Software\McAfee\MSC\Settings\toc\92EDE1E9-272F-404b-ABB1-5090200CCB28,"LinkContext",4096,substlink:vmap
+HKLM,Software\McAfee\MSC\Settings\toc\92EDE1E9-272F-404b-ABB1-5090200CCB28,"NotesResId",69633,0
+HKLM,Software\McAfee\MSC\Settings\toc\92EDE1E9-272F-404b-ABB1-5090200CCB28,"DisplayOrder",69633,22
+
+; Reports...
+HKLM,Software\McAfee\MSC\Settings\toc\7A6E733E-B234-4772-B146-297748862640,"NameResId",69633,2269
+HKLM,Software\McAfee\MSC\Settings\toc\7A6E733E-B234-4772-B146-297748862640,"SectionGuid",4096,{1ECAAA5E-ED97-44b1-81F8-1D0F680603A9}
+HKLM,Software\McAfee\MSC\Settings\toc\7A6E733E-B234-4772-B146-297748862640,"UiVisible",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\7A6E733E-B234-4772-B146-297748862640,"LinkType",69633,2
+HKLM,Software\McAfee\MSC\Settings\toc\7A6E733E-B234-4772-B146-297748862640,"LinkContext",4096,mcknownapp:uihost::misp://mscjsres.dll::report.html
+HKLM,Software\McAfee\MSC\Settings\toc\7A6E733E-B234-4772-B146-297748862640,"NotesResId",69633,0
+HKLM,Software\McAfee\MSC\Settings\toc\7A6E733E-B234-4772-B146-297748862640,"DisplayOrder",69633,11
+
+; History\Logs...
+HKLM,Software\McAfee\MSC\Settings\toc\7B3FC1EE-F43F-40aa-BED0-B3C16B4CECA0,"NameResId",69633,2199
+HKLM,Software\McAfee\MSC\Settings\toc\7B3FC1EE-F43F-40aa-BED0-B3C16B4CECA0,"SectionGuid",4096,{1ECAAA5E-ED97-44b1-81F8-1D0F680603A9}
+HKLM,Software\McAfee\MSC\Settings\toc\7B3FC1EE-F43F-40aa-BED0-B3C16B4CECA0,"UiVisible",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\7B3FC1EE-F43F-40aa-BED0-B3C16B4CECA0,"LinkType",69633,2
+HKLM,Software\McAfee\MSC\Settings\toc\7B3FC1EE-F43F-40aa-BED0-B3C16B4CECA0,"LinkContext",4096,mcknownapp:uihost::misp://mscjsres.dll::logs.html
+HKLM,Software\McAfee\MSC\Settings\toc\7B3FC1EE-F43F-40aa-BED0-B3C16B4CECA0,"NotesResId",69633,0
+HKLM,Software\McAfee\MSC\Settings\toc\7B3FC1EE-F43F-40aa-BED0-B3C16B4CECA0,"DisplayOrder",69633,33
+
+; About...
+HKLM,Software\McAfee\MSC\Settings\toc\025D179E-AB00-4763-8DD1-33B0D337731B,"NameResId",69633,2292
+HKLM,Software\McAfee\MSC\Settings\toc\025D179E-AB00-4763-8DD1-33B0D337731B,"SectionGuid",4096,{E4167172-3EA9-4E90-AD34-6204363BA819}
+HKLM,Software\McAfee\MSC\Settings\toc\025D179E-AB00-4763-8DD1-33B0D337731B,"UiVisible",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\025D179E-AB00-4763-8DD1-33B0D337731B,"LinkType",69633,2
+HKLM,Software\McAfee\MSC\Settings\toc\025D179E-AB00-4763-8DD1-33B0D337731B,"LinkContext",4096,mcknownapp:uihost::misp://mscjsres.dll::about.html
+HKLM,Software\McAfee\MSC\Settings\toc\025D179E-AB00-4763-8DD1-33B0D337731B,"NotesResId",69633,0
+HKLM,Software\McAfee\MSC\Settings\toc\025D179E-AB00-4763-8DD1-33B0D337731B,"DisplayOrder",69633,55
+
+; Hackerwatch...
+HKLM,Software\McAfee\MSC\Settings\toc\B5424D93-6A1B-4ED3-9000-6BBA9600DAEF,"NameResId",69633,2264
+HKLM,Software\McAfee\MSC\Settings\toc\B5424D93-6A1B-4ED3-9000-6BBA9600DAEF,"SectionGuid",4096,{E4167172-3EA9-4E90-AD34-6204363BA819}
+HKLM,Software\McAfee\MSC\Settings\toc\B5424D93-6A1B-4ED3-9000-6BBA9600DAEF,"UiVisible",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\B5424D93-6A1B-4ED3-9000-6BBA9600DAEF,"LinkType",69633,3
+HKLM,Software\McAfee\MSC\Settings\toc\B5424D93-6A1B-4ED3-9000-6BBA9600DAEF,"LinkContext",4096,substlink:hackerwatch
+HKLM,Software\McAfee\MSC\Settings\toc\B5424D93-6A1B-4ED3-9000-6BBA9600DAEF,"NotesResId",69633,0
+HKLM,Software\McAfee\MSC\Settings\toc\B5424D93-6A1B-4ED3-9000-6BBA9600DAEF,"DisplayOrder",69633,44
+
+;MIP...
+HKLM,Software\McAfee\MSC\Settings\toc\A6C9B4A0-CB4F-47A7-AF1E-DCD2D22727EB,"NameResId",69633,28005
+HKLM,Software\McAfee\MSC\Settings\toc\A6C9B4A0-CB4F-47A7-AF1E-DCD2D22727EB,"SectionGuid",4096,{7F7BB30F-D5D3-43F8-8B93-E2EEF69EBB4D}
+HKLM,Software\McAfee\MSC\Settings\toc\A6C9B4A0-CB4F-47A7-AF1E-DCD2D22727EB,"UiVisible",69633,1
+HKLM,Software\McAfee\MSC\Settings\toc\A6C9B4A0-CB4F-47A7-AF1E-DCD2D22727EB,"LinkType",69633,9
+HKLM,Software\McAfee\MSC\Settings\toc\A6C9B4A0-CB4F-47A7-AF1E-DCD2D22727EB,"LinkContext",4096,substlink:mip
+HKLM,Software\McAfee\MSC\Settings\toc\A6C9B4A0-CB4F-47A7-AF1E-DCD2D22727EB,"NotesResId",69633,28006
+HKLM,Software\McAfee\MSC\Settings\toc\A6C9B4A0-CB4F-47A7-AF1E-DCD2D22727EB,"DisplayOrder",69633,55
+HKLM,Software\McAfee\MSC\Settings\toc\A6C9B4A0-CB4F-47A7-AF1E-DCD2D22727EB\cond,"condName",4096,"{F842F9B6-DD9D-40D3-B306-7121BCEA72BD}"
+HKLM,Software\McAfee\MSC\Settings\toc\A6C9B4A0-CB4F-47A7-AF1E-DCD2D22727EB\cond,"dwcondMask",69633,1073807360
+HKLM,Software\McAfee\MSC\Settings\toc\A6C9B4A0-CB4F-47A7-AF1E-DCD2D22727EB\cond,"condData",4096,"%46100%\mcmscins.dll"
+HKLM,Software\McAfee\MSC\Settings\toc\A6C9B4A0-CB4F-47A7-AF1E-DCD2D22727EB\cond,"appCode",4096,"MIDPL"
+
+; Task scheduler presets (change the flag values from 65537 to 65539 to prevent the presets from update)
+
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\1,DescriptionResId,69635,9000
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\1,Interval,69635,1
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\1,DayOfWeekMask,69635,32
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\1,Hour,69635,4
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\1,Minute,69635,0
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\1,Active,69635,1
+
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\2,DescriptionResId,69635,9001
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\2,Interval,69635,2
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\2,DayOfWeekMask,69635,32
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\2,Hour,69635,4
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\2,Minute,69635,0
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\2,Active,69635,1
+
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\3,DescriptionResId,69635,9002
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\3,Interval,69635,3
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\3,DayOfWeekMask,69635,32
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\3,Hour,69635,4
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\3,Minute,69635,0
+HKLM,SOFTWARE\McAfee\Platform\Settings\TaskSchedulePreset\VSO\3,Active,69635,1
+
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MSC,"ResDll",4096,%46100%\mcprlres.dll
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MSC,"UIDll",4096,%46100%\mscjsres.dll
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MSC,"HelpFile",4096,%46100%\help\msc.chm
+; for downgrade over install
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MSC,"ResDll",,%46100%\mcprlres.dll
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MSC,"UIDll",,%46100%\mscjsres.dll
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MSC,"HelpFile",,%46100%\help\msc.chm
+
+; generalsettings customization
+HKLM,Software\McAfee\MSC\Settings\generalSettings,"ResDll",4096,%46100%\mcprlres.dll
+HKLM,Software\McAfee\MSC\Settings\Misc,"ResDll",4096,%46100%\mcprlres.dll
+HKLM,Software\McAfee\MSC\Settings\Misc,"FlexSkuPackages",4096,"396;400;401;431;444;455;481;513;517;522"
+HKLM,Software\McAfee\MSC\Settings\Misc,"HideMHNPackages",4096,""
+
+; category\type mappings
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA20,"priority",69633,1
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA20,"CatCSS",4096,"virusspyware"
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA21,"priority",69633,2
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA21,"CatCSS",4096,"webemail"
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22,"priority",69633,6
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22,"CatCSS",4096,"DataProtect"
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23,"priority",69633,8
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23,"CatCSS",4096,"Tools"
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25,"priority",69633,9
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25,"CatCSS",4096,"ParentalControls"
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA26,"priority",69633,7
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA27,"priority",69633,3
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA27,"CatCSS",4096,"update"
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA28,"priority",69633,4
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA28,"LaunchOnClick",69633,1
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA28,"CatCSS",4096,"subscription"
+
+;Add a new tile for MTK(YAP)
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA29,"priority",69633,5
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA29,"CategoryNameResID",69633,20255
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA29,"LaunchOnClick",69633,1
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA29,"CatCSS",4096,"truekey"
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA29,"uivisible",69633,0
+
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA20\0F167695-3F7C-421c-89E8-40544CE9D1A0,"AppID",4096,"VSO" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA20\0F167695-3F7C-421c-89E8-40544CE9D1A0,"rule",4096,"VSO" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA20\0F167695-3F7C-421c-89E8-40544CE9D1A0,"priority",69633,3
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA20\0F167695-3F7C-421c-89E8-40544CE9D1A0\notinstalled,"AppID",4096,"VSO" 
+
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA21\0F167695-3F7C-421c-89E8-40544CE9D1A1, "AppID",4096,"MPF" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA21\0F167695-3F7C-421c-89E8-40544CE9D1A1, "rule",4096,"MPF" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA21\0F167695-3F7C-421c-89E8-40544CE9D1A1,"priority",69633,1
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA21\0F167695-3F7C-421c-89E8-40544CE9D1A1\512,"problemaffinity",69633,26
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA21\0F167695-3F7C-421c-89E8-40544CE9D1A1\512,"ignoreproblemresid",69633,24982
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA21\0F167695-3F7C-421c-89E8-40544CE9D1A1\notinstalled, "AppID",4096,"MPF" 
+
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA21\0F167695-3F7C-421c-89E8-40544CE9D1A3, "AppID",4096,"MSK" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA21\0F167695-3F7C-421c-89E8-40544CE9D1A3, "rule",4096,"MSK" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA21\0F167695-3F7C-421c-89E8-40544CE9D1A3,"priority",69633,2
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA21\0F167695-3F7C-421c-89E8-40544CE9D1A3\notinstalled, "AppID",4096,"MSK" 
+
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA21\0F167695-3F7C-421c-89E8-40544CE9D1A2, "AppID",4096,"MSAD" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA21\0F167695-3F7C-421c-89E8-40544CE9D1A2, "rule",4096,"MSAD" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA21\0F167695-3F7C-421c-89E8-40544CE9D1A2,"priority",69633,3
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA21\0F167695-3F7C-421c-89E8-40544CE9D1A2\notinstalled, "AppID",4096,"MSAD" 
+
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A5, "AppID",4096,"MOBK" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A5, "rule",4096,"MOBK" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A5,"priority",69633,1
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A5\notinstalled, "AppID",4096,"MOBK" 
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A4,"AppID",4096,"MAT"
+HKLM,SOFTWARE\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A4,"rule",4096,"MAT"
+HKLM,SOFTWARE\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A4\notinstalled,"AppID",4096,"MAT"
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA22\0F167695-3F7C-421c-89E8-40544CE9D1A4,"priority",69633,2           
+
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A7, "AppID",4096,"NMC" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A7, "rule",4096,"NMC" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A7,"priority",69633,1
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A7\notinstalled, "AppID",4096,"NMC" 
+
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A8, "AppID",4096,"MQS" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A8, "rule",4096,"MQS" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A8,"priority",69633,2
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1A8\notinstalled, "AppID",4096,"MQS" 
+
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1B1, "AppID",4096,"VUL" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1B1, "rule",4096,"VUL" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1B1,"priority",69633,3
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA23\0F167695-3F7C-421c-89E8-40544CE9D1B1\notinstalled, "AppID",4096,"VUL" 
+
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1AA, "AppID",4096,"MPS" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1AA, "rule",4096,"MPS" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1AA,"priority",69633,1
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1AA\notinstalled, "AppID",4096,"MPS" 
+
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1AF,"priority",69633,2
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1AF\notinstalled, "AppID",4096,"MFP" 
+
+; Detection if MFP standalone is installed
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1B0\installed, "AppRegKeyPath",4096,"SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{A96FA488-2856-437F-8EAC-1FD67F0EE32C}" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1B0\installed, "AppFolderPath",4096,"SOFTWARE\Wow6432Node\Internet Content Filter\Settings" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1B0\installed, "AppFolderPathIndirect",4096,"Dir" 
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1B0\installed, "LinkType",69633,2
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1B0\installed, "LinkContext",4096,"SEConf.exe"
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1B0\installed, "ResDll",4096,%46100%\mcprlres.dll
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1B0\installed, "ResDllType",69633,0
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1B0\installed, "TypeDescriptionResId",69633,35221
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1B0\installed, "TypeStatusResId",69633,20230	
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1B0\installed, "TypeNameResId",69633,35220
+
+
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA26\0F167695-3F7C-421c-89E8-40544CE9D1AE\entitled,"AppID",4096,"MIP"
+
+;MTK protection type:
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA29\0F167695-3F7C-421c-89E8-40544CE9D1C0,"priority",69633,1
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA29\0F167695-3F7C-421c-89E8-40544CE9D1C0\installed,"AppID",4096,"MTK"
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA29\0F167695-3F7C-421c-89E8-40544CE9D1C0\installed, "LinkType",69633,1
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA29\0F167695-3F7C-421c-89E8-40544CE9D1C0\installed, "LinkContext",4096,"launch_mtk"
+
+;=======
+
+; Synchronization customization
+HKLM,SOFTWARE\McAfee\MSC\Settings\sync,Interval,69633,86400
+HKLM,SOFTWARE\McAfee\MSC\Settings\sync,lingering_exe_for_sync,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\sync,IntervalAfterRenew,69633,20
+
+; Instrumentation customization
+HKLM,SOFTWARE\McAfee\MSC\Settings\instrumentation,Enable,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\instrumentation,interval,69633,86400
+HKLM,SOFTWARE\McAfee\MSC\Settings\instrumentation,lingering_exe_for_instrumentation,69633,1
+
+;Update customization
+HKLM,SOFTWARE\McAfee\MSC\Settings\Update,UpdateCompHideRestartReq,69633,0
+HKLM,SOFTWARE\McAfee\MSC\Settings\Update,FDM_UpdateThreads,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Update,FDM_FreshInstThreads,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Update,EnableReduceRestartUpdate,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Update,ShowUpdateCompleteAlertPeriod,69633,604800
+
+; Uninstall Customizations...
+HKLM,SOFTWARE\McAfee\MSC\Settings\uninstall\survey,hide,69633,1
+
+; Right-click menu customization
+HKLM,SOFTWARE\McAfee\MSC\Settings\Systray\McAfeeStore,Hide,69633,0
+HKLM,SOFTWARE\McAfee\MSC\Settings\Systray\CustSupport,Hide,69633,0
+HKLM,SOFTWARE\McAfee\MSC\Settings\Systray\VerifySub,Hide,69633,0
+
+; Protection status notification interval
+HKLM,SOFTWARE\McAfee\MSC\Settings,ProtStatusNotifyInterval,69633,21600
+HKLM,SOFTWARE\McAfee\MSC\Settings,ProtStatusNotifyIntervalPostExpiry,69633,604800
+
+; Check to launch activation wizard when MSC is opened and activation is pending...
+HKLM,SOFTWARE\McAfee\MSC\Settings,non_reg_app_check ,69633,0
+; MAYS enabled customization
+HKLM,SOFTWARE\McAfee\MSC\Settings\multilic,multilic_enabled,69633,1
+
+;White list of package ids that provide MLS awarness tour
+HKLM,Software\McAfee\MSC\Settings\MLSAwareTour, "TourAvailablePackages",4096,"431;481"
+
+;MTK configuration
+HKLM,Software\McAfee\MSC\Settings\MTK, "IntegrationPkgs",4096,"396;400;401;431"
+
+; Expiration Customizations...
+HKLM,SOFTWARE\McAfee\MSC\Settings\expiration,pre2,69633,15
+HKLM,SOFTWARE\McAfee\MSC\Settings\expiration,pre1,69633,3
+HKLM,SOFTWARE\McAfee\MSC\Settings\expiration,post1,69633,4
+HKLM,SOFTWARE\McAfee\MSC\Settings\expiration,post2,69633,3650
+HKLM,SOFTWARE\McAfee\MSC\Settings\expiration,reboot_start,69633,10
+HKLM,SOFTWARE\McAfee\MSC\Settings\expiration,hide_renewlink_for_autorenewal,69633,0
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\expiration\notifications,ShowRebootAlertExpiry,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\expiration\notifications,ShowMilestoneAlertExpiry,69633,1
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\expiration\rules\rule_updatemgr,enable,69633,0
+
+; Activation Customizations...
+HKLM,SOFTWARE\McAfee\MSC\Settings\activation,graceperiod,69633,15
+HKLM,SOFTWARE\McAfee\MSC\Settings\activation,pre2,69633,12
+HKLM,SOFTWARE\McAfee\MSC\Settings\activation,pre1,69633,3
+HKLM,SOFTWARE\McAfee\MSC\Settings\activation,post1,69633,5
+HKLM,SOFTWARE\McAfee\MSC\Settings\activation,post2,69633,14
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\activation\notifications,ShowRebootAlertGrace ,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\activation\notifications,ShowMilestoneAlertGrace,69633,1
+
+; registration Customizations...
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration,pre2,69633,12
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration,pre1,69633,3
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration,post1,69633,5
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration,post2,69633,14
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration,day_value,69633,0
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\notifications,ShowRebootAlertGrace ,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\notifications,ShowMilestoneAlertGrace,69633,1
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\rules\rule_updatemgr,enable,69633,0
+
+;oobe V4 Loud registration default settings
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4,enabled,69633,0
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4\Alerts,enabled,69633,0
+HKLM,Software\McAfee\MSC\OEM\Manage\RGW,LoudOOBERegURL,4096,"http://home.mcafee.com/root/campaign.aspx?cid=127762"
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4,RegistrationMode,69633,0
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4,InitialLaunchInterval,69633,1440
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4\Alerts,AlertDueAction,69633,0
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4\Alerts\1,RegProximity,4096,"26:0,22:0,18:0"
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4\Alerts\2,RegProximity,4096,"22:1,6:1,24:0"
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4\Alerts\3,RegProximity,4096,"18:2,6:2,24:1"
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4\Alerts\4,RegProximity,4096,"14:3,28:2,18:1"
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4\Alerts\6,RegProximity,4096,"1:5,1:3,1:2"
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4\Alerts\12,RegProximity,4096,"1:9,1:6,1:3"
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4\Alerts\15,RegProximity,4096,"1:12,1:8,1:4"
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4\Alerts\24,RegProximity,4096,"1:18,1:12,1:6"
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4\Alerts\36,RegProximity,4096,"1:27,1:18,1:9"
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4\Alerts\39,RegProximity,4096,"1:27,1:18,1:9"
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4\Alerts\48,RegProximity,4096,"1:36,1:24,1:12"
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4\Alerts\50,RegProximity,4096,"1:36,1:24,1:12"
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4\Alerts\60,RegProximity,4096,"1:45,1:30,1:15"
+HKLM,SOFTWARE\McAfee\MSC\Settings\registration\LoudOobe4\Alerts\63,RegProximity,4096,"1:45,1:30,1:15"
+
+; Scheduler Customizations...
+HKLM,SOFTWARE\McAfee\Platform\Settings\taskscheduler,fullscreen_wait,69633,21600
+HKLM,SOFTWARE\McAfee\Platform\Settings\taskscheduler,winrestart_wait,69633,300
+HKLM,SOFTWARE\McAfee\Platform\Settings\taskscheduler,oobe_wait,69633,14400
+HKLM,SOFTWARE\McAfee\Platform\Settings\taskscheduler,idlemode_period,69633,600
+HKLM,SOFTWARE\McAfee\Platform\Settings\taskscheduler,idlemode_poll,69633,600
+HKLM,SOFTWARE\McAfee\Platform\Settings\taskscheduler,idlemode_timeout,69633,7200
+HKLM,SOFTWARE\McAfee\Platform\Settings\taskscheduler,cpuusage_threshold,69633,10
+HKLM,SOFTWARE\McAfee\Platform\Settings\taskscheduler,cpuusage_period,69633,10
+HKLM,SOFTWARE\McAfee\Platform\Settings\taskscheduler,pause_period,69633,600
+HKLM,SOFTWARE\McAfee\Platform\Settings\taskscheduler,aftersuspend_wait,69633,300
+HKLM,SOFTWARE\McAfee\Platform\Settings\taskscheduler,battery_poll_interval,69633,3600
+HKLM,SOFTWARE\McAfee\Platform\Settings\taskscheduler,wait_for_idle_master,69633,1
+
+; Scheduler Customization for to launch sync then mcinfo in oobe
+HKLM,SOFTWARE\McAfee\Platform\Settings\taskscheduler_oobe_wait,launchmcsyncforce,69633,1
+HKLM,SOFTWARE\McAfee\Platform\Settings\taskscheduler_oobe_wait,launchmcinfooninstall,69633,120
+
+; Subscription Management Customizations
+HKLM,SOFTWARE\McAfee\MSC\Settings\subscriptionManagement,enable,69633,1
+
+; My Account Customizations...
+HKLM,SOFTWARE\McAfee\MSC\Settings\myaccount,hide_purchased_licenses,69633,0
+
+; Personalization Customizations...
+HKLM,SOFTWARE\McAfee\MSC\Settings\personalization,hide,69633,0
+
+;In Product Transaction IPT Customizations
+HKLM,SOFTWARE\McAfee\MSC\Settings\InProductTransaction,enable,69633,0
+
+;In WebUpdate customization Customizations
+HKLM,SOFTWARE\McAfee\MSC\Settings\WebServiceUpdate,enable,69633,1
+
+; Headers
+
+; HOME
+HKLM,SOFTWARE\McAfee\MSC\Settings\Headers\9D0E54F7-D872-45c1-B008-931BEACB0975,uiVisible,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Headers\9D0E54F7-D872-45c1-B008-931BEACB0975,LinkType,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Headers\9D0E54F7-D872-45c1-B008-931BEACB0975,LinkContext,4096,"home"
+; TOC
+HKLM,SOFTWARE\McAfee\MSC\Settings\Headers\AC99D035-1B4A-42a9-A37C-AA414A77EF71,uiVisible,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Headers\AC99D035-1B4A-42a9-A37C-AA414A77EF71,LinkType,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Headers\AC99D035-1B4A-42a9-A37C-AA414A77EF71,LinkContext,4096,"toc"
+; HELPSUPPORT
+HKLM,SOFTWARE\McAfee\MSC\Settings\Headers\806DE77E-C149-4256-85B4-5DA1174694B7,uiVisible,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Headers\806DE77E-C149-4256-85B4-5DA1174694B7,LinkType,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Headers\806DE77E-C149-4256-85B4-5DA1174694B7,LinkContext,4096,"help_support"
+; TOOL
+HKLM,SOFTWARE\McAfee\MSC\Settings\Headers\12B42303-2224-49ec-8C45-3C4078D3C1BE,uiVisible,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Headers\12B42303-2224-49ec-8C45-3C4078D3C1BE,LinkType,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Headers\12B42303-2224-49ec-8C45-3C4078D3C1BE,LinkContext,4096,"tools"
+; MYACCOUNT
+HKLM,SOFTWARE\McAfee\MSC\Settings\Headers\A0BA4929-17F1-4b0f-9E68-D428309ED7CF,uiVisible,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Headers\A0BA4929-17F1-4b0f-9E68-D428309ED7CF,LinkType,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Headers\A0BA4929-17F1-4b0f-9E68-D428309ED7CF,LinkContext,4096,"my_account"
+
+; Footers
+
+; Threat Map
+HKLM,SOFTWARE\McAfee\MSC\Settings\Footers\F7E54891-7EDB-4144-BBA7-C9F88C15B2FA,uiVisible,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Footers\F7E54891-7EDB-4144-BBA7-C9F88C15B2FA,LinkType,69633,9
+HKLM,SOFTWARE\McAfee\MSC\Settings\Footers\F7E54891-7EDB-4144-BBA7-C9F88C15B2FA,LinkContext,4096,"substlink:vmap"
+HKLM,SOFTWARE\McAfee\MSC\Settings\Footers\F7E54891-7EDB-4144-BBA7-C9F88C15B2FA,NameResId,69633,2267
+HKLM,SOFTWARE\McAfee\MSC\Settings\Footers\F7E54891-7EDB-4144-BBA7-C9F88C15B2FA,DisplayOrder,69633,0
+
+; About
+HKLM,SOFTWARE\McAfee\MSC\Settings\Footers\6C88F43A-EEEF-4AE4-93BE-F03B96139FDE,uiVisible,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Footers\6C88F43A-EEEF-4AE4-93BE-F03B96139FDE,LinkType,69633,2
+HKLM,SOFTWARE\McAfee\MSC\Settings\Footers\6C88F43A-EEEF-4AE4-93BE-F03B96139FDE,LinkContext,4096,"mcknownapp:uihost::misp://mscjsres.dll::about.html"
+HKLM,SOFTWARE\McAfee\MSC\Settings\Footers\6C88F43A-EEEF-4AE4-93BE-F03B96139FDE,NameResId,69633,2292
+HKLM,SOFTWARE\McAfee\MSC\Settings\Footers\6C88F43A-EEEF-4AE4-93BE-F03B96139FDE,DisplayOrder,69633,1
+
+; Informational Alerts
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\{7E11C2FC-B6A3-4e4d-9924-61818C473286},Display,69633,17283
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\{138F30BA-0BD1-4AE3-B691-23D44D10DDF0},Display,69633,17284
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\{94584196-92AB-429d-B699-BD8649DFC981},Display,69633,24917
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\CF3782F5-DE57-4485-B815-ABD2E5D8121C,Display,69633,29000
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\E28136CC-F5DB-4E61-AC23-B5DAA63B118F,Display,69633,29001
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\2F9F1E55-8F3C-4a1e-9A47-B40265560791,Display,69633,29002
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\E9EBE83B-1A6A-4b1f-A99B-CF1E16218411,Display,69633,29003
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\2FDD337C-E5A0-44be-93ED-2DAFD78554CE,Display,69633,29004
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\{AF0BF12E-EC26-4b36-8646-4566778F94B8},Display,69633,29005
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\DE42A025-970B-45d7-A04B-180DCB4D3908,Display,69633,29006
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\{2BDCA38A-332B-493f-AD2F-C8B6B24AC27E},Display,69633,29007
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\{CCB8E070-688D-4186-BFD1-308378046A62},Display,69633,29008
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\{47C47B65-2DC5-4c8b-8E04-C49620CE6E5A},Display,69633,29009
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\{FE4601A5-9B68-48ab-9319-1C4B675E22A9},Display,69633,29010
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\{FF514EB6-3C05-4063-A24C-36395A640C74},Display,69633,29011
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\{F6FCCBF1-B423-4c2f-994A-5AA247F6F2D3},Display,69633,29012
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\961725BF-8992-4546-A338-D3C5CA11312C,Display,69633,29013
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\BE3B7CEA-5794-4acb-AB10-CB9AE7CD5596,Display,69633,29014
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\670E7C1D-4B79-40EC-B7C5-69AB9F100802,Display,69633,29015
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\{B1EB23ED-5B27-4f1c-821A-40683741768F},Display,69633,22984
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\EA43011F-C341-4759-8BCB-EFCB84CE94B3,Display,69633,22990
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\1538568B-8381-49E0-93BA-99AD8FA44D23,Display,69633,22991
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\480AE9AF-97F3-440D-BFD3-6D6305F19214,Display,69633,29015
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\41593C5A-5F9F-4645-BDAF-294254FA132F,Display,69633,29016
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\26E7284F-92F0-4C2E-B6F7-20DC6D027F48,Display,69633,29017
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\4659F2B5-E694-4318-B746-7306BCF2DF0B,Display,69633,35934
+
+; Hide specific alerts
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\{FE4601A5-9B68-48ab-9319-1C4B675E22A9},Hide,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\19B9B9D2-BA4B-4ad1-B617-BF5A578A8417,Hide,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\480AE9AF-97F3-440D-BFD3-6D6305F19214,Hide,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\41593C5A-5F9F-4645-BDAF-294254FA132F,Hide,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\{138F30BA-0BD1-4AE3-B691-23D44D10DDF0},Hide,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\26E7284F-92F0-4C2E-B6F7-20DC6D027F48,Hide,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\3A86B861-281F-44D1-AC9F-4A77E39832D9,Hide,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\961725BF-8992-4546-A338-D3C5CA11312C,Hide,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\38D5CB2A-DF8C-42E3-A03A-AC17183D839B,Hide,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\Alerts\0549780C-DC65-4DD9-90A9-5126D48AF361,Hide,69633,1
+
+;Alert action in Gamemode:
+HKLM,SOFTWARE\McAfee\MSC\Settings\AlertsInGamingMode\7E11C2FC-B6A3-4e4d-9924-61818C473286,AlertActionId,69633,6
+HKLM,SOFTWARE\McAfee\MSC\Settings\AlertsInGamingMode\4659F2B5-E694-4318-B746-7306BCF2DF0B,AlertActionId,69633,2
+
+;Metro notification alerts
+;at risk
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\B1EB23ED-5B27-4f1c-821A-40683741768F,ShowMetroToast,69633,1
+;firewall off
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\EA43011F-C341-4759-8BCB-EFCB84CE94B3,ShowMetroToast,69633,1
+;RTS off
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\1538568B-8381-49E0-93BA-99AD8FA44D23,ShowMetroToast,69633,1
+;none milestone, single product, grace period ends soon
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1503,ShowMetroToast,69633,1
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F151D,ShowMetroToast,69633,1
+
+;none milestone, trial, expires tomorrow
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1505,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1505,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F151F,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F151F,action_on_click,69633,4
+
+;none milestone, trial, expires soon
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1507,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1507,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1521,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1521,action_on_click,69633,4
+
+;none milestone, non-trial, expires soon
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1508,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1508,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1522,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1522,action_on_click,69633,4
+
+;none milestone, trial, expired
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1509,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1509,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1523,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1523,action_on_click,69633,4
+
+;none milestone, non-trial, expired
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F150A,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F150A,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1524,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1524,action_on_click,69633,4
+
+;milestone, single product, grace period pre2
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F150C,ShowMetroToast,69633,1
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1526,ShowMetroToast,69633,1
+
+;milestone, single product, grace period pre1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F150D,ShowMetroToast,69633,1
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1527,ShowMetroToast,69633,1
+
+;milestone, single product, grace period event
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F150E,ShowMetroToast,69633,1
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1528,ShowMetroToast,69633,1
+
+;milestone, single product, grace period post1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F150F,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F150F,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1529,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1529,action_on_click,69633,4
+
+;milestone, single product, grace period post2
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1510,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1510,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F152A,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F152A,action_on_click,69633,4
+
+;milestone, trial, pre2
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1511,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1511,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F152B,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F152B,action_on_click,69633,4
+
+;milestone, trial, pre1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1512,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1512,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F152C,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F152C,action_on_click,69633,4
+
+;milestone, trial, event
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1513,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1513,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F152D,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F152D,action_on_click,69633,4
+
+;milestone, trial, post1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1514,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1514,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F152E,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F152E,action_on_click,69633,4
+
+;milestone, trial, post2
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1515,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1515,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F152F,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F152F,action_on_click,69633,4
+
+;milestone, non-trail pre2
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1516,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1516,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1530,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1530,action_on_click,69633,4
+
+;milestone, non-trail pre1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1517,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1517,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1531,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1531,action_on_click,69633,4
+
+;milestone, non-trail event
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1518,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1518,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1532,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1532,action_on_click,69633,4
+
+;milestone, non-trail post1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1519,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1519,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1533,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1533,action_on_click,69633,4
+
+;milestone, non-trail post2
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F151A,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F151A,action_on_click,69633,4
+;reboot
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1534,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3E04AF1D-DABB-433A-ABEF-B84C0C4F1534,action_on_click,69633,4
+
+
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedExpiryStartAlert,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedExpiryStartAlert,ImgSrc,4096,"toast_neutral.png"
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedExpiryStartRebootAlert,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedExpiryStartRebootAlert,ImgSrc,4096,"toast_neutral.png"
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedExpiryEndAlert,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedExpiryEndRebootAlert,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedExpiryNonMilestoneAlert,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedExpiryNonMilestoneAlert,ImgSrc,4096,"toast_neutral.png"
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedExpiryNonMilestoneRebootAlert,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedExpiryNonMilestoneRebootAlert,ImgSrc,4096,"toast_neutral.png"
+
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedRegistrationStartAlert,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedRegistrationStartAlert,ImgSrc,4096,"toast_neutral.png"
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedRegistrationStartRebootAlert,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedRegistrationStartRebootAlert,ImgSrc,4096,"toast_neutral.png"
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedRegistrationEndAlert,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedRegistrationEndRebootAlert,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedRegistrationNonMilestoneAlert,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedRegistrationNonMilestoneAlert,ImgSrc,4096,"toast_neutral.png"
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedRegistrationNonMilestoneRebootAlert,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\ExtendedRegistrationNonMilestoneRebootAlert,ImgSrc,4096,"toast_neutral.png"
+;MPF Metro toast
+;Program wants Internet access
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3DFF80CB-CE48-4519-A57E-C05A8D79375D,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\3DFF80CB-CE48-4519-A57E-C05A8D79375D,DescResId,69633,35425
+
+;VSO Metro toast
+;Scan Completed (Issues Detected). Fix them now to protect yourself
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\F68628A0-5740-4e31-A1CF-1063EA95FD42,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\F68628A0-5740-4e31-A1CF-1063EA95FD42,Template,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\F68628A0-5740-4e31-A1CF-1063EA95FD42,TitleResId,69633,35426
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\F68628A0-5740-4e31-A1CF-1063EA95FD42,DescResId,69633,35427
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\F68628A0-5740-4e31-A1CF-1063EA95FD42,action_on_click,69633,201
+
+;Unable to clean a virus
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\7597A997-9D60-4D59-A0CB-C7489179C37D,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\7597A997-9D60-4D59-A0CB-C7489179C37D,Template,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\7597A997-9D60-4D59-A0CB-C7489179C37D,TitleResId,69633,35432
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\7597A997-9D60-4D59-A0CB-C7489179C37D,DescResId,69633,35433
+
+;Unable to clean a Trojan
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\00F13EB5-1DDE-417A-B6DC-1AFC8FEB7322,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\00F13EB5-1DDE-417A-B6DC-1AFC8FEB7322,Template,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\00F13EB5-1DDE-417A-B6DC-1AFC8FEB7322,TitleResId,69633,35428
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\00F13EB5-1DDE-417A-B6DC-1AFC8FEB7322,DescResId,69633,35429
+
+;Blocked a PUP from running
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\5B3670A4-90A4-4077-B4AC-E4BF45BE56CA,ShowMetroToast,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\5B3670A4-90A4-4077-B4AC-E4BF45BE56CA,Template,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\5B3670A4-90A4-4077-B4AC-E4BF45BE56CA,TitleResId,69633,35430
+HKLM,SOFTWARE\McAfee\MSC\Settings\MetroToasts\5B3670A4-90A4-4077-B4AC-E4BF45BE56CA,DescResId,69633,35431
+
+
+; Personalization Appid's and descriptions
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MNM,NameResId,69633,26980
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MNM,DescriptionResId,69633,26981
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MNM,AppID,4096,"MNM"
+
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MPFP,NameResId,69633,26982
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MPFP,DescriptionResId,69633,26983
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MPFP,AppID,4096,"MPF"
+
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MPS,NameResId,69633,26984
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MPS,DescriptionResId,69633,26985
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MPS,AppID,4096,"MPS"
+
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MOBK,NameResId,69633,26986
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MOBK,DescriptionResId,69633,26987
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MOBK,AppID,4096,"MOBK"
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MOBK,RequiresActivation,69633,1
+
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MQS,NameResId,69633,26988
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MQS,DescriptionResId,69633,26989
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MQS,AppID,4096,"MQS"
+
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MSAD,NameResId,69633,26990
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MSAD,DescriptionResId,69633,26991
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MSAD,AppID,4096,"MSAD"
+
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MSADP,NameResId,69633,26992
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MSADP,DescriptionResId,69633,26993
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MSADP,AppID,4096,"MSAD"
+
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MSC,NameResId,69633,26994
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MSC,DescriptionResId,69633,26995
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MSC,AppID,4096,"MSC"
+
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\SKO,NameResId,69633,26996
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\SKO,DescriptionResId,69633,26997
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\SKO,AppID,4096,"MSK"
+
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\VSO,NameResId,69633,26998
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\VSO,DescriptionResId,69633,26999
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\VSO,AppID,4096,"VSO"
+
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MAT,NameResId,69633,35061
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MAT,DescriptionResId,69633,35002
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MAT,AppID,4096,"MAT"
+
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\VUL,NameResId,69633,27002
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\VUL,DescriptionResId,69633,27003
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\VUL,AppID,4096,"VUL"
+
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\PCB,NameResId,69633,28014
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\PCB,DescriptionResId,69633,28015
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\PCB,AppID,4096,"PCB"
+
+HKLM,SOFTWARE\McAfee\MSC\Packages\AppCode\MIDPL,AppID,4096,"MIP"
+
+; Rotation stats
+HKLM,SOFTWARE\McAfee\MSC\Settings\infoviz\stats,hide_getstarted,69633,1
+; Custome Uninstall Screen
+HKLM,SOFTWARE\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\uninstall\ContextUI, "SubscriptionUrl",4096,"http://home.mcafee.com/AppSupport/MyAccount/UnInstallMessaging.ashx?affid=%d&sku=%d-%d-%d&dtag=%s&sdate=%s&edate=%s"
+
+; Package customization:
+; MSSB customization: its package id is 481
+HKLM,SOFTWARE\McAfee\MSC\Settings481\expiration,hidetoastalerts,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings481\adddevices,uivisible,69633,0
+HKLM,SOFTWARE\McAfee\MSC\Settings481\toc\4776FB3D-A5E3-46b8-ACAA-181CB546FD67,UiVisible,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings481\Alerts\E73E48F9-6AB9-4aaa-BB04-507C31A97305,Hide,69633,1
+HKLM,SOFTWARE\McAfee\MSC\Settings481\Alerts\E73E48F9-6AB9-4aaa-BB04-507C31A97305,defaulterrorval,69633,10004
+
+[ObfuscateRegEntry]
+; Application Registration...
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MSC,"Flag",69633,7
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MSC,"AppInfoClsId",4096,{39BE9FE5-916F-4F01-86D8-46D1B843C8DD}
+; for downgrade over install
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MSC,"Flag",65537,7
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\MSC,"AppInfoClsId",,{39BE9FE5-916F-4F01-86D8-46D1B843C8DD}
+
+; Launch flags for MFP lite
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA25\0F167695-3F7C-421c-89E8-40544CE9D1B0\installed, "LaunchFlags",69633,1
+
+[ApplyOverrides]
+override.inf=%46100%
+
+[RemoveCategory]
+HKLM,Software\McAfee\MSC\Settings\protcat\AA747A62-493D-4082-A2EF-C4AD2049AA24
+
