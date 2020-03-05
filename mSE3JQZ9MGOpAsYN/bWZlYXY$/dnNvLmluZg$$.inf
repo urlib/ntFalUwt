@@ -1,0 +1,492 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=vso.inf
+
+[SourceDisksNames]
+1="McAfee VirusScan Product Files","",1
+
+[Installer_Config]
+AppID=VSO
+Shared=0
+
+[Env-Var]
+;%VSINSTALL_DIR%=$REG$Key=Software\McAfee\VirusScan\InstallSettings:Name=Install Dir
+;%VSINSTALL_DIR64%=$REG$Key=Software\McAfee\VirusScan\InstallSettings:Name=Install Dir 64
+%LCID%=$REG$Key=SOFTWARE\McAfee\VirusScan\InstallSettings\Substitute:Name=LCID
+
+[Env-Var64]
+%LCID%=$REG$Key=SOFTWARE\McAfee\VirusScan\InstallSettings\Substitute:Name=LCID
+
+[DirIds]
+50000=%33500%\McAfee\MfeAV
+51000=%ProgramW6432%\McAfee\MfeAV
+40000=%33100%\McAfee\VirusScan
+40001=%33100%\McAfee\MCLOGS
+40002=%33100%\McAfee\Ransom_shield
+
+
+60000=%33000%\McAfee\Casper
+61000=%CommonProgramW6432%\McAfee\Casper
+
+41111=%windir%\system32
+
+[DestinationDirs]
+VsoProduct32=50000
+VsoProduct32RD=50000
+VsoProduct64=51000
+VsoProduct64RD=51000
+
+[Install_NT]
+PreInstallAMCore32=Setup
+InstallAMCore32=Exe
+VsoProduct32RC=RenCopy
+VsoInstall32=Setup
+EncryptReg=RegObfuscate
+Regsvr32_x86=EXE
+VsoInstallCustom86=EXE
+UpdateContentVersion86=EXE
+
+[UnInstall_NT]
+VsoUnInstallCustom86=EXE
+Uninstall86=RunINF
+Regsvr32_x86_U=EXE
+VsoUninstall32=Setup
+Cleanup32=DelFolders
+
+[Install_VISTA_x64]
+PreInstallAMCore64=Setup
+InstallAMCore64=Exe
+VsoProduct64RC=RenCopy
+VsoInstall64=Setup
+EncryptReg=RegObfuscate
+Regsvr32_x64=EXE
+VsoInstallCustom64=EXE
+UpdateContentVersion64=EXE
+
+[UnInstall_Vista_X64]
+VsoUnInstallCustom64=EXE
+Uninstall64=RunINF
+Regsvr32_x64_U=EXE
+VsoUninstall64=Setup
+Cleanup64=DelFolders
+
+[PreInstallAMCore32]
+AddReg=PreInstallAMCoreSetReg32
+[PreInstallAMCoreSetReg32]
+HKLM,Software\McAfee\VirusScan\InstallSettings\AMCore,ConfigXml,0,"%60000%\mfelamamconfig.xml"
+HKLM,Software\McAfee\VirusScan\InstallSettings\AMCore,InstallLog,0,"%40001%\casper_lam_installer.log"
+[InstallAMCore32]
+%60000%\AmcInst.exe=--install,1,1,,0,3010|1053
+
+[PreInstallAMCore64]
+AddReg=PreInstallAMCoreSetReg64
+
+[PreInstallAMCoreSetReg64]
+HKLM,Software\McAfee\VirusScan\InstallSettings\AMCore,ConfigXml,0x1000,"%61000%\mfelamamconfig.xml"
+HKLM,Software\McAfee\VirusScan\InstallSettings\AMCore,InstallLog,0x1000,"%40001%\casper_lam_installer.log"
+
+[InstallAMCore64]
+%61000%\AmcInst.exe=--install,1,1,,0,3010|1053
+
+[VsoUninstall32]
+Cleanup=1
+DelFiles=VsoProduct32
+DelFiles=VsoProduct32RD
+DelReg=VsoRegistry,EncryptReg
+
+
+[VsoUninstall64]
+Cleanup=1
+DelFiles=VsoProduct64
+DelFiles=VsoProduct64RD
+DelReg64=VsoRegistry,EncryptReg
+
+[VsoInstallCustom86]
+%50000%\MVsInst.exe=/install
+
+[VsoInstallCustom64]
+%51000%\MVsInst.exe=/install
+
+[VsoUnInstallCustom86]
+%50000%\MVsInst.exe=/uninstall
+
+[VsoUnInstallCustom64]
+%51000%\MVsInst.exe=/uninstall
+
+[VsoProduct32RC]
+MVsUiCfg.dat=%50000%
+mcctxmnu.dll=%50000%
+McVsPs.dll=%50000%
+mcodsps.dll=%50000%
+vsores.dll=%50000%
+mcvsoshl.dll=%50000%
+mcvsocfg.dll=%50000%
+;EScnPlug.dll=%50000%
+McVsMap.exe=%50000%
+mvslog.dll=%50000%
+mvsap.dll=%50000%
+McOasShm.dll=%50000%
+McVSPP.dll=%50000%
+mcqtax.dll=%50000%
+McOdsShm.dll=%50000%
+VSJsRes.dll=%50000%
+McVsShld.exe=%50000%
+mcvsoutil.dll=%50000%
+MVsInst.exe=%50000%
+
+
+[VsoProduct64RC]
+MVsUiCfg.dat=%51000%
+mcctxmnu.dll=%51000%
+McVsPs.dll=%51000%
+mcodsps.dll=%51000%
+vsores.dll=%51000%
+mcvsoshl.dll=%51000%
+mcvsocfg.dll=%51000%
+;EScnPlug.dll=%51000%
+McVsMap.exe=%51000%
+mvslog.dll=%51000%
+mvsap.dll=%51000%
+McOasShm.dll=%51000%
+McVSPP.dll=%51000%
+mcqtax.dll=%51000%
+McOdsShm.dll=%51000%
+VSJsRes.dll=%51000%
+McVsShld.exe=%51000%
+mcvsoutil.dll=%51000%
+MVsInst.exe=%51000%
+
+[VsoProduct32RD]
+MVsUiCfg.dat,,,65568
+mcctxmnu.dll,,,65568
+McOasShm.dll,,,65568
+McOdsShm.dll,,,65568
+mvsap.dll,,,65568
+McVSPP.dll,,,65568
+mcqtax.dll,,,65568
+mvslog.dll,,,65568
+McVsShld.exe,,,65568
+VSJsRes.dll,,,65568
+McVsMap.exe,,,65568
+MVsInst.exe,,,65568
+;EScnPlug.dll,,,65568
+mcvsocfg.dll,,,65568
+mcvsoshl.dll,,,65568
+vsores.dll,,,65568
+mcodsps.dll,,,65568
+McVsPs.dll,,,65568
+mcvsoutil.dll,,,65568
+
+[VsoProduct64RD]
+MVsUiCfg.dat,,,65568
+mcctxmnu.dll,,,65568
+McOasShm.dll,,,65568
+McOdsShm.dll,,,65568
+mvsap.dll,,,65568
+McVSPP.dll,,,65568
+mcqtax.dll,,,65568
+mvslog.dll,,,65568
+McVsShld.exe,,,65568
+VSJsRes.dll,,,65568
+McVsMap.exe,,,65568
+MVsInst.exe,,,65568
+;EScnPlug.dll,,,65568
+mcvsocfg.dll,,,65568
+mcvsoshl.dll,,,65568
+vsores.dll,,,65568
+mcodsps.dll,,,65568
+McVsPs.dll,,,65568
+mcvsoutil.dll,,,65568
+
+[VsoInstall32]
+CopyFiles=VsoProduct32
+AddReg=VsoRegistry,VsoRegistry32,Partner,Partner_Settings,System,System_Settings
+
+[VsoProduct32]
+vso.inf,,,65568
+CaspCont.inf,,,65568
+
+[VsoInstall64]
+CopyFiles=VsoProduct64
+AddReg=VsoRegistry,VsoRegistry64,Partner,Partner_Settings,System,System_Settings
+
+[VsoProduct64]
+vso.inf,,,65568
+CaspCont.inf,,,65568
+
+[VsoRegistry]
+HKLM,Software\McAfee\OemInfo\Customizaton\{68E641DD-0FF3-4C19-9499-985ECA497C06},,0x1000,
+HKLM,Software\McAfee\OemInfo\Customizaton\{162EFDC5-2957-465D-887B-590AF4A7E84D},,0x1000,
+
+HKLM,Software\McAfee\McProxy\Plugins\{F80EAA49-6471-40B8-84F5-E1C1E4F5644A},"Name",0x1000,"VSO"
+HKLM,Software\McAfee\McProxy\Plugins\{F80EAA49-6471-40B8-84F5-E1C1E4F5644A},"Protocols",0x11003,2
+HKLM,Software\McAfee\McProxy\Plugins\{F80EAA49-6471-40B8-84F5-E1C1E4F5644A},"LateInit",0x11003,1
+
+HKLM,Software\McAfee\MSC\Settings\mccfgpv\delinfoalerts\2E25C78E-8160-4824-A89A-1CFD2222F738,,0x1000,
+HKLM,Software\McAfee\MSC\Settings\mccfgpv\delinfoalerts\2E25C78E-8160-4824-A89A-1CFD2222F738,"6169A83A-BE15-496E-9ECC-09856E8B0A80",0x1000,
+HKLM,Software\McAfee\MSC\Settings\mccfgpv\delinfoalerts\2E25C78E-8160-4824-A89A-1CFD2222F738,"F0931F18-65F2-4ADD-B478-57B3B5777FFA",0x1000,
+
+HKLM,Software\McAfee\MSC\Settings\toc\FFBBC517-6ED4-4ded-AB71-FFE24430B1BC,"NameResId",0x11001,2254
+HKLM,Software\McAfee\MSC\Settings\toc\FFBBC517-6ED4-4ded-AB71-FFE24430B1BC,"SectionGuid",0x1000,{7F7BB30F-D5D3-43F8-8B93-E2EEF69EBB4D}
+HKLM,Software\McAfee\MSC\Settings\toc\FFBBC517-6ED4-4ded-AB71-FFE24430B1BC,"UiVisible",0x11001,1
+HKLM,Software\McAfee\MSC\Settings\toc\FFBBC517-6ED4-4ded-AB71-FFE24430B1BC,"LinkType",0x11001,1
+HKLM,Software\McAfee\MSC\Settings\toc\FFBBC517-6ED4-4ded-AB71-FFE24430B1BC,"LinkContext",0x1000,scan_settings
+HKLM,Software\McAfee\MSC\Settings\toc\FFBBC517-6ED4-4ded-AB71-FFE24430B1BC,"NotesResId",0x11001,2255
+HKLM,Software\McAfee\MSC\Settings\toc\FFBBC517-6ED4-4ded-AB71-FFE24430B1BC,"DisplayOrder",0x11001,110
+HKLM,Software\McAfee\MSC\Settings\toc\88657DF9-1C52-4ea6-B877-48BA1AAB4216,"NameResId",0x11001,2258
+HKLM,Software\McAfee\MSC\Settings\toc\88657DF9-1C52-4ea6-B877-48BA1AAB4216,"SectionGuid",0x1000,{7F7BB30F-D5D3-43F8-8B93-E2EEF69EBB4D}
+HKLM,Software\McAfee\MSC\Settings\toc\88657DF9-1C52-4ea6-B877-48BA1AAB4216,"UiVisible",0x11001,1
+HKLM,Software\McAfee\MSC\Settings\toc\88657DF9-1C52-4ea6-B877-48BA1AAB4216,"LinkType",0x11001,1
+HKLM,Software\McAfee\MSC\Settings\toc\88657DF9-1C52-4ea6-B877-48BA1AAB4216,"LinkContext",0x1000,quarantined_items
+HKLM,Software\McAfee\MSC\Settings\toc\88657DF9-1C52-4ea6-B877-48BA1AAB4216,"NotesResId",0x11001,2259
+HKLM,Software\McAfee\MSC\Settings\toc\88657DF9-1C52-4ea6-B877-48BA1AAB4216,"DisplayOrder",0x11001,154
+HKLM,Software\McAfee\MSC\Settings\toc\3EABDD80-0F73-4774-ADA6-81CDEAAA5775,"NameResId",0x11001,2256
+HKLM,Software\McAfee\MSC\Settings\toc\3EABDD80-0F73-4774-ADA6-81CDEAAA5775,"SectionGuid",0x1000,{7F7BB30F-D5D3-43F8-8B93-E2EEF69EBB4D}
+HKLM,Software\McAfee\MSC\Settings\toc\3EABDD80-0F73-4774-ADA6-81CDEAAA5775,"UiVisible",0x11001,1
+HKLM,Software\McAfee\MSC\Settings\toc\3EABDD80-0F73-4774-ADA6-81CDEAAA5775,"LinkType",0x11001,1
+HKLM,Software\McAfee\MSC\Settings\toc\3EABDD80-0F73-4774-ADA6-81CDEAAA5775,"LinkContext",0x1000,schedule_scan
+HKLM,Software\McAfee\MSC\Settings\toc\3EABDD80-0F73-4774-ADA6-81CDEAAA5775,"NotesResId",0x11001,2257
+HKLM,Software\McAfee\MSC\Settings\toc\3EABDD80-0F73-4774-ADA6-81CDEAAA5775,"DisplayOrder",0x11001,143
+
+
+HKLM,Software\McAfee\VirusScan\Custom\ODS,"CtxMnuIcon",0x11001,1
+
+HKLM,Software\McAfee.com\Agent\Apps\VSO,,0x1000,
+HKLM,Software\McAfee.com\VirusScan Online,,0x1000,
+
+HKLM,Software\McAfee\VirusScan\InstallSettings,"vid",0x1000,"McAfee"
+HKLM,Software\McAfee\VirusScan\InstallSettings,"VM_Url",0x1000,"https://vil.mcafee.com/mast2.asp"
+HKLM,Software\McAfee\VirusScan\InstallSettings,"VM_Debug",0x11001,2
+HKLM,Software\McAfee\VirusScan,"SP_Url",0x1000,"https://%domain%/apps/%appcode%/%lang%/%version2%/chkupd.asp?"
+
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"PerformanceLevel",0x11003,2
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"PerformanceLevel_type",0x11001,2
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"SleepAfterAPMResumeEvent",0x11003,60000
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"SleepAfterAPMResumeEvent_type",0x11001,3
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"UpdateCheckAfterServiceStartTimeout",0x11003,24
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"UpdateCheckAfterServiceStartTimeout_type",0x11001,3
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"SleepAfterCSResumeEvent",0x11003,60000
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"SleepAfterCSResumeEvent_type",0x11001,3
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"McShieldIdleTimeSec",0x11003,300
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"McShieldIdleTimeSec_type",0x11001,3
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"TelemetrySubmitIntervalSec",0x11003,7200
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"TelemetrySubmitIntervalSec_type",0x11001,3
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"DemandStartMcShieldEnabled",0x11003,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"DemandStartMcShieldEnabled_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"OASEnabled",0x11003,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"OASEnabled_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"AVEngineRepairEnabled",0x11003,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"AVEngineRepairEnabled_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"AVEngineScanEnabled",0x11003,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"AVEngineScanEnabled_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JcmTrustEnabled",0x11003,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JcmTrustEnabled_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"PerformJTIPreinstallScan",0x11003,0
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"PerformJTIPreinstallScan_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JTIEnableSelfProtection",0x11003,0
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JTIEnableSelfProtection_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JTIEnableAacListener",0x11003,0
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JTIEnableAacListener_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"RaptorEnabled",0x11003,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"RaptorEnabled_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"RaptorMemLimit",0x11003,0
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"RaptorMemLimit_type",0x11001,2
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"RaptorThreadLimit",0x11003,0
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"RaptorThreadLimit_type",0x11001,2
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"RaptorStartMode",0x11003,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"RaptorStartMode_type",0x11001,3
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"RaptorCloudConfig",0x1000,"1E60FCEC7FAF4F08302EAF40A6449E5B09F451FCCEF2756548A38514412B8AA6C06B75ECFBECE936E554F4CEC22BA62C85A2D8F5E873F67DECB49C93290CE39D967A6F5AE19D84578F87C7089B8AA7A9CB9F5AF19509F337C8550A2417C767DA5078A3BFA6F5718B9E99D80BFA60C295"
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"RaptorCloudConfig_type",0x11001,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"OASScanTimeoutMS",0x11003,25000
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"OASScanTimeoutMS_type",0x11001,3
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JTIGTIEnabled",0x11003,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JTIGTIEnabled_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JCMScanEnabled",0x11003,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JCMScanEnabled_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JTIScanEnabled",0x11003,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JTIScanEnabled_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JTIEnableTelemetry",0x11003,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JTIEnableTelemetry_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"TrustedInstallerScanEnabled",0x11003,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"TrustedInstallerScanEnabled_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JcmID",0x1000,"47A03CE1D94BEF2E9B6F3A48E6B51E99"
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JcmID_type",0x11001,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JcmPW",0x1000,"A7545020F749E244D115D9C70A43C82CE5D73FA5B6EB9B6D96AF024C511372AE"
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JcmPW_type",0x11001,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JcmServer",0x1000,"3C9908CD5AAB2DD09876F1D3AA82A2DEAA99442202C0CC8D61756AA52E006E16"
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JcmServer_type",0x11001,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JcmConfigBlob",0x1000,"78E0939E037DC2A363446831335B1AC29076B2073983FD0BEA90DA9968433449EABA6F019AE328F1FA389D82199A8BC570B9285B9D911EBCD5FB15BB100E81F21CBDE0658EEC32D8036C39F3129CAFF14D056465504F0A2D86B17197915C9571C04390DCAB733D4CE6D366F87849E3DAF3E32D3306110842A081F277578119B08D2CDFBCDDA3EFC764BCB73D5B61530AFD4874EC798DF82872C8ABBB1C3A516A1C9D6B2715528E0B4AF4110C51626CB55AAA1788D415C9722FE7624FF5D2FFBF742F6C19C788C47F9EC94CFB564DC0FB10E99B735607D5DCE4FFF20BE9EBB20A9B918E5C83FD61A6CA8E8D23DC59EB0140AE0889397D15A880D4F6A73B808BDB9AA94F63BDBCD22E2AA0E6AE3EF19C1C0E98D3027B4B6FC08EF62A05DEEBB6BCB4ABCA675A383C66EEDED5145802906BC18C450B4F9B7656262A65349C498C491760071CD3AE002000BD4E801E91ED19576DAB76DE837209D03F6354D2B1C4EBEB409845E8E85CCF912AFB08E54B54E8C58DEA3ED4D8EFCB8A2241D6CB39834E7952166C08EB04473E36B1043CDA24C8116F541DCD82068D4BC4C745516B37E918CECBAC57DD1A3DE8791A35E546735A17B140B0277724C24EF94BD2DA21FB5D21B28928F866ED8B0A7102E4562459F516BF94873F4C6426B507E51F9FA7318DA4BC0915929A07BBA23B957EC31F721E534EE0594BF4034156E1B2F6F89782F3C66FAF113FA6D88FE137F5D1831E486E43C3C2FCFDAA32E633530F063EAD716FC66EC535369CCFD21CCDB6B5F9234FC9A955C2503572A8A800C4601542174AEB1DD3C3B9F2A6C8F4874F7A2E03D8404918ABF84CF11D317B80DFDCE5644BAB8F18BB059F28EC7CD2AC3AC62477300259"
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JcmConfigBlob_type",0x11001,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JTISecurityPosture",0x11001,2
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JTISecurityPosture_type",0x11001,3
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JTIContentScannerPaths",0x11003,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"JTIContentScannerPaths_type",0x11001,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"EnableWriteScanSetting",0x11003,0
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"EnableWriteScanSetting_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"QSEOccurred",0x11003,0
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"QSEOccurred_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"InfectedPEFilterMaxCacheSize",0x11003,100
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"InfectedPEFilterMaxCacheSize_type",0x11001,3
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"InfectedPEFilterTimeoutMS",0x11003,10000
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"InfectedPEFilterTimeoutMS_type",0x11001,3
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"FullScreenTrackingInterval",0x11003,30000
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"FullScreenTrackingInterval_type",0x11001,3
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"CpuBusyFactor",0x11003,0
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"CpuBusyFactor_type",0x11001,3
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"SupportAlternativeDataStreams",0x11003,0
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"SupportAlternativeDataStreams_type",0x11001,4
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"jcm_cache_size_multiplier",0x11001,-200 ; see setting definition - negatives represent fractions, and it's 100x the multiplier you actually want
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"real_protect_static_enabled",0x11001,1
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"av_engine_graphene_target_memory",0x11001,40
+HKLM,Software\McAfee\VirusScan\Settings\LAM,"amsi_office_scan_enabled",0x11001,1
+
+[VsoRegistry32]
+HKLM,Software\McAfee\VirusScan\InstallSettings,"VS_UninstallString",,"""%33400%\mcinst.exe"" ""%50000%\vsoLI.inf"" /uninstall"
+HKLM,Software\McAfee\MSC\Settings\toc\2C773470-DFBE-46b7-A09E-7639C74FF7C4,"NameResId",65537,2400
+HKLM,Software\McAfee\MSC\Settings\toc\2C773470-DFBE-46b7-A09E-7639C74FF7C4,"SectionGuid",,{7F7BB30F-D5D3-43F8-8B93-E2EEF69EBB4D}
+HKLM,Software\McAfee\MSC\Settings\toc\2C773470-DFBE-46b7-A09E-7639C74FF7C4,"UiVisible",65537,1
+HKLM,Software\McAfee\MSC\Settings\toc\2C773470-DFBE-46b7-A09E-7639C74FF7C4,"LinkType",65537,1
+HKLM,Software\McAfee\MSC\Settings\toc\2C773470-DFBE-46b7-A09E-7639C74FF7C4,"LinkContext",,run_a_scan
+HKLM,Software\McAfee\MSC\Settings\toc\2C773470-DFBE-46b7-A09E-7639C74FF7C4,"NotesResId",65537,2406
+HKLM,Software\McAfee\MSC\Settings\toc\2C773470-DFBE-46b7-A09E-7639C74FF7C4,"DisplayOrder",65537,11
+
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\VSO,"ResDll",,"%50000%\vsores.dll"
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\VSO,"UIDll",,"%50000%\VSJsRes.dll"
+
+[VsoRegistry64]
+HKLM,Software\McAfee\VirusScan\InstallSettings,"VS_UninstallString",0x1000,"""%33400%\mcinst.exe"" ""%51000%\vsoLI.inf"" /uninstall"
+HKLM,Software\McAfee\MSC\Settings\toc\2C773470-DFBE-46b7-A09E-7639C74FF7C4,"NameResId",0x11001,2400
+HKLM,Software\McAfee\MSC\Settings\toc\2C773470-DFBE-46b7-A09E-7639C74FF7C4,"SectionGuid",0x1000,{7F7BB30F-D5D3-43F8-8B93-E2EEF69EBB4D}
+HKLM,Software\McAfee\MSC\Settings\toc\2C773470-DFBE-46b7-A09E-7639C74FF7C4,"UiVisible",0x11001,1
+HKLM,Software\McAfee\MSC\Settings\toc\2C773470-DFBE-46b7-A09E-7639C74FF7C4,"LinkType",0x11001,1
+HKLM,Software\McAfee\MSC\Settings\toc\2C773470-DFBE-46b7-A09E-7639C74FF7C4,"LinkContext",0x1000,run_a_scan
+HKLM,Software\McAfee\MSC\Settings\toc\2C773470-DFBE-46b7-A09E-7639C74FF7C4,"NotesResId",0x11001,2406
+HKLM,Software\McAfee\MSC\Settings\toc\2C773470-DFBE-46b7-A09E-7639C74FF7C4,"DisplayOrder",0x11001,11
+
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\VSO,"ResDll",0x1000,"%51000%\vsores.dll"
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\VSO,"UIDll", 0x1000,"%51000%\VSJsRes.dll"
+;also write applicationinfo to 32 bit hive for backward compatible with old mcinst
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\VSO,"ResDll",,"%51000%\vsores.dll"
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\VSO,"UIDll",,"%51000%\VSJsRes.dll"
+
+[Overrides]
+AddReg=Partner
+AddReg=Partner_Settings
+AddReg=System
+AddReg=System_Settings
+
+[Partner]
+HKLM,Software\McAfee\VirusScan\Overrides\Partner,,0x1000,
+HKLM,Software\McAfee\VirusScan\Overrides\Partner,priority,0x00011001,16
+
+[Partner_Settings]
+HKLM,Software\McAfee\VirusScan\Overrides\Partner\Settings,,0x1000,
+
+[System]
+HKLM,Software\McAfee\VirusScan\Overrides\System,,0x1000,
+HKLM,Software\McAfee\VirusScan\Overrides\System,priority,0x00011001,32
+
+
+[EncryptReg]
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\VSO,"Flag",0x11001,5
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\VSO,"AppInfoClsId",0x1000,{874f654B-C2A6-4F89-9195-6C6C3EEB779A}
+;also write applicationinfo to 32 bit hive for backward compatible with old mcinst
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\VSO,"Flag",0x10001,5
+HKLM,Software\McAfee\MSC\Settings\ApplicationInfo\VSO,"AppInfoClsId",,{874f654B-C2A6-4F89-9195-6C6C3EEB779A}
+
+HKLM,Software\McAfee\VirusScan\InstallSettings,"AppInfo2",0x1000,"Source=%domain%	Version=%version2%	Build=%buildli%	Lang=%lang%	Date=%date%	content_version=%ContentVersion%	content_creation_date=%Content_Creation_Date%"
+
+[OCXRegister]
+;EScnPlug.dll
+;McVsPs.dll
+;mcodsps.dll
+;mcctxmnu.dll
+;mcvsocfg.dll
+;mcqtax.dll
+;McVSPP.dll
+;mvsap.dll
+;mvslog.dll
+;McOasShm.dll
+;McOdsShm.dll
+
+;McVsMap.exe
+;McVsShld.exe
+
+[Regsvr32_x86]
+%10%\system32\regsvr32.exe=/s """%50000%\McVsPs.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%50000%\mcodsps.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%50000%\mcctxmnu.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%50000%\mcvsocfg.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%50000%\mcqtax.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%50000%\McVSPP.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%50000%\mvsap.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%50000%\mvslog.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%50000%\McOasShm.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%50000%\McOdsShm.dll""",1,1,,0
+%50000%\\McVsMap.exe=/RegServer,1,1,,0
+%50000%\\McVsShld.exe=/RegServer,1,1,,0
+
+[Regsvr32_x64]
+%10%\system32\regsvr32.exe=/s """%51000%\McVsPs.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%51000%\mcodsps.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%51000%\mcctxmnu.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%51000%\mcvsocfg.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%51000%\mcqtax.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%51000%\McVSPP.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%51000%\mvsap.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%51000%\mvslog.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%51000%\McOasShm.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/s """%51000%\McOdsShm.dll""",1,1,,0
+%51000%\\McVsMap.exe=/RegServer,1,1,,0
+%51000%\\McVsShld.exe=/RegServer,1,1,,0
+
+[Regsvr32_x86_U]
+%50000%\\McVsShld.exe=/UnregServer,1,1,,0
+%50000%\\McVsMap.exe=/UnregServer,1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%50000%\mcqtax.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%50000%\mcctxmnu.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%50000%\McVSPP.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%50000%\mvsap.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%50000%\mvslog.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%50000%\McOasShm.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%50000%\McOdsShm.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%50000%\mcvsocfg.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%50000%\mcodsps.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%50000%\McVsPs.dll""",1,1,,0
+
+[Regsvr32_x64_U]
+%51000%\\McVsShld.exe=/UnregServer,1,1,,0
+%51000%\\McVsMap.exe=/UnregServer,1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%51000%\mcqtax.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%51000%\mcctxmnu.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%51000%\McVSPP.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%51000%\mvsap.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%51000%\mvslog.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%51000%\McOasShm.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%51000%\McOdsShm.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%51000%\mcvsocfg.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%51000%\mcodsps.dll""",1,1,,0
+%10%\system32\regsvr32.exe=/u /s """%51000%\McVsPs.dll""",1,1,,0
+
+[Cleanup32]
+%40000%
+%40002%
+
+[Cleanup64]
+%40000%
+%40002%
+
+[Uninstall86]
+%60000%\casper.inf
+%50000%\CaspCont.inf
+
+[Uninstall64]
+%61000%\casper64.inf
+%51000%\CaspCont.inf
+
+
+[UpdateContentVersion86]
+%41111%\rundll32.exe="""%50000%\mcvsoutil.dll"",SetContentVersion",1,1
+[UpdateContentVersion64]
+%41111%\rundll32.exe="""%51000%\mcvsoutil.dll"",SetContentVersion",1,1
