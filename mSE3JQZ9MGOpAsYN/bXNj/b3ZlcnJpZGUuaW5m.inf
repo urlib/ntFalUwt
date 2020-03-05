@@ -1,0 +1,38 @@
+; Customization Override file for zh-cn
+
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=override.inf
+
+[Installer_Config]
+AppID=MSC
+Shared=0
+
+[SourceDisksNames]
+1="McAfee Default Customization Override File for zh-cn","",1
+
+[DirIds]
+;Env-Var Defined ==> Program Files
+;33100 ==> All Users\Application Data
+;33000 ==> Program Files\Common files
+;33200 ==> McIns.exe Module dir
+;33300 ==> ExtractCAB location
+;16422 ==> Program Files
+
+[DefaultInstall]
+AddReg=Overrides
+
+[DefaultUnInstall]
+DelReg=Overrides
+
+[Install_NT]
+DefaultInstall=Setup
+
+[UnInstall_NT]
+DefaultUnInstall=Setup
+
+[Overrides]
+; Add registry overrides
+HKLM,Software\McAfee\MSC\Settings\links,"getstarted",,
+
