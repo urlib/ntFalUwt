@@ -1,0 +1,93 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=mscmods64.inf
+
+[Installer_Config]
+AppID=MSC
+Shared=0
+
+[SourceDisksNames]
+1="McAfee Module Files","",1
+
+[DefaultInstall]
+CopyFiles=FileList
+
+[DefaultUnInstall]
+DelFiles=FileList,DelFilesForRenCopy
+
+[DestinationDirs]   
+FileList=46100
+RenCopyList=46100
+DelFilesForRenCopy=46100
+McPersHandlerConfig=33300
+
+[RenCopyList]
+SubscriptionHandler.dll=%46100%
+SubscriptionEventHandler.dll=%46100%
+WscInteractionHandler.dll=%46100%
+CultureChangeHandler.dll=%46100%
+CultureLookUpHandler.dll=%46100%
+CSPEnrollmentHandler.dll=%46100%
+McGsMod.dll=%46100%
+McPersHandler.dll=%46100%
+
+[DelFilesForRenCopy]
+SubscriptionHandler.dll,,,65568
+SubscriptionEventHandler.dll,,,65568
+WscInteractionHandler.dll,,,65568
+CultureChangeHandler.dll,,,65568
+CultureLookUpHandler.dll,,,65568
+CSPEnrollmentHandler.dll,,,65568
+McGsMod.dll,,,65568
+McPersHandler.dll,,,65568
+
+[FileList]
+mscmods64.inf,,,65568
+
+[DirIds]
+46100=%ProgramW6432%\McAfee\MSC
+80000=%CommonProgramW6432%\McAfee\ModuleCore
+
+[Install_NT]
+UnregisterModule=EXE
+DefaultInstall=Setup
+RenCopyList=RenCopy
+RegisterModule=EXE
+DelModuleConfig=Setup
+
+[UnInstall_NT]
+UnregisterModule=EXE
+DefaultUnInstall=Setup
+
+[RegisterModule]
+%80000%\ModuleCoreService.exe=/register=SubscriptionHandler /binaryFile=SubscriptionHandler.dll /binaryPath="""%46100%""" /startType=delayed /userMode=true,1,1
+%80000%\ModuleCoreService.exe=/register=WscInteractionHandler /binaryFile=WscInteractionHandler.dll /binaryPath="""%46100%""" /protected /factoryEnabled=true /startType=9AD52B918ED09BEC6F3517B90D596DDB,1,1 
+%80000%\ModuleCoreService.exe=/register=SubscriptionEventHandler /binaryFile=SubscriptionEventHandler.dll /binaryPath="""%46100%""",1,1
+%80000%\ModuleCoreService.exe=/register=CultureChangeHandler /binaryFile=CultureChangeHandler.dll /binaryPath="""%46100%""" /startType=delayed,1,1
+%80000%\ModuleCoreService.exe=/register=CultureLookUpHandler /binaryFile=CultureLookUpHandler.dll /binaryPath="""%46100%""" /startType=delayed,1,1
+%80000%\ModuleCoreService.exe=/register=CSPEnrollmentHandler /binaryFile=CSPEnrollmentHandler.dll /binaryPath="""%46100%""" /startType=delayed,1,1
+%80000%\ModuleCoreService.exe=/register=McGsMod /binaryFile=McGsMod.dll /binaryPath="""%46100%""" /startType=delayed,1,1
+%80000%\ModuleCoreService.exe=/register=McPersHandler /moduleConfigFile="""%33300%"""\McPersHandlerConfig.xml /userMode=true,1,1
+%80000%\ModuleCoreService.exe=/register=McGsModUserMode /userMode=true /binaryFile=McGsMod.dll /binaryPath="""%46100%""" /startType=ondemand /messageTriggers=MSC.GetGSSettings.Request,1,1
+
+[UnregisterModule]
+%80000%\ModuleRegister.exe=/unregister=SubscriptionHandler,1,1
+%80000%\ModuleCoreService.exe=/unregister=SubscriptionHandler /userMode=true,1,1
+; uninstall from ProtectedHost
+%80000%\ModuleCoreService.exe=/unregister=WscInteractionHandler /protected,1,1 
+; uninstall from ModuleCore , no wait
+%80001%\ModuleCoreService.exe=/unregister=WscInteractionHandler,0,1 
+%80000%\ModuleCoreService.exe=/unregister=SubscriptionEventHandler,1,1
+%80000%\ModuleCoreService.exe=/unregister=CultureChangeHandler,1,1
+%80000%\ModuleCoreService.exe=/unregister=CultureLookUpHandler,1,1
+%80000%\ModuleCoreService.exe=/unregister=CSPEnrollmentHandler,1,1
+%80000%\ModuleCoreService.exe=/unregister=McGsMod,1,1
+%80000%\ModuleCoreService.exe=/unregister=McPersHandler /userMode=true,1,1
+%80000%\ModuleCoreService.exe=/unregister=McGsModUserMode /userMode=true,1,1
+
+[DelModuleConfig]
+Delfiles=McPersHandlerConfig
+
+[McPersHandlerConfig]
+McPersHandlerConfig.xml
