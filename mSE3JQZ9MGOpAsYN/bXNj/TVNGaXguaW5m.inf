@@ -1,0 +1,61 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=MSFix.inf
+
+[Installer_Config]
+AppID=MSC
+Shared=0
+
+[SourceDisksNames]
+1="Redistributed Microsoft hot fixes for x64","",1
+
+
+[DirIds]
+46001=%ProgramW6432%\McAfee\MSC
+
+[DestinationDirs]   
+Common64=46001
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; 64 bit
+[Install_Vista_x64]
+DefaultInstall64=Setup
+;Run Vista x64 fix here
+;Command_Vista_x64=EXE
+
+[Install_Windows7_x64]
+DefaultInstall64=Setup
+;Run Windows7 x64 fix here
+;Command_Win7_x64=EXE
+
+
+
+[UnInstall_Vista_x64]
+DefaultUnInstall64=Setup
+
+[DefaultInstall64]
+CopyFiles=Common64
+AddReg=AddUpdateEntry64
+
+[DefaultUnInstall64]
+DelFiles=Common64
+DelReg=AddUpdateEntry64
+
+[Common64]
+MSFix.inf,,,65568
+
+[AddUpdateEntry64]
+HKLM,Software\McAfee\MSC\Update\Checksums,"MSFix.inf",4096,"%46001%"
+
+
+; run in none-block, scient mode
+[Command_Vista_x64]
+%11%\CMD.exe="/C ""%33300%\Windows6.0-KB976529-x64.msu"" /norestart /quiet",0,1
+
+[Command_Win7_x64]
+%11%\CMD.exe="/C ""%33300%\Windows6.1-KB976759-x64.msu"" /norestart /quiet",0,1
+
+
