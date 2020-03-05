@@ -1,0 +1,95 @@
+@.¢í±,ï6Å€ö±R“∞’¥¬Q›‰˘b%-P<?xml version="1.0" encoding="utf-8"?>
+<!-- Note: Always add JP and JA for Japanese language configurations -->
+<uiconfig version="1.0">
+	<advanced>
+		<computerdata>
+			<en-us width="700" height="477"/>
+			<ru width="700" height="577"/>
+		</computerdata>
+		<emailim>
+			<en-us width="700" height="577"/>
+		</emailim>
+		<oas_reenable>
+			<en-us width="360" height="230"/>
+			<en-ca width="360" height="230"/>
+			<en-au width="360" height="230"/>
+			<en-gb width="360" height="230"/>
+			<!--  ( Czech) -->
+			<cs width="360" height="230"/>
+			<da width="360" height="230"/>
+			<de width="360" height="230"/>
+			<es width="360" height="230"/>
+			<es-mx width="360" height="230"/>
+			<!-- (Finnish) -->
+			<fi width="360" height="230"/>
+			<fr width="360" height="230"/>
+			<fr-ca width="360" height="230"/>
+			<it width="360" height="230"/>
+			<ja width="360" height="230"/>
+			<jp width="360" height="230"/>
+			<ko width="360" height="230"/>
+			<!-- (Dutch) -->
+			<nl width="360" height="230"/>
+			<no width="360" height="230"/>
+			<pl width="360" height="230"/>
+			<!-- (Portuguese European) -->
+			<pt width="360" height="230"/>
+			<pt-br width="360" height="230"/>
+			<sv width="360" height="230"/>
+			<!-- (Turkish) -->
+			<tr width="360" height="230"/>
+			<xx-db width="360" height="230"/>
+			<xx-sb width="360" height="230"/>
+			<zh-cn width="360" height="230"/>
+			<zh-tw width="360" height="230"/>
+			<!-- (Toshiba Languages) -->
+			<el width="360" height="230"/>
+			<hu width="360" height="230"/>
+			<ru width="360" height="230"/>
+			<sk width="360" height="230"/>
+			<!-- (New Languages) -->
+			<ar-ae width="360" height="230"/>
+			<hr width="360" height="230"/>
+			<he width="360" height="230"/>
+			<sr width="360" height="230"/>
+		</oas_reenable>
+	</advanced>
+	<alert>
+		<!--OAS and IM Scanner-->
+		<Alert_E9EBE83B-1A6A-4b1f-A99B-CF1E16218411>
+			<en-us width="310" details_height="200"/>
+			<jp width="310" details_height="200"/>
+			<ja width="310" details_height="200"/>
+			<ptr2 width="310" details_height="200"/>
+		</Alert_E9EBE83B-1A6A-4b1f-A99B-CF1E16218411>
+		<!--Buffer overflow-->
+		<Alert_3EBE8401-84C4-47db-8011-8EC2CB4DCFDE>
+			<en-us width="310" details_height="200"/>
+			<jp width="310" details_height="200"/>
+			<ja width="310" details_height="200"/>
+			<ptr2 width="310" details_height="200"/>
+		</Alert_3EBE8401-84C4-47db-8011-8EC2CB4DCFDE>
+		<!--ScriptStopper-->
+		<Alert_2F9F1E55-8F3C-4a1e-9A47-B40265560791>
+			<en-us width="310" details_height="200"/>
+			<jp width="369" details_height="200"/>
+			<ja width="369" details_height="200"/>
+			<zh-tw width="310" details_height="200"/>
+			<ptr2 width="369" details_height="200"/>
+		</Alert_2F9F1E55-8F3C-4a1e-9A47-B40265560791>
+		<!--ODS_SlideAlert-->
+		<Alert_CF3782F5-DE57-4485-B815-ABD2E5D8121C>
+			<en-us width="310" details_height="170"/>
+			<jp width="310" details_height="200"/>
+			<ja width="310" details_height="200"/>
+			<ptr2 width="310" details_height="200"/>
+		</Alert_CF3782F5-DE57-4485-B815-ABD2E5D8121C>
+		<!--FailureAlert-->
+		<Alert_BD06BE33-9DD8-4832-A324-E8C8EEF8EEB4>
+			<en-us width="310" details_height="170"/>
+			<jp width="310" details_height="200"/>
+			<ja width="310" details_height="200"/>
+			<ptr2 width="310" details_height="200"/>
+		</Alert_BD06BE33-9DD8-4832-A324-E8C8EEF8EEB4>
+	</alert>
+</uiconfig>
