@@ -1,0 +1,387 @@
+[Version]
+Signature="$Chicago$"
+AdvancedINF=2.5
+LayoutFile=McPartnerSAInstallManager.inf
+
+[Installer_Config]
+AppID=MCPSAIM
+Shared=0
+
+[SourceDisksNames]
+1="McPartnerSAInstallManager","",1
+
+[DirIds]
+;33000 ==> \Program Files\Common Files
+;33100 ==> \Documents and Settings\All Users\Application Data
+;33400 ==> \Program Files\Common Files\McAfee\Installer
+;33500 ==> \Program Files
+45010=%33500%\McAfee\MSC\Partner\SAInstallManager
+45020=%ProgramW6432%\McAfee\MSC\Partner\SAInstallManager
+46010=%33000%\McAfee\Platform
+46020=%CommonProgramW6432%\McAfee\Platform
+46310=%33500%\McAfee\MSC\Custom_Uninstall
+46410=%ProgramW6432%\McAfee\MSC\Custom_Uninstall
+
+[DestinationDirs]   
+FileList=45010
+FileList64=45020
+SiteAdvisorFileList=45010
+SiteAdvisorFileList64=45020
+RenCopySiteAdvisor=45010
+RenCopySiteAdvisor64=45020
+SAInstallManagerInf32=46310
+SAInstallManagerInf64=46410
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;	32 bit os
+;;
+
+[DefaultInstall]
+AddReg=RegEntries
+AddReg=RegEntryPhase2
+
+
+[FileList]
+McPartnerSAInstallManager.exe,,,65568
+McPartnerSAInstallManager.inf,,,65568
+
+[SiteAdvisorFileList]
+install.ini,,,65568
+mcinst.exe,,,65568
+mcplgui.dll,,,65568
+McSacIns.dll,,,65568
+mfeasins_x64.exe,,,65568
+mfeasins_x86.exe,,,65568
+msac.ico,,,65568
+MSADMLKit.cab,,,65568
+SA_indep.cab,,,65568
+SA_INF.cab,,,65568
+SA_L10n.cab,,,65568
+SA_main.inf,,,65568
+SA_PreInstall.cab,,,65568
+SA_win32.cab,,,65568
+SA_x64.cab,,,65568
+SACore_indep.cab,,,65568
+SACore_win32.cab,,,65568
+SACore_x64.cab,,,65568
+saInst.exe,,,65568
+sares.dll,,,65568
+TBCore_indep.cab,,,65568
+TBCore_x64.cab,,,65568
+;;;; Custom cabs
+87_msaduc.cab,,,65568
+122_msaduc.cab,,,65568
+339_msaduc.cab,,,65568
+365_msaduc.cab,,,65568
+370_msaduc.cab,,,65568
+390_msaduc.cab,,,65568
+518_msaduc.cab,,,65568
+532_msaduc.cab,,,65568
+607_msaduc.cab,,,65568
+608_msaduc.cab,,,65568
+640_msaduc.cab,,,65568
+648_msaduc.cab,,,65568
+649_msaduc.cab,,,65568
+825_msaduc.cab,,,65568
+105_msaduc.cab,,,65568
+977_msaduc.cab,,,65568
+978_msaduc.cab,,,65568
+826_msaduc.cab,,,65568
+662_msaduc.cab,,,65568
+1055_msaduc.cab,,,65568
+1059_msaduc.cab,,,65568
+1050_msaduc.cab,,,65568
+973_msaduc.cab,,,65568
+885_msaduc.cab,,,65568
+;1101_msaduc.cab,,,65568
+;135_msaduc.cab,,,65568
+;310_msaduc.cab,,,65568
+;670_msaduc.cab,,,65568
+
+
+
+
+
+[RenCopySiteAdvisor]
+install.ini=%45010%
+mcinst.exe=%45010%
+mcplgui.dll=%45010%
+McSacIns.dll=%45010%
+mfeasins_x64.exe=%45010%
+mfeasins_x86.exe=%45010%
+msac.ico=%45010%
+MSADMLKit.cab=%45010%
+SA_indep.cab=%45010%
+SA_INF.cab=%45010%
+SA_L10n.cab=%45010%
+SA_main.inf=%45010%
+SA_PreInstall.cab=%45010%
+SA_win32.cab=%45010%
+SA_x64.cab=%45010%
+SACore_indep.cab=%45010%
+SACore_win32.cab=%45010%
+SACore_x64.cab=%45010%
+saInst.exe=%45010%
+sares.dll=%45010%
+TBCore_indep.cab=%45010%
+TBCore_x64.cab=%45010%
+;;;; Custom cabs
+; 87_msaduc.cab=%45010%
+; 122_msaduc.cab=%45010%
+; 339_msaduc.cab=%45010%
+; 365_msaduc.cab=%45010%
+; 370_msaduc.cab=%45010%
+; 390_msaduc.cab=%45010%
+; 518_msaduc.cab=%45010%
+; 532_msaduc.cab=%45010%
+; 607_msaduc.cab=%45010%
+; 608_msaduc.cab=%45010%
+; 640_msaduc.cab=%45010%
+; 648_msaduc.cab=%45010%
+; 649_msaduc.cab=%45010%
+; 825_msaduc.cab=%45010%
+; 105_msaduc.cab=%45010%
+; 977_msaduc.cab=%45010%
+; 978_msaduc.cab=%45010%
+; 826_msaduc.cab=%45010%
+; 662_msaduc.cab=%45010%
+; 1055_msaduc.cab=%45010%
+; 1059_msaduc.cab=%45010%
+; 1050_msaduc.cab=%45010%
+; 973_msaduc.cab=%45010%
+; 885_msaduc.cab=%45010%
+; 642_msaduc.cab=%45010%
+;1101_msaduc.cab=%45010%
+;135_msaduc.cab=%45010%
+;310_msaduc.cab=%45010%
+;670_msaduc.cab=%45010%
+
+[SAInstallManagerInf32]
+McPartnerSAInstallManager.inf,,,65568
+
+[Install_NT]
+DefaultInstall=Setup
+RegMcTask=RegObfuscate
+RenCopyInstallManager=RenCopy
+RenCopySiteAdvisor=RenCopy
+RefreshTaskScheduler=EXE
+
+[RenCopyInstallManager]
+McPartnerSAInstallManager.exe=%45010%
+McPartnerSAInstallManager.inf=%46310%
+McPartnerSAInstallManager.ini=%45010%
+
+[UnInstall_NT]
+DefaultUnInstall=Setup
+FolderCleanup=DelFolders
+
+[DefaultUnInstall]
+DelFiles=FileList, SiteAdvisorFileList, SAInstallManagerInf32
+
+[RegEntries]
+HKLM,Software\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\SAInstallManager,maxRunCount,65537,-1
+HKLM,Software\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\SAInstallManager,minSupportedOS,65537,8
+
+[RegEntryPhase2]
+HKLM,Software\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\SAInstallManager,downloadSuccessful,65537,1
+
+[FolderCleanup]
+%45010%=1
+
+[RegMcTask]
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"TaskType",65537,3
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"TaskTrigType",65537,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"TaskTrigger",,%45010%\McPartnerSAInstallManager.exe       
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"NextRun",65537,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"DefaultFreq",65537,19020
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"TaskBatteryWise",65537,1
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"DayOfWeekMask",65537,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"Interval",65537,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"RunInUserContext",65537,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"Hour",65537,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"Minute",65537,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"RepeatTask",65537,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"RunWhenIdle",65537,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"Priority",65537,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"PresetId",65537,0
+
+[RefreshTaskScheduler]
+%46010%\McPltCmd.exe=/triggerts
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;	64 bit os
+;;
+
+
+[DefaultInstall64]
+AddReg=RegEntries64
+AddReg=RegEntryPhase2_64
+
+
+[FileList64]
+McPartnerSAInstallManager.exe,,,65568
+McPartnerSAInstallManager.inf,,,65568
+
+[SiteAdvisorFileList64]
+install.ini,,,65568
+mcinst.exe,,,65568
+mcplgui.dll,,,65568
+McSacIns.dll,,,65568
+mfeasins_x64.exe,,,65568
+mfeasins_x86.exe,,,65568
+msac.ico,,,65568
+MSADMLKit.cab,,,65568
+SA_indep.cab,,,65568
+SA_INF.cab,,,65568
+SA_L10n.cab,,,65568
+SA_main.inf,,,65568
+SA_PreInstall.cab,,,65568
+SA_win32.cab,,,65568
+SA_x64.cab,,,65568
+SACore_indep.cab,,,65568
+SACore_win32.cab,,,65568
+SACore_x64.cab,,,65568
+saInst.exe,,,65568
+sares.dll,,,65568
+TBCore_indep.cab,,,65568
+TBCore_x64.cab,,,65568
+;;;; Custom cabs
+87_msaduc.cab,,,65568
+122_msaduc.cab,,,65568
+339_msaduc.cab,,,65568
+365_msaduc.cab,,,65568
+370_msaduc.cab,,,65568
+390_msaduc.cab,,,65568
+518_msaduc.cab,,,65568
+532_msaduc.cab,,,65568
+607_msaduc.cab,,,65568
+608_msaduc.cab,,,65568
+640_msaduc.cab,,,65568
+648_msaduc.cab,,,65568
+649_msaduc.cab,,,65568
+825_msaduc.cab,,,65568
+105_msaduc.cab,,,65568
+977_msaduc.cab,,,65568
+978_msaduc.cab,,,65568
+826_msaduc.cab,,,65568
+662_msaduc.cab,,,65568
+1055_msaduc.cab,,,65568
+1059_msaduc.cab,,,65568
+1050_msaduc.cab,,,65568
+973_msaduc.cab,,,65568
+885_msaduc.cab,,,65568
+642_msaduc.cab,,,65568
+;1101_msaduc.cab,,,65568
+;135_msaduc.cab,,,65568
+;310_msaduc.cab,,,65568
+;670_msaduc.cab,,,65568
+
+[RenCopySiteAdvisor64]
+install.ini=%45020%
+mcinst.exe=%45020%
+mcplgui.dll=%45020%
+McSacIns.dll=%45020%
+mfeasins_x64.exe=%45020%
+mfeasins_x86.exe=%45020%
+msac.ico=%45020%
+MSADMLKit.cab=%45020%
+SA_indep.cab=%45020%
+SA_INF.cab=%45020%
+SA_L10n.cab=%45020%
+SA_main.inf=%45020%
+SA_PreInstall.cab=%45020%
+SA_win32.cab=%45020%
+SA_x64.cab=%45020%
+SACore_indep.cab=%45020%
+SACore_win32.cab=%45020%
+SACore_x64.cab=%45020%
+saInst.exe=%45020%
+sares.dll=%45020%
+TBCore_indep.cab=%45020%
+TBCore_x64.cab=%45020%
+;;;; Custom cabs
+; 87_msaduc.cab=%45020%
+; 122_msaduc.cab=%45020%
+; 339_msaduc.cab=%45020%
+; 365_msaduc.cab=%45020%
+; 370_msaduc.cab=%45020%
+; 390_msaduc.cab=%45020%
+; 518_msaduc.cab=%45020%
+; 532_msaduc.cab=%45020%
+; 607_msaduc.cab=%45020%
+; 608_msaduc.cab=%45020%
+; 640_msaduc.cab=%45020%
+; 648_msaduc.cab=%45020%
+; 649_msaduc.cab=%45020%
+; 825_msaduc.cab=%45020%
+; 105_msaduc.cab=%45020%
+; 977_msaduc.cab=%45020%
+; 978_msaduc.cab=%45020%
+; 826_msaduc.cab=%45020%
+; 662_msaduc.cab=%45020%
+; 1055_msaduc.cab=%45020%
+; 1059_msaduc.cab=%45020%
+; 1050_msaduc.cab=%45020%
+; 973_msaduc.cab=%45020%
+; 885_msaduc.cab=%45020%
+; 642_msaduc.cab=%45020%
+;1101_msaduc.cab=%45020%
+;135_msaduc.cab=%45020%
+;310_msaduc.cab=%45020%
+;670_msaduc.cab=%45020%
+
+[SAInstallManagerInf64]
+McPartnerSAInstallManager.inf,,,65568
+
+[Install_NT_x64]
+DefaultInstall64=Setup
+RegMcTask64=RegObfuscate
+RenCopyInstallManager64=RenCopy
+RenCopySiteAdvisor64=RenCopy
+RefreshTaskScheduler64=EXE
+
+[RenCopyInstallManager64]
+x64\McPartnerSAInstallManager.exe=%45020%\McPartnerSAInstallManager.exe
+McPartnerSAInstallManager.inf=%46410%
+McPartnerSAInstallManager.ini=%45020%
+
+[UnInstall_NT_x64]
+DefaultUnInstall64=Setup
+FolderCleanup64=DelFolders
+
+[DefaultUnInstall64]
+DelFiles=FileList64, SiteAdvisorFileList64, SAInstallManagerInf64
+
+[RegEntries64]
+HKLM,Software\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\SAInstallManager,maxRunCount,69633,-1
+HKLM,Software\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\SAInstallManager,minSupportedOS,69633,8
+
+[RegEntryPhase2_64]
+HKLM,Software\McAfee\MSC\overrides\B6229FD2-AB40-40ac-B70A-68E0303E0546\Settings\SAInstallManager,downloadSuccessful,69633,1
+
+[FolderCleanup64]
+%45020%=1
+
+[RegMcTask64]
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"TaskType",69633,3
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"TaskTrigType",69633,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"TaskTrigger",4096,%45020%\McPartnerSAInstallManager.exe       
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"NextRun",69633,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"DefaultFreq",69633,19020
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"TaskBatteryWise",69633,1
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"DayOfWeekMask",69633,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"Interval",69633,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"RunInUserContext",69633,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"Hour",69633,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"Minute",69633,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"RepeatTask",69633,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"RunWhenIdle",69633,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"Priority",69633,0
+HKLM,SOFTWARE\Mcafee\Platform\Scheduler\McPartnerSAInstallManager,"PresetId",69633,0
+
+[RefreshTaskScheduler64]
+%46020%\McPltCmd.exe=/triggerts
