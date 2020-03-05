@@ -1,0 +1,2737 @@
+@.¢í±,ï6Å€=x¶tNsV§1ØªlÇ◊√è.Â<?xml version="1.0" encoding="utf-8"?>
+<uiconfig version="2.0">
+	<misp_shell>
+		<en-us>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<!-- This node defines the window size of main UI -->
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</en-us>
+		<ar>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</ar>
+		<ar-ae>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</ar-ae>
+		<cs>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</cs>
+		<da>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</da>
+		<de>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</de>
+		<el>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</el>
+		<es>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</es>
+		<es-es>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</es-es>
+		<es-mx>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</es-mx>
+		<fi>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</fi>
+		<fr>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</fr>
+		<fr-ca>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</fr-ca>
+		<he>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</he>
+		<he-il>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</he-il>
+		<hr>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</hr>
+		<hr-hr>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</hr-hr>
+		<hu>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</hu>
+		<it>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</it>
+		<ja>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</ja>
+		<jp>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</jp>
+		<ko>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</ko>
+		<nl>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</nl>
+		<no>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</no>
+		<pl>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</pl>
+		<pt>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</pt>
+		<pt-pt>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</pt-pt>
+		<pt-br>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</pt-br>
+		<ru>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</ru>
+		<sk>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</sk>
+		<sr-sp>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</sr-sp>
+		<sv>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</sv>
+		<tr>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</tr>
+		<zh-cn>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</zh-cn>
+		<zh-tw>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="960" height="700">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+				<mcupdateprog width="350" height="200"></mcupdateprog>
+			</lores>
+		</zh-tw>
+		<xx-db>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="820" height="617">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="750" height="520">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+			</lores>
+		</xx-db>
+		<xx-sb>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="820" height="617">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mainframe width="750" height="520">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframe>
+				<mainframeo width="750" height="620">
+					<!-- Override the global shell font -->
+					<!-- <font face_name="" point_size="" codepage=""/> -->
+				</mainframeo>
+			</lores>
+		</xx-sb>
+	</misp_shell>
+	<!-- misp_uihost node defines the sizes of windows that are displayed by mcuihost.exe  -->
+	<misp_uihost>
+		<en-us>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<!--history and logs window-->
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<!--about window-->
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<!--security report window-->
+				<report.html width="700" height="620"/>
+				<!--uninstall window-->
+				<uninstall.html width="541" height="520"/>
+				<mlsyapintercept.html width="840" height="744"/>
+				<add_device.html width="700" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<mays.html width="700" height="620"/>
+				<logs.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+				<mlsyapintercept.html width="840" height="744"/>
+				<add_device.html width="700" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+			</lores>
+		</en-us>
+		<en-ca>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<report.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</en-ca>
+		<en-au>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</en-au>
+		<en-gb>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</en-gb>
+		<ar>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</ar>
+		<ar-ae>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</ar-ae>
+		<cs>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</cs>
+		<da>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</da>
+		<de>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</de>
+		<es>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</es>
+		<es-es>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</es-es>
+		<es-mx>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</es-mx>
+		<fi>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="700" height="620"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</fi>
+		<fr>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</fr>
+		<fr-ca>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</fr-ca>
+		<he>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</he>
+		<he-il>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</he-il>
+		<hr>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</hr>
+		<hr-hr>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</hr-hr>
+		<it>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</it>
+		<ja>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="700" height="620"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="700" height="620"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</ja>
+		<jp>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="700" height="620"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</jp>
+		<ko>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="700" height="620"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="700" height="620"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</ko>
+		<nl>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<nps.html width="500" height="275" position="4"/>
+				<abouto.html width="750" height="620"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</nl>
+		<no>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</no>
+		<ru>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</ru>
+		<el>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</el>
+		<he>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</he>
+		<pl>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</pl>
+		<pt>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</pt>
+		<pt-pt>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</pt-pt>
+		<pt-br>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</pt-br>
+		<sk>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="700" height="620"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</sk>
+		<sr-sp>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</sr-sp>
+		<sv>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</sv>
+		<tr>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<report.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</tr>
+		<zh-cn>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="700" height="620"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="700" height="620"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</zh-cn>
+		<zh-tw>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</zh-tw>
+		<hu>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<!-- This is global font info for uninstaller that should be used if we have a Win32 UI -->
+				<!-- This is optional. If all the UI is HTML it is not required. -->
+				<font face_name="arial" point_size="8" codepage="1252"/>
+				<logs.html width="700" height="620"/>
+				<mays.html width="700" height="620"/>
+				<about.html width="541" height="520"/>
+				<abouto.html width="750" height="620"/>
+				<nps.html width="500" height="275" position="4"/>
+				<report.html width="700" height="620"/>
+				<uninstall.html width="541" height="520"/>
+			</lores>
+		</hu>
+	</misp_uihost>
+	<!--mcuicnt node defines the sizes of windows that are displayed by mcuicnt.exe-->
+	<mcuicnt>
+		<en-us>
+			<!-- This provides seperate dimensions, for monitors with resolution 1024x768 or higher-->
+			<hires>
+				<!--learn more window-->
+				<onlinehelp width="700" height="620"/>
+			</hires>
+			<!-- This provides seperate dimensions for lower resolution displays -->
+			<lores>
+				<onlinehelp width="700" height="620"/>
+			</lores>
+		</en-us>
+	</mcuicnt>
+	<pearl_alert>
+		<en-us>
+			<!-- This provides default width for all P1 alerts-->
+			<p1 width="525"/>
+			<!-- This provides default width for all P2 alerts-->
+			<p2 width="400"/>
+			<!-- This provides default width for all P3 alerts-->
+			<p3 width="400"/>
+			<!-- The items listed under alertparams node will override the attributes set in p1, p2, and p3 nodes-->
+			<alertparams>
+				<!-- The node name should be something likes alert_XXX, where XXX should be replaced by corresponding alert's type ID.-->
+				<!-- The alert width set for alert with type ID XXX will override the width set in p1, p2, and p3 nodes-->
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="525"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+			</alertparams>
+		</en-us>
+		<en-ca>
+			<p1 width="525"/>
+			<p2 width="400"/>
+			<p3 width="400"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="525"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+			</alertparams>
+		</en-ca>
+		<en-au>
+			<p1 width="525"/>
+			<p2 width="400"/>
+			<p3 width="400"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="525"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+			</alertparams>
+		</en-au>
+		<en-gb>
+			<p1 width="525"/>
+			<p2 width="400"/>
+			<p3 width="400"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="525"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+			</alertparams>
+		</en-gb>
+		<ar>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</ar>
+		<ar-ae>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</ar-ae>
+		<cs>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</cs>
+		<da>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</da>
+		<de>
+			<p1 width="540"/>
+			<p2 width="600"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+			</alertparams>
+		</de>
+		<el>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="800"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="800"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+			</alertparams>
+		</el>
+		<es>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</es>
+		<es-es>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</es-es>
+		<es-mx>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</es-mx>
+		<fi>
+			<p1 width="540"/>
+			<p2 width="600"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</fi>
+		<fr>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</fr>
+		<fr-ca>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</fr-ca>
+		<he>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</he>
+		<he-il>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</he-il>
+		<hr>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</hr>
+		<hr-hr>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</hr-hr>
+		<hu>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="800"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+			</alertparams>
+		</hu>
+		<it>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="700"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="750"/>
+				<alert_5135544F-55FE-4d10-8383-D70D933F0E96 width="900"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</it>
+		<ja>
+			<p1 width="540"/>
+			<p2 width="560"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_CF3782F5-DE57-4485-B815-ABD2E5D8121C width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</ja>
+		<jp>
+			<p1 width="540"/>
+			<p2 width="560"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</jp>
+		<ko>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+				<alert_E9EBE83B-1A6A-4b1f-A99B-CF1E16218411 width="640"/>
+			</alertparams>
+		</ko>
+		<nl>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</nl>
+		<no>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</no>
+		<pl>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="750"/>
+				<alert_5135544F-55FE-4d10-8383-D70D933F0E96 width="800"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</pl>
+		<pt>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</pt>
+		<pt-pt>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</pt-pt>
+		<pt-br>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</pt-br>
+		<ru>
+			<p1 width="540"/>
+			<p2 width="600"/>
+			<p3 width="750"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="750"/>
+				<alert_5135544F-55FE-4d10-8383-D70D933F0E96 width="700"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="640"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+				<alert_CF3782F5-DE57-4485-B815-ABD2E5D8121C width="600"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+			</alertparams>
+		</ru>
+		<sk>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="700"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="700"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</sk>
+		<sr-sp>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</sr-sp>
+		<sv>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</sv>
+		<tr>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</tr>
+		<zh-cn>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</zh-cn>
+		<zh-tw>
+			<p1 width="540"/>
+			<p2 width="540"/>
+			<p3 width="640"/>
+			<alertparams>
+				<alert_3DFF80CB-CE48-4519-A57E-C05A8D79375D width="640"/>
+				<alert_8006F185-550D-4090-B628-B52D8068B2D7 width="500"/>
+				<alert_19B9B9D2-BA4B-4ad1-B617-BF5A578A8417 width="500"/>
+				<alert_86E7F4CD-9AA2-4757-AC75-B3A2B836D464 width="500"/>
+			</alertparams>
+		</zh-tw>
+	</pearl_alert>
+	<splash>
+		<fonts>
+			<zh-cn>
+				<copyright face_name="ÂÆã‰Ωì" point_size="10" codepage="936"/>
+			</zh-cn>
+			<zh-tw>
+				<copyright face_name="Êñ∞Á¥∞ÊòéÈ´î" point_size="10" codepage="950"/>
+			</zh-tw>
+		</fonts>
+	</splash>
+</uiconfig>
